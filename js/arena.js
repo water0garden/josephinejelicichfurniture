@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           };
 
 
-          var randomNum = Math.random() * 100;
+          var randomNum = Math.random() * 300;
 
             if (randomNum<55) {
               var size = 'small';
