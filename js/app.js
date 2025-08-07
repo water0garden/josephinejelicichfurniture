@@ -1,4 +1,4 @@
-const domain = "josephinejelicichfurniture.myshopify.com"; // Replace with your store
+const domain = "gbg11r-ah.myshopify.com"; // Replace with your store
 const storefrontAccessToken = "e4c45ba5e531c0c76f492bd773f5f339"; // Replace with your token
 
 async function fetchProducts() {
