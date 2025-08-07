@@ -377,7 +377,6 @@ footer {
 .item-container .shopify-buy-frame iframe {
   width: 200px!important;
   display: block;
-
 }
 
 #product-component-1749695189225 {
@@ -385,7 +384,10 @@ footer {
 }
 
 #product-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-block;
   justify-content: space-between;
+}
+
+#product-list .p {
+  display: none;
 }
