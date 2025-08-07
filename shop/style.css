@@ -375,11 +375,17 @@ footer {
 }
 
 .item-container .shopify-buy-frame iframe {
-  width: 140px!important;
+  width: 200px!important;
   display: block;
 
 }
 
 #product-component-1749695189225 {
   display: inline-block;
+}
+
+product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
