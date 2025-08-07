@@ -49,7 +49,7 @@ function displayProducts(products) {
 
     div.innerHTML = `
       <h2>${node.title}</h2>
-      <img src="${image}" alt="${alt}" width="200">
+      <img src="${image}" alt="${alt}" width="400">
       <p>${node.description}</p>
     `;
 
