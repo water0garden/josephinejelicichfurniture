@@ -41,12 +41,7 @@ async function fetchProduct() {
     body: JSON.stringify({ query })
   });
 
-  console.log("API response:", json);
-  console.log("Handle:", handle);
-
-  const json = await response.json();
-  displayProduct(json.data.productByHandle);
-}
+   console.log("Handle:", handle);
 
 function displayProduct(product) {
   if (!product) {
