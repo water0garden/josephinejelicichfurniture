@@ -393,6 +393,8 @@ footer {
   width: 100%;
 }
 
-.shop-paragraph {
-  display: none;
+p .shop-paragraph {
+  font-style: italic;
+
 }
+
