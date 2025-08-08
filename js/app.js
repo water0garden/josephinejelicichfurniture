@@ -51,6 +51,7 @@ function displayProducts(products) {
       <img src="${image}" alt="${alt}" width="400">
       <h2>${node.title}</h2>
       <p>${node.description}</p>
+      <button class="shop-paragraph">View</button>
     `;
 
     container.appendChild(div);
@@ -78,6 +79,31 @@ function displayProducts(products) {
       <img src="${image}" alt="${alt}" width="400">
       <h2>${node.title}</h2>
       <p class="shop-paragraph">${node.description}</p>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+function displayProducts(products) {
+  const container = document.getElementById("product-list");
+
+  products.forEach(({ node }) => {
+    const div = document.createElement("div");
+    div.className = "product";
+
+    const image = node.images.edges[0]?.node.src || "";
+    const alt = node.images.edges[0]?.node.altText || "";
+    const handle = node.handle; // Make sure your query includes 'handle'
+    const productUrl = `https://gbg11r-ah.myshopify.com/products/${handle}`;
+
+    div.innerHTML = `
+      <img src="${image}" alt="${alt}" width="400">
+      <h2>${node.title}</h2>
+      <p class="shop-paragraph">${node.description}</p>
+      <a href="${productUrl}" target="_blank">
+        <button>View</button>
+      </a>
     `;
 
     container.appendChild(div);
