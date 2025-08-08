@@ -388,6 +388,11 @@ footer {
   justify-content: space-between;
 }
 
+.product {
+  display: inline-block;
+  width: 100%;
+}
+
 .shop-paragraph {
   display: none;
 }
