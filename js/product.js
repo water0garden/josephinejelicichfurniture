@@ -80,8 +80,9 @@ function displayProduct(product) {
 }
 
 function addToCart(variantId) {
-  // Redirect to Shopify checkout for this variant
-  window.location.href = `https://${domain}/cart/${variantId}:1`;
+  // Extract numeric ID from Shopify's global ID
+  const numericId = variantId.split("/").pop();
+  window.location.href = `https://${domain}/cart/${numericId}:1`;
 }
 
 fetchProduct();
