@@ -171,13 +171,14 @@ figcaption:hover {
   }
 }
 
-p {
+p .shop-paragraph{
   font-size: 1rem;
   line-height: 1.3;
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   letter-spacing: 0.045rem;
   margin: 0px;
   padding-bottom: 2rem;
+  
 
 }
 
@@ -395,7 +396,7 @@ footer {
   margin-bottom: 2rem;
 }
 
-p .shop-paragraph {
+.shop-paragraph {
   font-style: italic;
 
 }

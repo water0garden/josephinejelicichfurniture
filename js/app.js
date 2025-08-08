@@ -59,3 +59,6 @@ function displayProducts(products) {
 
 fetchProducts();
 
+document.querySelectorAll(".shop-paragraph").forEach(p => {
+  p.style.display = "none";
+});
