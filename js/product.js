@@ -1,7 +1,6 @@
 const domain = "gbg11r-ah.myshopify.com";
 const storefrontAccessToken = "e4c45ba5e531c0c76f492bd773f5f339";
 
-// Get product handle from URL
 const params = new URLSearchParams(window.location.search);
 const handle = params.get("handle");
 
@@ -72,7 +71,6 @@ function displayProduct(product) {
   `;
 }
 
-// Placeholder for add to cart
 function addToCart(variantId) {
   alert("Add to cart functionality requires Shopify Buy SDK or custom integration.");
 }
