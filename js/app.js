@@ -67,5 +67,4 @@ fetchProducts();
 
     const p = document.querySelector("p");
 
-  // Add a new class
-  p.classList.add("my-new-class");
+
