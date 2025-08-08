@@ -24,7 +24,10 @@ async function fetchProduct() {
             node {
               id
               title
-              price
+              price {
+                amount
+                currencyCode
+              }
             }
           }
         }
@@ -65,7 +68,7 @@ function displayProduct(product) {
 
   let variantsHtml = product.variants.edges.map(variant =>
     `<div>
-      <strong>${variant.node.title}</strong> - $${variant.node.price}
+      <strong>${variant.node.title}</strong> - ${variant.node.price.amount} ${variant.node.price.currencyCode}
       <button onclick="addToCart('${variant.node.id}')">Add to Cart</button>
     </div>`
   ).join("");
