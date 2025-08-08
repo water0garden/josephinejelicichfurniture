@@ -64,3 +64,61 @@ fetchProducts();
 document.querySelectorAll(".shop-paragraph").forEach(p => {
   p.style.display = "none";
 });
+
+
+
+function displayProducts(products) {
+  const container = document.getElementById("product-list");
+
+  products.forEach(({ node }) => {
+    const div = document.createElement("div");
+    div.className = "product";
+
+    const image = node.images.edges[0]?.node.src || "";
+    const alt = node.images.edges[0]?.node.altText || "";
+
+    // Assign 'shop-paragraph' class to <p>
+    div.innerHTML = `
+      <img src="${image}" alt="${alt}" width="400">
+      <h2>${node.title}</h2>
+      <p class="shop-paragraph">${node.description}</p>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+function displayProducts(products) {
+  const container = document.getElementById("product-list");
+
+  products.forEach(({ node }) => {
+    const div = document.createElement("div");
+    div.className = "product";
+
+    const image = node.images.edges[0]?.node.src || "";
+    const alt = node.images.edges[0]?.node.altText || "";
+    const handle = node.handle; // Make sure your query includes 'handle'
+    const productUrl = `product.html?handle=${handle}`;
+
+    div.innerHTML = `
+      <img src="${image}" alt="${alt}" width="400">
+      <h2>${node.title}</h2>
+      <p class="shop-paragraph">${node.description}</p>
+      <a href="${productUrl}" target="_blank">
+        <button>View</button>
+      </a>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+const productUrl = `product.html?handle=${handle}`;
+div.innerHTML = `
+  <img src="${image}" alt="${alt}" width="400">
+  <h2>${node.title}</h2>
+  <p class="shop-paragraph">${node.description}</p>
+  <a href="${productUrl}">
+    <button>View</button>
+  </a>
+`;
