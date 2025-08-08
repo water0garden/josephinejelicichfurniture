@@ -85,39 +85,39 @@ function addToCart(variantId) {
   window.location.href = `https://${domain}/cart/${numericId}:1`;
 }
 
-let cart = [];
+// let cart = [];
 
-function addToCart(variantId) {
-  // Find the variant details from the page data
-  const variant = window.currentProduct.variants.edges.find(v => v.node.id === variantId).node;
-  cart.push({
-    id: variantId,
-    title: variant.title,
-    price: variant.price.amount,
-    currency: variant.price.currencyCode
-  });
-  showCart();
-}
+// function addToCart(variantId) {
+//   // Find the variant details from the page data
+//   const variant = window.currentProduct.variants.edges.find(v => v.node.id === variantId).node;
+//   cart.push({
+//     id: variantId,
+//     title: variant.title,
+//     price: variant.price.amount,
+//     currency: variant.price.currencyCode
+//   });
+//   showCart();
+// }
 
-function showCart() {
-  const cartPopup = document.getElementById("cart-popup");
-  const cartItems = document.getElementById("cart-items");
-  cartItems.innerHTML = cart.map(item =>
-    `<div>
-      <strong>${item.title}</strong> - ${item.price} ${item.currency}
-    </div>`
-  ).join("");
-  cartPopup.style.display = "block";
-}
+// function showCart() {
+//   const cartPopup = document.getElementById("cart-popup");
+//   const cartItems = document.getElementById("cart-items");
+//   cartItems.innerHTML = cart.map(item =>
+//     `<div>
+//       <strong>${item.title}</strong> - ${item.price} ${item.currency}
+//     </div>`
+//   ).join("");
+//   cartPopup.style.display = "block";
+// }
 
-function closeCart() {
-  document.getElementById("cart-popup").style.display = "none";
-}
+// function closeCart() {
+//   document.getElementById("cart-popup").style.display = "none";
+// }
 
-// Save product globally for cart lookup
-function displayProduct(product) {
-  window.currentProduct = product;
-  // ...existing code...
-}
+// // Save product globally for cart lookup
+// function displayProduct(product) {
+//   window.currentProduct = product;
+//   // ...existing code...
+// }
 
 fetchProduct();
