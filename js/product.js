@@ -45,10 +45,7 @@ async function fetchProduct() {
   });
 
   const json = await response.json();
-  console.log("Handle:", handle);
-  console.log("API response:", json);
 
-  // Handle missing product gracefully
   if (!json.data || !json.data.productByHandle) {
     document.getElementById("product-detail").innerHTML = "<p>Product not found.</p>";
     return;
@@ -83,7 +80,8 @@ function displayProduct(product) {
 }
 
 function addToCart(variantId) {
-  alert("Add to cart functionality requires Shopify Buy SDK or custom integration.");
+  // Redirect to Shopify checkout for this variant
+  window.location.href = `https://${domain}/cart/${variantId}:1`;
 }
 
 fetchProduct();
