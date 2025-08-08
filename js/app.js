@@ -48,8 +48,8 @@ function displayProducts(products) {
     const alt = node.images.edges[0]?.node.altText || "";
 
     div.innerHTML = `
-      <h2>${node.title}</h2>
       <img src="${image}" alt="${alt}" width="400">
+      <h2>${node.title}</h2>
       <p>${node.description}</p>
     `;
 
@@ -62,3 +62,24 @@ fetchProducts();
 document.querySelectorAll(".shop-paragraph").forEach(p => {
   p.style.display = "none";
 });
+
+function displayProducts(products) {
+  const container = document.getElementById("product-list");
+
+  products.forEach(({ node }) => {
+    const div = document.createElement("div");
+    div.className = "product";
+
+    const image = node.images.edges[0]?.node.src || "";
+    const alt = node.images.edges[0]?.node.altText || "";
+
+    // Assign 'shop-paragraph' class to <p>
+    div.innerHTML = `
+      <img src="${image}" alt="${alt}" width="400">
+      <h2>${node.title}</h2>
+      <p class="shop-paragraph">${node.description}</p>
+    `;
+
+    container.appendChild(div);
+  });
+}
