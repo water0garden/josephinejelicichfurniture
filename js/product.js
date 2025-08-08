@@ -72,7 +72,7 @@ function displayProduct(product) {
   `;
 }
 
-// Shopify Buy SDK or custom cart logic needed for real cart functionality
+// Placeholder for add to cart
 function addToCart(variantId) {
   alert("Add to cart functionality requires Shopify Buy SDK or custom integration.");
 }
