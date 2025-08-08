@@ -41,7 +41,17 @@ async function fetchProduct() {
     body: JSON.stringify({ query })
   });
 
-   console.log("Handle:", handle);
+  const json = await response.json();
+  console.log("Handle:", handle);
+  console.log("API response:", json);
+
+  // Handle missing product gracefully
+  if (!json.data || !json.data.productByHandle) {
+    document.getElementById("product-detail").innerHTML = "<p>Product not found.</p>";
+    return;
+  }
+  displayProduct(json.data.productByHandle);
+}
 
 function displayProduct(product) {
   if (!product) {
