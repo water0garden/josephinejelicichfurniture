@@ -59,12 +59,3 @@ function displayProducts(products) {
 
 fetchProducts();
 
-  // Select all <p> elements
-  const paragraphs = document.querySelectorAll("p");
-
-  // Loop through and add a class to each one
-  paragraphs.forEach(p => p.classList.add("shop-paragraph"));
-
-    const p = document.querySelector("p");
-
-
