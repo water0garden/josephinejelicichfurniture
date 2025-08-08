@@ -71,10 +71,10 @@ function displayProduct(product) {
   ).join("");
 
   document.getElementById("product-detail").innerHTML = `
-    <h1>${product.title}</h1>
     ${imagesHtml}
+    <p>${product.title}</p>
     <p>${product.description}</p>
-    <h3>Variants</h3>
+    <p>Variants</p>
     ${variantsHtml}
   `;
 }
