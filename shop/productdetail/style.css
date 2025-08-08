@@ -106,12 +106,11 @@ body {
   vertical-align: top;
 }
 
-.h1 {
+h1 {
   font-size: 2rem;
   line-height: 1.3;
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   letter-spacing: 0.045rem;
-  margin-bottom: 1rem;
 }
 
 /* .work-container:hover {
