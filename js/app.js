@@ -45,7 +45,7 @@ function displayProducts(products) {
     const image = node.images.edges[0]?.node.src || "";
     const alt = node.images.edges[0]?.node.altText || "";
     const handle = node.handle;
-    const productUrl = `product/index.html?handle=${handle}`;
+    const productUrl = `../product-detail.html?handle=${handle}`;
 
     const div = document.createElement("div");
     div.className = "product";
