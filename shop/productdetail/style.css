@@ -157,11 +157,7 @@ img {
   width: 700px;           /* Set your desired width */
   height: 800px;          /* Set your desired height */
   object-fit: cover;      /* Controls how image fits the box */
-  display: block;         /* Removes extra space below images */    Optional: rounded corners
-  vertical-align: top;
-  /* width: 100%;
-  display: block;
-  position: relative; */
+  margin-bottom: 1rem;;
 }
 }
 
