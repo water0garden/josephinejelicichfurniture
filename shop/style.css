@@ -120,8 +120,8 @@ h2 {
 
 
 img {
-  width: 400px;           /* Set your desired width */
-  height: 200px;          /* Set your desired height */
+  width: 700px;           /* Set your desired width */
+  height: 800px;          /* Set your desired height */
   object-fit: cover;      /* Controls how image fits the box */
   display: block;         /* Removes extra space below images */    /* Optional: rounded corners */
   vertical-align: top;
