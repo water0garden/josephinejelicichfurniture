@@ -154,6 +154,16 @@ img {
   width: 600px;
   display: inline-block;
   position: relative;
+  vertical-align: top;
+  width: 400px;           /* Set your desired width */
+  height: 200px;          /* Set your desired height */
+  object-fit: cover;      /* Controls how image fits the box */
+  display: block;         /* Removes extra space below images */    /* Optional: rounded corners */
+  vertical-align: top;
+  /* width: 100%;
+  display: block;
+  position: relative; */
+}
 }
 
 @media (max-width: 800px) {
