@@ -120,4 +120,14 @@ function addToCart(variantId) {
 //   // ...existing code...
 // }
 
+    // Description (now uses safe Shopify HTML)
+    const descDiv = document.createElement("div");
+    descDiv.className = "product-description";
+    descDiv.innerHTML = node.descriptionHtml;
+
+    div.appendChild(descDiv);
+    container.appendChild(div);
+  });
+}
+
 fetchProduct();
