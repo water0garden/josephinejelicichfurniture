@@ -151,7 +151,6 @@ h1 {
 /* *** fig, image styles *** */
 
 img {
-  width: 600px;
   display: inline-block;
   position: relative;
   vertical-align: top;
