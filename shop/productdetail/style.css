@@ -231,6 +231,10 @@ p {
 
 /* *** Navigation and dropdown *** */
 
+.jos-choice {
+  font-family: 'tratello', Arial, sans-serif;
+}
+
 .text-frag {
   display: inline-block;
   margin-right: 3ch;
