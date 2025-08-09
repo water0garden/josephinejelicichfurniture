@@ -44,6 +44,11 @@ a:hover { color: black;}
   src: url(../fonts/Herculanum.ttf);
 }
 
+@font-face {
+  font-family: 'tratello' ;
+  src: url(../fonts/tratello.ttf);
+}
+
 .title-page {
   font-family: 'Herculanum.ttf';
   font-size: 2rem;
@@ -202,6 +207,11 @@ p {
 
 /* *** Navigation and dropdown *** */
 
+.jos-choice {
+  font-family: 'tratello', Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
 .text-frag {
   display: inline-block;
   margin-right: 3ch;
