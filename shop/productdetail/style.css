@@ -36,7 +36,7 @@ a:hover { color: black;}
 
 @font-face {
   font-family: 'hoefler-text-ornaments';
-  src: url(../fonts/hoefler-text-ornaments.ttf);
+  src: url(../../fonts/hoefler-text-ornaments.ttf);
 }
 
 @font-face {
