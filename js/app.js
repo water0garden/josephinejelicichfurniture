@@ -37,7 +37,6 @@ async function fetchProducts() {
   const json = await response.json();
   displayProducts(json.data.products.edges);
 }
-
 function displayProducts(products) {
   const container = document.getElementById("product-list");
 
@@ -49,16 +48,33 @@ function displayProducts(products) {
 
     const div = document.createElement("div");
     div.className = "product";
+
+    // Get the first variant (you can show more if needed)
+    const variant = node.variants.edges[0]?.node;
+    const variantId = variant?.id;
+
+    // Add product HTML
     div.innerHTML = `
       <img src="${image}" alt="${alt}" width="400">
       <a href="${productUrl}">
         <button><p class="product-title">${node.title}</p></button>
       </a>
-      
-      
     `;
+
+    // Add "Add to Cart" button if variant exists
+    if (variantId) {
+      const addBtn = document.createElement("button");
+      addBtn.textContent = "Add to Cart";
+      addBtn.onclick = () => {
+        window.currentProduct = node; // So addToCart can access variant info
+        addToCart(variantId);
+      };
+      div.appendChild(addBtn);
+    }
+
     container.appendChild(div);
   });
+}
 
   // Hide all <p> elements with the shop-paragraph class
   document.querySelectorAll(".shop-paragraph").forEach(p => {
