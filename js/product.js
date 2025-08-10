@@ -108,6 +108,36 @@ function addToCart(variant) {
   showCart();
 }
 
+function showCart() {
+  const cartPopup = document.getElementById("cart-popup");
+  const cartItems = document.getElementById("cart-items");
+
+  cartItems.innerHTML = cart.map(item => `
+    <div style="margin-bottom: 10px;">
+      <strong>${item.title}</strong><br>
+      ${item.quantity} × ${item.price} ${item.currency}
+    </div>
+  `).join("");
+
+  cartPopup.style.display = "block";
+}
+
+function closeCart() {
+  document.getElementById("cart-popup").style.display = "none";
+}
+
+function goToCheckout() {
+  if (cart.length === 0) return;
+
+  const domain = "your-store.myshopify.com"; // ← change this to your Shopify domain
+  const cartUrl = `https://${domain}/cart/` + cart
+    .map(item => `${item.id.split("/").pop()}:${item.quantity}`)
+    .join(",") + "?checkout";
+
+  window.location.href = cartUrl;
+}
+
+
 
 
 // let cart = [];
