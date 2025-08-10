@@ -27,6 +27,7 @@
       <span class="text-frag"><a href="../../view-1/index.html">Day by day</a></span>
       <span class="text-frag"><a href="../../view-2/index.html">Gallery</a></span>
       <span class="text-frag shop-nav"><a href="../index.html">Shop</a></span>
+      <span class="text-frag" id="cart-popup"><a href="../../shop/cart/index.html">Cart</a></span>
       </span>
     </header>
 
@@ -36,8 +37,10 @@
      <script src="../../js/product.js"></script>
  
 <div id="cart-popup" style="display:block; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:#fff; border:1px solid #ccc; padding:20px; z-index:1000;">
-  <h2>Your Cart</h2>
-  <div id="cart-items"></div>
+  <h2>Cart</h2>
+  <div id="cart-items">
+
+  </div>
   <button onclick="closeCart()">Close</button>
 </div>
 

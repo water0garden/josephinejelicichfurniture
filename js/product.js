@@ -64,8 +64,7 @@ function displayProduct(product) {
   ).join("");
 
   let variantsHtml = product.variants.edges.map(variant =>
-    `<div>
-       - ${variant.node.price.amount} ${variant.node.price.currencyCode}
+    `<div>${variant.node.price.amount} ${variant.node.price.currencyCode}
       <button onclick="addToCart('${variant.node.id}')">Buy me</button>
     </div>`
   ).join("");
