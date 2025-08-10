@@ -79,23 +79,6 @@ function displayProduct(product) {
   `;
 }
 
-function getPlainText(htmlString) {
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = htmlString;
-  return tempDiv.textContent || tempDiv.innerText || ''; // Use textContent for modern browsers, innerText for older ones
-}
-
-// Example usage:
-// Assuming 'productDescriptionHtml' is the HTML string fetched from Shopify
-const plainTextDescription = getPlainText(productDetailHtml);
-// Now you can display plainTextDescription in your desired element
-
-
-function addToCart(variantId) {
-  // Extract numeric ID from Shopify's global ID
-  const numericId = variantId.split("/").pop();
-  window.location.href = `https://${domain}/cart/${numericId}:1`;
-}
 
 // let cart = [];
 
