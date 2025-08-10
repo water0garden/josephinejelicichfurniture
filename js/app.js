@@ -69,4 +69,76 @@ function displayProducts(products) {
 // Call this once to load products
 
 
+let cart = [];
+
+// Adds a variant to the cart and shows the popup
+function addToCart(variantId) {
+  const variant = window.currentProduct.variants.edges.find(
+    (v) => v.node.id === variantId
+  )?.node;
+
+  if (!variant) {
+    console.error("Variant not found:", variantId);
+    return;
+  }
+
+  // Check if item already in cart
+  const existingItem = cart.find((item) => item.id === variantId);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      id: variantId,
+      title: variant.title,
+      price: variant.price.amount,
+      currency: variant.price.currencyCode,
+      quantity: 1
+    });
+  }
+
+  showCart();
+}
+
+// Show the cart popup and render items
+function showCart() {
+  const cartPopup = document.getElementById("cart-popup");
+  const cartItems = document.getElementById("cart-items");
+
+  cartItems.innerHTML = cart
+    .map(
+      (item) => `
+      <div class="cart-item">
+        <strong>${item.title}</strong><br>
+        ${item.quantity} × ${item.price} ${item.currency}
+      </div>`
+    )
+    .join("");
+
+  cartPopup.style.display = "block";
+}
+
+// Hide the cart popup
+function closeCart() {
+  document.getElementById("cart-popup").style.display = "none";
+}
+
+// Checkout: redirect to Shopify with variant IDs and quantities
+function goToCheckout() {
+  if (cart.length === 0) return;
+
+  const domain = "your-store.myshopify.com"; // 🔁 Replace this
+  const cartUrl =
+    "https://" +
+    domain +
+    "/cart/" +
+    cart
+      .map((item) => item.id.split("/").pop() + ":" + item.quantity)
+      .join(",") +
+    "?checkout";
+
+  window.location.href = cartUrl;
+}
+
+
+
 fetchProducts();
