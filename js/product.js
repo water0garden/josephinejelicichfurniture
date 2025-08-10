@@ -87,8 +87,9 @@ function getPlainText(htmlString) {
 
 // Example usage:
 // Assuming 'productDescriptionHtml' is the HTML string fetched from Shopify
-const plainTextDescription = getPlainText(productDescriptionHtml);
+const plainTextDescription = getPlainText(productDetailHtml);
 // Now you can display plainTextDescription in your desired element
+
 
 function addToCart(variantId) {
   // Extract numeric ID from Shopify's global ID
