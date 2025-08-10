@@ -75,6 +75,7 @@ function displayProduct(product) {
     <p class="product-title">${product.title}</p>
     <p>${product.description}</p>
     <p class="product-variant">Options</p>
+    <strong><p class="product-title">${product.title}</p></strong>
     ${variantsHtml}
   `;
 }
