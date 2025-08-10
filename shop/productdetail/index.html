@@ -35,15 +35,22 @@
   <section class="work-container">
  <div id="product-detail"></div>
      <script src="../../js/product.js"></script>
+     <script src="../../js/app.js"></script>
  
-<div id="cart-popup" style="display:block; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:#fff; border:1px solid #ccc; padding:20px; z-index:1000;">
+<!-- <div id="cart-popup" style="display:block; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:#fff; border:1px solid #ccc; padding:20px; z-index:1000;">
   <h2>Cart</h2>
   <div id="cart-items">
 
   </div>
   <button onclick="closeCart()">Close</button>
-</div>
+</div> -->
 
+<div id="cart-popup" style="display: none; position: fixed; right: 0; top: 0; width: 300px; background: white; border-left: 1px solid #ccc; padding: 1rem; box-shadow: -2px 0 5px rgba(0,0,0,0.1); z-index: 1000;">
+  <h3>Cart</h3>
+  <div id="cart-items"></div>
+  <button onclick="goToCheckout()">Go to Checkout</button>
+  <button onclick="closeCart()">Close</button>
+</div>
 
 </section>
 <footer>
