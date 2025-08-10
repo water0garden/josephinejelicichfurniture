@@ -7,11 +7,9 @@ html {
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
+
 }
 
-.s1 {
-  font-style: italic;
-}
 
 @media (max-width: 800px) {
   html {
