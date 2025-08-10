@@ -73,7 +73,7 @@ function displayProduct(product) {
   document.getElementById("product-detail").innerHTML = `
     ${imagesHtml}
     <p class="product-title">${product.title}</p>
-    <p class="product-description">${product.description}</p>
+    <p class="product-description">${product.descriptionHtml}</p>
     <p class="product-variant">Options</p>
     ${variantsHtml}
   `;
@@ -86,14 +86,6 @@ function addToCart(variantId) {
 }
 
 
-const container = document.getElementById('product-description');
-const html = product.descriptionHtml; // From Shopify API
-
-const div = document.createElement('div');
-div.className = 'product-description';
-div.innerHTML = html;
-
-container.appendChild(div);
 
 // let cart = [];
 
