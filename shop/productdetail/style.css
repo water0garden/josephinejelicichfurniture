@@ -129,9 +129,10 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.product-detail {
+.product-description {
   white-space: pre-line;
   margin-bottom: 1rem;
+  
 }
 
 /* .work-container:hover {
@@ -272,6 +273,8 @@ p {
     vertical-align: middle;
   }
 }
+
+
 
 button {
   background-color: transparent;

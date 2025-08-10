@@ -73,7 +73,7 @@ function displayProduct(product) {
   document.getElementById("product-detail").innerHTML = `
     ${imagesHtml}
     <p class="product-title">${product.title}</p>
-    <p>${product.description}</p>
+    <p class="product-description">${product.description}</p>
     <p class="product-variant">Options</p>
     ${variantsHtml}
   `;
