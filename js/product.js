@@ -4,6 +4,8 @@ const storefrontAccessToken = "e4c45ba5e531c0c76f492bd773f5f339";
 const params = new URLSearchParams(window.location.search);
 const handle = params.get("handle");
 
+let cart = [];
+
 async function fetchProduct() {
   const query = `
     {
@@ -41,7 +43,7 @@ async function fetchProduct() {
       "Content-Type": "application/json",
       "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
     },
-    body: JSON.stringify({ query })
+    body: JSON.stringify({ query }),
   });
 
   const json = await response.json();
@@ -50,48 +52,59 @@ async function fetchProduct() {
     document.getElementById("product-detail").innerHTML = "<p>Product not found.</p>";
     return;
   }
+
   displayProduct(json.data.productByHandle);
 }
 
 function displayProduct(product) {
-  if (!product) {
-    document.getElementById("product-detail").innerHTML = "<p>Product not found.</p>";
-    return;
-  }
+  if (!product) return;
 
-  let imagesHtml = product.images.edges.map(img =>
+  // Save globally so we can reuse it
+  window.currentProduct = product;
+
+  const container = document.getElementById("product-detail");
+
+  // Images
+  const imagesHtml = product.images.edges.map(img =>
     `<img src="${img.node.src}" alt="${img.node.altText || ''}" width="400">`
   ).join("");
 
-  let variantsHtml = product.variants.edges.map(variant =>
-    `<div>
-    <strong>${variant.node.title}</strong> - ${variant.node.price.amount} ${variant.node.price.currencyCode}
-    ${variant.node.price.amount} ${variant.node.price.currencyCode}     
-      <button onclick="addToCart('${variant.node.id}')">Buy me</button>
-    </div>`
-  ).join("");
-
-  document.getElementById("product-detail").innerHTML = `
-    ${imagesHtml}
+  // Description
+  const descriptionHtml = `
     <p class="product-title">${product.title}</p>
     <p class="product-description">${product.description}</p>
-    <p class="product-variant">Options</p>
-    ${variantsHtml}
   `;
+
+  // First variant only (you can add a loop later)
+  const variant = product.variants.edges[0]?.node;
+
+  let addToCartHtml = "";
+  if (variant) {
+    addToCartHtml = `
+      <div>
+        <strong>${variant.title}</strong><br>
+        ${variant.price.amount} ${variant.price.currencyCode}<br>
+        <button id="add-to-cart-btn">Add to Cart</button>
+      </div>
+    `;
+  }
+
+  container.innerHTML = `
+    ${imagesHtml}
+    ${descriptionHtml}
+    ${addToCartHtml}
+  `;
+
+  // Add event listener to button
+  if (variant) {
+    const btn = document.getElementById("add-to-cart-btn");
+    btn.addEventListener("click", () => addToCart(variant));
+  }
 }
-
-// function addToCart(variantId) {
-//   // Extract numeric ID from Shopify's global ID
-//   const numericId = variantId.split("/").pop();
-//   window.location.href = `https://${domain}/cart/${numericId}:1`;
-// }
-
-let cart = [];
 
 function addToCart(variant) {
   const variantId = variant.id;
 
-  // Check if item is already in the cart
   const existingItem = cart.find(item => item.id === variantId);
   if (existingItem) {
     existingItem.quantity += 1;
@@ -129,13 +142,15 @@ function closeCart() {
 function goToCheckout() {
   if (cart.length === 0) return;
 
-  const domain = "your-store.myshopify.com"; // ← change this to your Shopify domain
   const cartUrl = `https://${domain}/cart/` + cart
     .map(item => `${item.id.split("/").pop()}:${item.quantity}`)
     .join(",") + "?checkout";
 
   window.location.href = cartUrl;
 }
+
+// Call the fetch function on page load
+fetchProduct();
 
 
 
