@@ -129,6 +129,11 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.product-detail {
+  white-space: pre-line;
+  margin-bottom: 1rem;
+}
+
 /* .work-container:hover {
   color: grey;
   z-index: 16;
