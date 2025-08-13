@@ -142,6 +142,13 @@ h1 {
   }
 }
 
+
+@media (max-width: 800px) {
+  .product-detail {
+    white-space: pre-line;
+    width: 100%;
+  }
+}
 /* .work-container:hover {
   color: grey;
   z-index: 16;
@@ -180,7 +187,7 @@ img {
   object-fit: cover;      /* Controls how image fits the box */
   margin-bottom: 1rem;;
 }
-}
+
 
 @media (max-width: 800px) {
   img {
