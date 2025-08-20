@@ -78,7 +78,7 @@ body {
 
 .work-container {
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
   padding-top: 4rem;
   /* float: left; */
   display: block;
@@ -148,6 +148,7 @@ figure {
 figcaption {
   margin: 0 auto;
   padding-top: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 figcaption:hover {
