@@ -251,7 +251,7 @@ p {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   letter-spacing: 0.045rem;
   margin: 0px;
-  max-width: 50%;
+  max-width: 40%;
 }
 
 @media (max-width: 800px) {
