@@ -429,7 +429,8 @@ footer {
 .product {
   display: inline-block;
   width: 50%;
-  margin-bottom: 1rem ;
+  margin-bottom: 2rem ;
+  float: left;;
 }
 
 .product-title {
