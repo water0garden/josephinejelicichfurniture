@@ -50,12 +50,11 @@ function displayProducts(products) {
     const div = document.createElement("div");
     div.className = "product";
     div.innerHTML = `
-      <img src="${image}" alt="${alt}" width="400">
       <a href="${productUrl}">
-        <button><p class="product-title">${node.title}</p></button>
+        <img src="${image}" alt="${alt}" width="400">
+        <p class="product-title">${node.title}</p>
       </a>
-      
-      
+      <p class="shop-paragraph">${node.description}</p>
     `;
     container.appendChild(div);
   });
