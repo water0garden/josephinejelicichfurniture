@@ -21,6 +21,23 @@ html {
    overflow: auto;
 }
 
+
+a:link, a:visited {
+color: black;
+text-decoration: none;
+}
+
+a:active { color: black;}
+a:hover { color: black;}
+
+@media (max-width: 800px) {
+  a:link, a:visited {
+    color: black;
+  }
+}
+
+/* *** font things *** */
+
 @font-face {
   font-family: 'hoefler-text-ornaments';
   src: url(../fonts/hoefler-text-ornaments.ttf);

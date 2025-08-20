@@ -25,12 +25,19 @@ html {
 }
 
 a:link, a:visited {
-color: grey;
+color: black;
 text-decoration: none;
 }
 
-a:active { color: forestgreen;}
+a:active { color: black;}
 a:hover { color: black;}
+
+@media (max-width: 800px) {
+  a:link, a:visited {
+    color: black;
+  }
+}
+
 
 /* *** font things *** */
 
