@@ -66,20 +66,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
           };
 
 
-          var randomNum = Math.random() * 300;
+          var randomNum = Math.random(); // randomNum is between 0 and 1
 
-            if (randomNum<55) {
-              var size = 'small';
-            }
-            else if (randomNum<66) {
-              var size = 'medium';
-            }
-            else if (randomNum<100) {
-              var size = 'large';
-            }
-            // else if (randomNum<100) {
-            //   var size = 'ornaments';
-            // }
+          if (randomNum < 1/3) {
+            var size = 'small';
+          } else if (randomNum < 2/3) {
+            var size = 'medium';
+          } else {
+            var size = 'large';
+          }
 
 
           var entryHTML = '<figure class="work ' + size + '">'
