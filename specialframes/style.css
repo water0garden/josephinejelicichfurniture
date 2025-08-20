@@ -28,8 +28,8 @@ html {
 }
 
 @font-face {
-  font-family: 'tratello';
-  src: url(../../fonts/tratello.ttf);
+  font-family: 'tratello' ;
+  src: url(../fonts/tratello.ttf);
 }
 
 
@@ -78,7 +78,7 @@ body {
 
 .work-container {
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
   padding-top: 4rem;
   /* float: left; */
   display: block;
@@ -88,7 +88,7 @@ body {
 
 
 .work-container:hover {
-  color: lightgrey;
+  color: burlywood;
   transition: 6s;
 }
 
@@ -148,6 +148,7 @@ figure {
 figcaption {
   margin: 0 auto;
   padding-top: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 figcaption:hover {
@@ -176,15 +177,8 @@ p {
 
 .jos-choice {
   font-family: 'tratello', Arial, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   letter-spacing: 1px;
-  padding-right: 12rem; /* testing space */
-}
-
-@media (max-width: 800px) {
-  .jos-choice {
-    padding-right: 0px;
-  }
 }
 
 .text-frag {
