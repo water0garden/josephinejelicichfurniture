@@ -122,15 +122,6 @@ h2 {
   letter-spacing: 0.045rem;
 }
 
-.product-title {
-  font-size: 1.5rem;
-  line-height: 1.3;
-  font-family: 'tratello', Arial, sans-serif;
-  letter-spacing: 0.045rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;;
-
-}
 
 
 
@@ -443,5 +434,29 @@ footer {
   margin-bottom: 2rem;
 }
 
+.product-title {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-family: 'tratello', Arial, sans-serif;
+  letter-spacing: 0.045rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;;
 
+}
+
+/* Responsive for iPhone and small screens */
+@media (max-width: 800px) {
+  .product {
+    width: 100%;
+    max-width: 100vw;
+  }
+  .product img {
+    width: 100%;
+    height: 250px;   /* Adjust as needed for mobile */
+  }
+  .product-title, .shop-paragraph {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+}
 
