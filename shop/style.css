@@ -98,7 +98,7 @@ body {
 
 .work-container {
   padding-top: 4rem;
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   float: left;
   display: block;
@@ -126,14 +126,13 @@ h2 {
 
 
 img {
-  width: 700px;           /* Set your desired width */
+  width: 650px;           /* Set your desired width */
   height: 800px;          /* Set your desired height */
   object-fit: cover;      /* Controls how image fits the box */
   display: block;         /* Removes extra space below images */    /* Optional: rounded corners */
   vertical-align: top;
-  /* width: 100%;
-  display: block;
-  position: relative; */
+  /* width: 100%; */
+  position: relative;
 }
 
 @media (max-width: 800px) {
