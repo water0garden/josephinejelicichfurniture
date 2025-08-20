@@ -22,13 +22,18 @@ html {
 
 
 a:link, a:visited {
-color: grey;
+color: black;
 text-decoration: none;
 }
 
-a:active { color: forestgreen;}
+a:active { color: black;}
 a:hover { color: black;}
 
+@media (max-width: 800px) {
+  a:link, a:visited {
+    color: black;
+  }
+}
 
 
 
@@ -209,9 +214,9 @@ p {
 
 .jos-choice {
   font-family: 'tratello', Arial, sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   letter-spacing: 1px;
-  padding-right: 12rem;
+   padding-right: 12rem; /* testing space */
 }
 
 .text-frag {
@@ -277,7 +282,7 @@ button {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   font-size: 1rem;
   padding-bottom: 1rem;
-  padding-right: 12rem;
+  padding-right: 18rem;
 }
 
 @media (max-width: 800px) {
