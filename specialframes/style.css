@@ -27,6 +27,13 @@ html {
   src: url(../fonts/hoefler-text-ornaments.ttf);
 }
 
+@font-face {
+  font-family: 'tratello';
+  src: url(../../fonts/tratello.ttf);
+}
+
+
+
 .special {
   font-family: 'hoefler-text-ornaments', hoefler-text-ornaments;
   font-weight: normal;
@@ -166,6 +173,19 @@ p {
 
 
 /* *** Navigation and dropdown *** */
+
+.jos-choice {
+  font-family: 'tratello', Arial, sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding-right: 12rem; /* testing space */
+}
+
+@media (max-width: 800px) {
+  .jos-choice {
+    padding-right: 0px;
+  }
+}
 
 .text-frag {
   display: inline-block;
