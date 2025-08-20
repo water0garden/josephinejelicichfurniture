@@ -80,16 +80,6 @@ a:hover { color: black;}
   box-sizing: border-box;
 }
 
-a:link, a:visited {
-color: grey;
-text-decoration: none;
-}
-
-a:active { color: forestgreen;}
-a:hover { color: black;}
-
-
-
 
 body {
   font-size: 1rem;
