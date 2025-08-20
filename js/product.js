@@ -11,6 +11,7 @@ async function fetchProduct() {
         id
         title
         description
+        descriptionHtml
         images(first: 5) {
           edges {
             node {
@@ -73,7 +74,7 @@ function displayProduct(product) {
   document.getElementById("product-detail").innerHTML = `
     ${imagesHtml}
     <p class="product-title">${product.title}</p>
-    <p class="shop-paragraph">${product.description}</p>
+    <div class="shop-paragraph">${product.descriptionHtml}</div>
     <p class="product-variant">Options</p>
     ${variantsHtml}
   `;
