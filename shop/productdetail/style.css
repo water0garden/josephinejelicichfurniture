@@ -256,7 +256,7 @@ p {
 
 @media (max-width: 800px) {
   p {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
