@@ -270,7 +270,7 @@ button {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   font-size: 1rem;
   padding-bottom: 1rem;
-  /* padding-right: 12rem; */
+  padding-right: 12rem;
 }
 
 @media (max-width: 800px) {
