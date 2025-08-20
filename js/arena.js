@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-  var randomNum = Math.floor(Math.random() * 1000000) + 1  ;
+  var randomNum = Math.floor(Math.random() * 1000000) + 1;
 
   arenaDisplay = {
 
@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       let randomNum = Math.floor(Math.random() * 1000000) + 1;
 
       function fetchPage() {
-        // Are.na API supports ?page= and ?per= (max per=100)
         var fetchURL = 'https://api.are.na/v2/channels/' + slug + '/?per=100&page=' + page + '&nocache=' + randomNum;
         fetch(fetchURL, { method: 'get' })
           .then(function (response) {
@@ -19,10 +18,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (data.contents && data.contents.length > 0) {
               allContents = allContents.concat(data.contents);
               page++;
-              fetchPage(); // Fetch next page
+              fetchPage();
             } else {
-              // All pages fetched, now parse
-              data.contents = allContents.reverse(); // Reverse if you want newest first
+              // Only reverse ONCE here if you want newest first
+              data.contents = allContents.reverse();
               arenaDisplay.parseChannel(data, container);
             }
           })
@@ -37,20 +36,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
     parseChannel: function (data, container) {
       var channel = {};
       channel.title = data.title;
-      channel.contents = data.contents.reverse();
+      channel.contents = data.contents; // <-- FIXED: removed .reverse()
       channel.url = 'https://are.na/' + data.user.slug + '/' + data.slug + '/';
-
-
 
       console.log(data);
       // console.log(channel);
 
-
-
       if (data.metadata !== null) {
         var channelDescription = data.metadata.description;
         var channelDescriptionKeywordCheck = channelDescription.toLowerCase();
-        if ( channelDescriptionKeywordCheck.includes("text") ) {
+        if (channelDescriptionKeywordCheck.includes("text")) {
           document.querySelector('body').setAttribute('data-template', 'text');
         };
       }
@@ -65,43 +60,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
             var source = entry.image.original.url
           };
 
-
           var randomNum = Math.random(); // randomNum is between 0 and 1
 
-          if (randomNum < 1/3) {
+          if (randomNum < 1 / 3) {
             var size = 'small';
-          } else if (randomNum < 2/3) {
+          } else if (randomNum < 2 / 3) {
             var size = 'medium';
           } else {
             var size = 'large';
           }
 
-
           var entryHTML = '<figure class="work ' + size + '">'
-                + '<img src="' + entry.image.original.url + '">'
-                + '<figcaption>'
-                  + entry.title + entry.description_html
-                + '</figcaption>'
-              + '</figure>';
+            + '<img src="' + entry.image.original.url + '">'
+            + '<figcaption>'
+            + entry.title + entry.description_html
+            + '</figcaption>'
+            + '</figure>';
         }
-
-
-          // var entryHTML = '<figure class="work ' + size + '">'
-          //       + '<img src="' + entry.image.original.url + '">'
-          //       + '<div class="dropdown">'
-          //         +  '<button class="dropbtn">'
-          //           + entry.title
-          //             +  '<i class="fa fa-caret-down"></i>'
-          //         + '</button>'
-          //         + '<div class="dropdown-content" id="myDropdown">'
-          //         + entry.description_html
-          //         + '</div>'
-          //       + '</div>'
-          //     + '</figure>'
-          // }
-
-
-
 
         else if (entry.class === 'Link') {
           if (entry.title !== "") {
@@ -128,17 +103,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         else if (entry.class === 'Media') {
           var entryHTML = '<article>'
-              + '<figure>'
-              + entry.embed.html
-              + '<figcaption>'
-              + '<a  target="_blank" '
-              + 'href="'
-              + entry.source.url
-              + '">'
-              + entry.title
-              + '</a>'
-              + '</figcaption>'
-              + '</figure>'
+            + '<figure>'
+            + entry.embed.html
+            + '<figcaption>'
+            + '<a  target="_blank" '
+            + 'href="'
+            + entry.source.url
+            + '">'
+            + entry.title
+            + '</a>'
+            + '</figcaption>'
+            + '</figure>'
             + '</article>';
         }
 
@@ -169,10 +144,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         else if (entry.class === 'Text') {
           var entryHTML = '<article>'
-          + '<div class="text-block">'
-              + entry.content_html
+            + '<div class="text-block">'
+            + entry.content_html
             + '</div>'
-          + '</article>';
+            + '</article>';
         }
 
         else if (entry.class === 'Channel') {
@@ -186,12 +161,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
           var entryHTML = '<article>'
             + '<p>'
             + '<a class="sparkle-portal" href="/i/index.php?id='
-              + entry.slug
-              + '">'
-              + wordhtml
-              + '</a>'
-            +'</p>'
-          + '</article>';
+            + entry.slug
+            + '">'
+            + wordhtml
+            + '</a>'
+            + '</p>'
+            + '</article>';
         }
 
         container.innerHTML += entryHTML;
