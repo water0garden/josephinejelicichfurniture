@@ -4,21 +4,34 @@ document.addEventListener("DOMContentLoaded", function (event) {
   arenaDisplay = {
 
     fetch: function (slug, per, container) {
-      var fetchURL = 'https://api.are.na/v2/channels/' + slug + '/?per=' + per + '&nocache=' + randomNum;
-      // url (required), options (optional)
-      fetch(fetchURL, {
-        method: 'get'
-      }).then(function (response) {
-        var channel = response.json();
-        var prom = Promise.resolve(channel).then(function (data) {
-          // console.log(data);
-          arenaDisplay.parseChannel(data, container);
+      let allContents = [];
+      let page = 1;
+      let randomNum = Math.floor(Math.random() * 1000000) + 1;
 
-        });
-      }).catch(function (err) {
-        console.log('fetch failed');
-      });
+      function fetchPage() {
+        // Are.na API supports ?page= and ?per= (max per=100)
+        var fetchURL = 'https://api.are.na/v2/channels/' + slug + '/?per=100&page=' + page + '&nocache=' + randomNum;
+        fetch(fetchURL, { method: 'get' })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            if (data.contents && data.contents.length > 0) {
+              allContents = allContents.concat(data.contents);
+              page++;
+              fetchPage(); // Fetch next page
+            } else {
+              // All pages fetched, now parse
+              data.contents = allContents.reverse(); // Reverse if you want newest first
+              arenaDisplay.parseChannel(data, container);
+            }
+          })
+          .catch(function (err) {
+            console.log('fetch failed');
+          });
+      }
 
+      fetchPage();
     },
 
     parseChannel: function (data, container) {
