@@ -202,7 +202,3 @@ document.addEventListener("DOMContentLoaded", function (event) {
   };
 
 });
-
-<!-- In /view-2/index.html -->
-<div id="random-product"></div>
-<script src="../js/view2-random-product.js"></script>
