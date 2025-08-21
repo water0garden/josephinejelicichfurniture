@@ -440,7 +440,7 @@ footer {
   align-items: center;
 }
 
-.product-title {
+.product-title.figcaption {
   font-size: 1.5rem;
   line-height: 1.3;
   font-family: 'tratello', Arial, sans-serif;
@@ -456,24 +456,19 @@ footer {
     width: 100%;
     max-width: 100vw;
     margin-bottom: 0;
+    padding-top: 0.5rem;
 
   }
   .product img {
     width: 100%;
     height: 100%;   /* Adjust as needed for mobile */
   }
-  .product-title, .shop-paragraph {
+  .product-title.figcaption {
     width: 100%;
     font-size: 1.2rem;
   }
 }
 
-@media (max-width: 800px) {
-  .product {
-    width: 100%;
-    padding: 0.5rem;
-  }
-}
 
 /* Cart Slideout */
 .cart-slideout {

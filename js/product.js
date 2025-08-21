@@ -97,7 +97,7 @@ function addToCart(variantId, title, price, currency) {
   showCart();
 }
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function showCart() {
   document.getElementById("cart-slideout").classList.add("open");
