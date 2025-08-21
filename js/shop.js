@@ -62,9 +62,9 @@ function renderProducts(products) {
     const handle = product.handle;
     return `
     
-        <figure class="product">
-          <a href="productdetail/index.html?handle=${handle}"><img src="${image}" alt="${alt}"></a>
-        </figure>
+    <img class="product">
+        <a href="productdetail/index.html?handle=${handle}"><img src="${image}" alt="${alt}"></a>
+     </img>
         <figcaption>
           <a href="productdetail/index.html?handle=${handle}" class="shop-detail-link"><p class="product-title">${product.title}</p></a>
         </figcaption>
