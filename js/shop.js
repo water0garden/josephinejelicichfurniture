@@ -61,8 +61,8 @@ function renderProducts(products) {
     const currency = product.variants.edges[0]?.node.price.currencyCode || "";
     const handle = product.handle;
     return `
-      <article class="work-container">
-        <figure class="product-list'>
+      <article class="product-list">
+        <figure class="product">
           <a href="productdetail/index.html?handle=${handle}">
             <img src="${image}" alt="${alt}">
           </a>
