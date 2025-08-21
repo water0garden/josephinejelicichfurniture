@@ -150,7 +150,7 @@ img {
 } */
 
 
-figure {
+/* figure {
   vertical-align: top;
   margin: 0;
   padding: 0;
@@ -167,7 +167,7 @@ figure {
     width: 100%;
     display: block;
   }
-}
+} */
 
 .work {
   margin: 0 auto;
