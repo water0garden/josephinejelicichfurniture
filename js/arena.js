@@ -55,10 +55,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         if (entry.class === 'Image') {
 
           if (entry.source !== null) {
-            var source = entry.source.url
+            var source = entry.source.url;
           } else {
-            var source = entry.image.original.url
-          };
+            var source = entry.image.original.url;
+          }
 
           var randomNum = Math.random();
 
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           } else if (captionText.includes('the warren')) {
             link = '../warren/index.html';
           } else if (captionText.includes('shop')) {
-            link = '../shop/index.html';
+            link = '../shop/index.html'; // <-- This links to the main shop page
           } else if (captionText.includes('personal projects')) {
             link = '../personalprojects/index.html';
           }
@@ -202,3 +202,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   };
 
 });
+
+<!-- In /view-2/index.html -->
+<div id="random-product"></div>
+<script src="../js/view2-random-product.js"></script>
