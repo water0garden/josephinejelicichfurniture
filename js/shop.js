@@ -65,9 +65,9 @@ function renderProducts(products) {
     <figure class="product">
         <a href="productdetail/index.html?handle=${handle}"><img src="${image}" alt="${alt}"></a>
      </figure>
-        <figcaption>
+        <p>
           <a href="productdetail/index.html?handle=${handle}" class="shop-detail-link"><p class="product-title">${product.title}</p></a>
-        </figcaption>
+        </p>
     
     `;
   }).join("");
