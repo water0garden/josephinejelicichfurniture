@@ -63,9 +63,7 @@ function renderProducts(products) {
     return `
       <article class="product-list">
         <figure class="product">
-          <a href="productdetail/index.html?handle=${handle}">
-            <img src="${image}" alt="${alt}">
-          </a>
+          <a href="productdetail/index.html?handle=${handle}"><img src="${image}" alt="${alt}"></a>
         </figure>
         <figcaption>
           <a href="productdetail/index.html?handle=${handle}" class="shop-detail-link"><p class="product-title">${product.title}</p></a>
