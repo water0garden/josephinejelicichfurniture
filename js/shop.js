@@ -11,6 +11,7 @@ async function fetchProducts() {
             handle
             title
             description
+            descriptionHtml
             images(first: 1) {
               edges {
                 node {
@@ -61,13 +62,13 @@ function renderProducts(products) {
     const handle = product.handle;
     return `
       <article class="work-container">
-        <figure>
+        <figure class="product-list'>
           <a href="productdetail/index.html?handle=${handle}">
-            <img src="${image}" alt="${alt}" style="width:100%;max-width:350px;">
+            <img src="${image}" alt="${alt}">
           </a>
         </figure>
         <figcaption>
-          <a href="productdetail/index.html?handle=${handle}" class="shop-detail-link">View Product</a>
+          <a href="productdetail/index.html?handle=${handle}" class="shop-detail-link"><p class="product-title">${product.title}</p></a>
         </figcaption>
       </article>
     `;
