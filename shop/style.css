@@ -422,15 +422,22 @@ footer {
 } */
 
 #product-list {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
+  gap: 0; /* or gap: 2rem; for spacing between items */
+  margin: 0;
+  padding: 0;
 }
 
 .product {
-  display: inline-block;
+  box-sizing: border-box;
   width: 50%;
-  margin-bottom: 2rem ;
-  float: left;;
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product-title {
