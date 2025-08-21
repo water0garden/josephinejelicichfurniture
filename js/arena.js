@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             var source = entry.image.original.url
           };
 
-          var randomNum = Math.random(); // randomNum is between 0 and 1
+          var randomNum = Math.random();
 
           if (randomNum < 1 / 3) {
             var size = 'small';
@@ -70,8 +70,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
             var size = 'large';
           }
 
+          // --- KEYWORD LINK LOGIC ---
+          var captionText = ((entry.title || '') + ' ' + (entry.description_html || '')).toLowerCase();
+          var link = null;
+
+          if (captionText.includes('commissions')) {
+            link = '../commissions/index.html';
+          } else if (captionText.includes('nelson carpentry school')) {
+            link = '../nelson/index.html';
+          } else if (captionText.includes('special frames')) {
+            link = '../specialframes/index.html';
+          } else if (captionText.includes('the warren')) {
+            link = '../warren/index.html';
+          } else if (captionText.includes('shop')) {
+            link = '../shop/index.html';
+          } else if (captionText.includes('personal projects')) {
+            link = '../personalprojects/index.html';
+          }
+
+          var imageTag = '<img src="' + entry.image.original.url + '">';
+          if (link) {
+            imageTag = '<a href="' + link + '">' + imageTag + '</a>';
+          }
+
           var entryHTML = '<figure class="work ' + size + '">'
-            + '<img src="' + entry.image.original.url + '">'
+            + imageTag
             + '<figcaption>'
             + entry.title + entry.description_html
             + '</figcaption>'
