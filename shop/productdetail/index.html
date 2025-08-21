@@ -79,15 +79,19 @@
       document.getElementById("cart-slideout").classList.add("open");
       document.getElementById("cart-overlay").classList.add("open");
       const cartItems = document.getElementById("cart-items");
-      cartItems.innerHTML = cart
-        .map(
-          (item) => `
-          <div class="cart-item">
-            <strong>${item.title}</strong><br>
-            ${item.quantity} × ${item.price} ${item.currency}
-          </div>`
-        )
-        .join("") || "<p>Your cart is empty.</p>";
+      if (!cart.length) {
+        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+      } else {
+        cartItems.innerHTML = cart
+          .map(
+            (item) => `
+            <div class="cart-item">
+              <strong>${item.title}</strong><br>
+              ${item.quantity} × ${item.price} ${item.currency}
+            </div>`
+          )
+          .join("");
+      }
     }
 
     function closeCart() {
