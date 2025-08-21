@@ -440,7 +440,7 @@ footer {
   align-items: center;
 }
 
-.product-title.figcaption {
+.product-title .figcaption {
   font-size: 1.5rem;
   line-height: 1.3;
   font-family: 'tratello', Arial, sans-serif;
@@ -463,7 +463,7 @@ footer {
     width: 100%;
     height: 100%;   /* Adjust as needed for mobile */
   }
-  .product-title.figcaption {
+  .product-title .figcaption {
     width: 100%;
     font-size: 1.2rem;
   }
