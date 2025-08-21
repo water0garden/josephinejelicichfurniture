@@ -1,4 +1,3 @@
-
 const shopDomain = "gbg11r-ah.myshopify.com";
 const storefrontAccessToken = "e4c45ba5e531c0c76f492bd773f5f339";
 
@@ -57,18 +56,16 @@ function renderProducts(products) {
   container.innerHTML = products.map(({ node: product }) => {
     const image = product.images.edges[0]?.node.src || "";
     const alt = product.images.edges[0]?.node.altText || "";
-    const price = product.variants.edges[0]?.node.price.amount || "";
-    const currency = product.variants.edges[0]?.node.price.currencyCode || "";
     const handle = product.handle;
     return `
-    
-    <figure class="product">
-        <a href="productdetail/index.html?handle=${handle}"><img src="${image}" alt="${alt}"></a>
-     </figure>
-        <p>
-          <a href="productdetail/index.html?handle=${handle}" class="shop-detail-link"><p class="product-title">${product.title}</p></a>
-        </p>
-    
+      <figure class="product">
+        <a href="productdetail/index.html?handle=${handle}">
+          <img class="product-img" src="${image}" alt="${alt}">
+          <figcaption>
+            <span class="product-title">${product.title}</span>
+          </figcaption>
+        </a>
+      </figure>
     `;
   }).join("");
 }
