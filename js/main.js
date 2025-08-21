@@ -106,7 +106,36 @@ const Carousel = {
   }
 };
 
+let cart = [];
 
+function addToCart(variantId, title, price, currency) {
+  cart.push({ variantId, title, price, currency });
+  showCart();
+}
+
+function showCart() {
+  document.getElementById("cart-slideout").classList.add("open");
+  document.getElementById("cart-overlay").classList.add("open");
+  const cartItems = document.getElementById("cart-items");
+  cartItems.innerHTML = cart.map(item =>
+    `<div style="margin-bottom:1rem;">
+      <strong>${item.title}</strong><br>
+      ${item.price} ${item.currency}
+    </div>`
+  ).join("") || "<p>Your cart is empty.</p>";
+}
+
+function closeCart() {
+  document.getElementById("cart-slideout").classList.remove("open");
+  document.getElementById("cart-overlay").classList.remove("open");
+}
+
+function checkoutCart() {
+  if (cart.length === 0) return;
+  const first = cart[0];
+  const numericId = first.variantId.split("/").pop();
+  window.location.href = `https://gbg11r-ah.myshopify.com/cart/${numericId}:1`;
+}
 
 Debug.init();
 Site.init();

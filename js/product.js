@@ -66,8 +66,8 @@ function displayProduct(product) {
 
   let variantsHtml = product.variants.edges.map(variant =>
     `<div>
-    <strong>${variant.node.title}</strong> - ${variant.node.price.amount} ${variant.node.price.currencyCode}   
-      <button onclick="addToCart('${variant.node.id}')">Buy me</button>
+      <strong>${variant.node.title}</strong> - ${variant.node.price.amount} ${variant.node.price.currencyCode}   
+      <button onclick="addToCart('${variant.node.id}', '${product.title}', '${variant.node.price.amount}', '${variant.node.price.currencyCode}')">Add to Cart</button>
     </div>`
   ).join("");
 
@@ -80,73 +80,60 @@ function displayProduct(product) {
   `;
 }
 
-function addToCart(variantId) {
-  // Extract numeric ID from Shopify's global ID
-  const numericId = variantId.split("/").pop();
-  window.location.href = `https://${domain}/cart/${numericId}:1`;
+function addToCart(variantId, title, price, currency) {
+  // Check if item already in cart
+  const existing = cart.find(item => item.variantId === variantId);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({
+      variantId,
+      title,
+      price,
+      currency,
+      quantity: 1
+    });
+  }
+  showCart();
 }
 
-// let cart = [];
+let cart = [];
 
-// function addToCart(variant) {
-//   const variantId = variant.id;
+function showCart() {
+  document.getElementById("cart-slideout").classList.add("open");
+  document.getElementById("cart-overlay").classList.add("open");
+  const cartItems = document.getElementById("cart-items");
+  if (!cart.length) {
+    cartItems.innerHTML = "<p>Your cart is empty.</p>";
+  } else {
+    cartItems.innerHTML = cart
+      .map(
+        (item) => `
+        <div class="cart-item">
+          <strong>${item.title}</strong><br>
+          ${item.quantity} × ${item.price} ${item.currency}
+        </div>`
+      )
+      .join("");
+  }
+}
 
-//   // Check if item is already in the cart
-//   const existingItem = cart.find(item => item.id === variantId);
-//   if (existingItem) {
-//     existingItem.quantity += 1;
-//   } else {
-//     cart.push({
-//       id: variantId,
-//       title: variant.title,
-//       price: variant.price.amount,
-//       currency: variant.price.currencyCode,
-//       quantity: 1
-//     });
-//   }
+function closeCart() {
+  document.getElementById("cart-slideout").classList.remove("open");
+  document.getElementById("cart-overlay").classList.remove("open");
+}
 
-//   showCart();
-// }
-
-
-
-
-
-// let cart = [];
-
-// function addToCart(variantId) {
-//   // Find the variant details from the page data
-//   const variant = window.currentProduct.variants.edges.find(v => v.node.id === variantId).node;
-//   cart.push({
-//     id: variantId,
-//     title: variant.title,
-//     price: variant.price.amount,
-//     currency: variant.price.currencyCode
-//   });
-//   showCart();
-// }
-
-// function showCart() {
-//   const cartPopup = document.getElementById("cart-popup");
-//   const cartItems = document.getElementById("cart-items");
-//   cartItems.innerHTML = cart.map(item =>
-//     `<div>
-//       <strong>${item.title}</strong> - ${item.price} ${item.currency}
-//     </div>`
-//   ).join("");
-//   cartPopup.style.display = "block";
-// }
-
-// function closeCart() {
-//   document.getElementById("cart-popup").style.display = "none";
-// }
-
-// // Save product globally for cart lookup
-// function displayProduct(product) {
-//   window.currentProduct = product;
-//   // ...existing code...
-// }
-
-
+function goToCheckout() {
+  if (cart.length === 0) return;
+  const cartUrl =
+    "https://" +
+    domain +
+    "/cart/" +
+    cart
+      .map((item) => item.variantId.split("/").pop() + ":" + item.quantity)
+      .join(",") +
+    "?checkout";
+  window.location.href = cartUrl;
+}
 
 fetchProduct();
