@@ -60,19 +60,13 @@ function renderProducts(products) {
     const currency = product.variants.edges[0]?.node.price.currencyCode || "";
     const handle = product.handle;
     return `
-      <article class="item-container">
+      <article class="work-container">
         <figure>
           <a href="productdetail/index.html?handle=${handle}">
             <img src="${image}" alt="${alt}" style="width:100%;max-width:350px;">
           </a>
         </figure>
         <figcaption>
-          <div class="shop-item-price">
-            ${product.title} — ${price} ${currency}
-          </div>
-          <div class="shop-item-description">
-            ${product.description}
-          </div>
           <a href="productdetail/index.html?handle=${handle}" class="shop-detail-link">View Product</a>
         </figcaption>
       </article>
