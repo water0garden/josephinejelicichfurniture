@@ -453,6 +453,7 @@ footer {
 @media (max-width: 800px) {
   .product {
     width: 100%;
+    height: 100%;
     max-width: 100vw;
     margin-bottom: 0;
     padding-top: 0.5rem;
@@ -462,7 +463,7 @@ footer {
     height: 100%;
     padding-bottom: 1rem ;   /* Adjust as needed for mobile */
   }
-  .product-title figcaption {
+  .product-title figcaption{
     width: 100%;
     font-size: 1.2rem;
     padding-bottom: 0.5rem;
