@@ -335,9 +335,11 @@ button {
   text-decoration: none;
 }
 
-.cart-btn {
+#cart-btn {
   display: inline-block;
   float: left;
+  vertical-align: top;
+  position: relative;
   
 }
 
@@ -353,7 +355,7 @@ button {
 }
 
 @media (max-width: 800px) {
-  .dropdown .dropbtn .cart-btn  {
+  .dropdown .dropbtn #cart-btn  {
     padding-right: 0px;
   }
 }
