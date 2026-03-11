@@ -74,3 +74,8 @@ document.addEventListener("DOMContentLoaded", async function() {
   const products = await fetchProducts();
   renderProducts(products);
 });
+
+// Example for a button with id="return-to-shop"
+document.getElementById("return-to-shop").onclick = function() {
+  window.location.href = "../shop/index.html";
+};
