@@ -451,9 +451,9 @@ button {
 @media (max-width: 800px) {
 .shop-nav {
     display: inline-block;
-    float: left;
+    float: right;
     padding: 0;
-    position: relative;
+    position:;
   }
 }
 
