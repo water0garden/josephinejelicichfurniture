@@ -76,6 +76,6 @@ document.addEventListener("DOMContentLoaded", async function() {
 });
 
 // Example for a button with id="return-to-shop"
-document.getElementById("return-to-shop").onclick = function() {
+document.getElementById("return-to-store").onclick = function() {
   window.location.href = "../shop/index.html";
 };
