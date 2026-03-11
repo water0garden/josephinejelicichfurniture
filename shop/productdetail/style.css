@@ -356,7 +356,7 @@ button {
 }
 
 @media (max-width: 800px) {
-  .dropdown .dropbtn #cart-btn  {
+  .dropdown .dropbtn  {
     padding-right: 0px;
   }
 }
