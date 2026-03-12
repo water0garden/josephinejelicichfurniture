@@ -64,25 +64,29 @@ function displayProduct(product) {
     `<img src="${img.node.src}" alt="${img.node.altText || ''}" width="400">`
   ).join("");
 
-  // If only one variant, show product title, price, and add to cart
-  if (product.variant.edges.length === 1) {
-    const variant = product.variant.edges[0].node;
+  // If only one variant, show product title, variant title (if not default), price, and add to cart
+  if (product.variants.edges.length === 1) {
+    const variant = product.variants.edges[0].node;
+    const variantTitle = variant.title && variant.title !== "Default Title"
+      ? `${product.title} - ${variant.title}`
+      : product.title;
     document.getElementById("product-detail").innerHTML = `
       ${imagesHtml}
-      <p class="product-title">${product.title}</p>
+      <p class="product-title">${variantTitle}</p>
       <div class="shop-paragraph">${product.descriptionHtml}</div>
       <div>
         <span class="product-price">${variant.price.amount} ${variant.price.currencyCode}</span>
-        <button onclick="addToCart('${variant.id}', '${product.title}', '${variant.price.amount}', '${variant.price.currencyCode}')">Add to Cart</button>
+        <button onclick="addToCart('${variant.id}', '${variantTitle}', '${variant.price.amount}', '${variant.price.currencyCode}')">Add to Cart</button>
       </div>
     `;
     return;
   }
 
-  // If multiple variants, show options with product.title and variant title
-  let variantHtml = product.variant.edges.map(variant =>
+  // If multiple variants, show options with product.title and variant title, price, and add to cart
+  let variantsHtml = product.variants.edges.map(variant =>
     `<div>
-      <div class="jos-choice">${product.title} - ${variant.node.title}</div> - ${variant.node.price.amount} ${variant.node.price.currencyCode}   
+      <div class="jos-choice">${product.title} - ${variant.node.title}</div>
+      <span class="product-price">${variant.node.price.amount} ${variant.node.price.currencyCode}</span>
       <button onclick="addToCart('${variant.node.id}', '${product.title} - ${variant.node.title}', '${variant.node.price.amount}', '${variant.node.price.currencyCode}')">Add to Cart</button>
     </div>`
   ).join("");
@@ -92,7 +96,7 @@ function displayProduct(product) {
     <p class="product-title">${product.title}</p>
     <div class="shop-paragraph">${product.descriptionHtml}</div>
     <p class="product-variant">Options</p>
-    ${variantHtml}
+    ${variantsHtml}
   `;
 }
 
