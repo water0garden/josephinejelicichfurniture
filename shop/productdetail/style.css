@@ -449,6 +449,7 @@ button {
 
 @media (max-width: 800px) {
 .shop-nav {
+  float: left;
     display: inline-block;
     padding: 0;
   }
