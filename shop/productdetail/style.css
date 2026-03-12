@@ -121,6 +121,8 @@ body {
   display: block;
   overflow: auto;
   vertical-align: top;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 h1 {
