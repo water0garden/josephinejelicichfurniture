@@ -57,9 +57,15 @@ function renderProducts(products) {
     const image = product.images.edges[0]?.node.src || "";
     const alt = product.images.edges[0]?.node.altText || "";
     const handle = product.handle;
-    const variantCount = product.variants.edges.length;
-    // Only show product title if one variant, otherwise show product title (no variant title available)
-    const optionName = product.title;
+    // Use product-variant for variant count and title
+    const variantCount = product['product-variant']?.edges?.length || 0;
+    let optionName = product.title;
+    if (variantCount > 1) {
+      // Show product title and first product-variant option
+      const variantTitle = product['product-variant'].edges[0]?.node?.title || "";
+      optionName = `${product.title} - ${variantTitle}`;
+    }
+    // If only one variant, show only product title
     return `
       <figure class="product">
         <a href="productdetail/index.html?handle=${handle}">
