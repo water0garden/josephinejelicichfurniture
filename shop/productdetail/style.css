@@ -19,6 +19,8 @@ html {
 
 .clearfix {
    overflow: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 
@@ -107,6 +109,8 @@ body {
   background: white;
   width: 100%;
   overflow: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .work-container {
@@ -201,6 +205,9 @@ img {
   height: 800px;          /* Set your desired height */
   object-fit: cover;      /* Controls how image fits the box */
   margin-bottom: 1rem;;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
 }
 
 

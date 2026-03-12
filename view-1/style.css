@@ -152,6 +152,8 @@ img {
   height: auto;
   z-index: 1;
   border: 1px;
+  overflow-x: hidden;
+}
 }
 
 img:hover {
@@ -175,6 +177,8 @@ figure {
   figure {
     width: 100%;
     display: block;
+    overflow-x: hidden;
+
   }
 }
 
