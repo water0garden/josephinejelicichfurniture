@@ -57,12 +57,15 @@ function renderProducts(products) {
     const image = product.images.edges[0]?.node.src || "";
     const alt = product.images.edges[0]?.node.altText || "";
     const handle = product.handle;
+    // Check if only one variant
+    const variantCount = product.variants.edges.length;
+    const optionName = variantCount === 1 ? product.title : product.variants.edges[0]?.node.title || product.title;
     return `
       <figure class="product">
         <a href="productdetail/index.html?handle=${handle}">
           <img class="product-img" src="${image}" alt="${alt}">
           <figcaption>
-            <span class="product-title">${product.title}</span>
+            <span class="product-title">${optionName}</span>
           </figcaption>
         </a>
       </figure>
