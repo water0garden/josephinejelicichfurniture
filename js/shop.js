@@ -58,12 +58,8 @@ function renderProducts(products) {
     const alt = product.images.edges[0]?.node.altText || "";
     const handle = product.handle;
     const variantCount = product.variants.edges.length;
-    // Only show product title if one variant, otherwise show variant title
-    const optionName = variantCount === 1
-      ? product.title
-      : product.variants.edges[0]?.node.title
-        ? `${product.title} - ${product.variants.edges[0].node.title}`
-        : product.title;
+    // Only show product title if one variant, otherwise show product title (no variant title available)
+    const optionName = product.title;
     return `
       <figure class="product">
         <a href="productdetail/index.html?handle=${handle}">
