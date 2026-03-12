@@ -131,14 +131,33 @@ function showCart() {
   } else {
     cartItems.innerHTML = cart
       .map(
-        (item) => `
+        (item, idx) => `
         <div class="cart-item">
-          <p>${item.title}</p><br>
-          ${item.quantity} × ${item.price} ${item.currency}
+          <p>${item.title}</p>
+          <p>${item.quantity} × ${item.price} ${item.currency}</p>
+          <div>
+            <button onclick="updateCartQuantity(${idx}, -1)">−</button>
+            <span>${item.quantity}</span>
+            <button onclick="updateCartQuantity(${idx}, 1)">+</button>
+            <button onclick="removeCartItem(${idx})">Remove</button>
+          </div>
         </div>`
       )
       .join("");
   }
+}
+
+function updateCartQuantity(index, change) {
+  cart[index].quantity += change;
+  if (cart[index].quantity < 1) cart[index].quantity = 1;
+  localStorage.setItem('cart', JSON.stringify(cart));
+  showCart();
+}
+
+function removeCartItem(index) {
+  cart.splice(index, 1);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  showCart();
 }
 
 function closeCart() {
