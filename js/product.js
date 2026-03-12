@@ -135,11 +135,11 @@ function showCart() {
         <div class="cart-item">
           <p>${item.title}</p>
           <p>${item.quantity} × ${item.price} ${item.currency}</p>
-          <div style="font-family: dotum;">
+          <div>
             <button onclick="updateCartQuantity(${idx}, -1)">−</button>
             <span>${item.quantity}</span>
             <button onclick="updateCartQuantity(${idx}, 1)">+</button>
-            <button onclick="removeCartItem(${idx})">Remove</button>
+            <button onclick="removeCartItem(${idx})" style="font-family:'dotum',serif;font-size:1rem;">Remove</button>
           </div>
         </div>`
       )
