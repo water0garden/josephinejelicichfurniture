@@ -314,6 +314,7 @@ button {
   padding: 0;
   line-height: 1.3;
   font-family: 'tratello', sans-serif;
+  font-size: 1.5rem;
   letter-spacing: 0.045rem;
   cursor: grab;
   border: none;
