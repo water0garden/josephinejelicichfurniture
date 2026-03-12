@@ -115,6 +115,8 @@ function addToCart(variantId, title, price, currency) {
       quantity: 1
     });
   }
+  // Save cart to localStorage so all items are collected and persist
+  localStorage.setItem('cart', JSON.stringify(cart));
   showCart();
 }
 
