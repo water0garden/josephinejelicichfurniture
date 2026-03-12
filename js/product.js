@@ -130,7 +130,7 @@ function showCart() {
       .map(
         (item) => `
         <div class="cart-item">
-          <strong>${item.title}</strong><br>
+          <p>${item.title}</p><br>
           ${item.quantity} × ${item.price} ${item.currency}
         </div>`
       )
