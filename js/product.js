@@ -79,11 +79,11 @@ function displayProduct(product) {
     return;
   }
 
-  // If multiple variants, show options
+  // If multiple variants, show options with product.title and variant title
   let variantsHtml = product.variants.edges.map(variant =>
     `<div>
-      <div class="jos-choice">${variant.node.title}</div> - ${variant.node.price.amount} ${variant.node.price.currencyCode}   
-      <button onclick="addToCart('${variant.node.id}', '${product.title}', '${variant.node.price.amount}', '${variant.node.price.currencyCode}')">Add to Cart</button>
+      <div class="jos-choice">${product.title} - ${variant.node.title}</div> - ${variant.node.price.amount} ${variant.node.price.currencyCode}   
+      <button onclick="addToCart('${variant.node.id}', '${product.title} - ${variant.node.title}', '${variant.node.price.amount}', '${variant.node.price.currencyCode}')">Add to Cart</button>
     </div>`
   ).join("");
 
