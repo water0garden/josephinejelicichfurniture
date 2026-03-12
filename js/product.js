@@ -65,8 +65,8 @@ function displayProduct(product) {
   ).join("");
 
   // If only one variant, show product title, price, and add to cart
-  if (product.variants.edges.length === 1) {
-    const variant = product.variants.edges[0].node;
+  if (product.variant.edges.length === 1) {
+    const variant = product.variant.edges[0].node;
     document.getElementById("product-detail").innerHTML = `
       ${imagesHtml}
       <p class="product-title">${product.title}</p>
@@ -80,7 +80,7 @@ function displayProduct(product) {
   }
 
   // If multiple variants, show options with product.title and variant title
-  let variantsHtml = product.variants.edges.map(variant =>
+  let variantHtml = product.variant.edges.map(variant =>
     `<div>
       <div class="jos-choice">${product.title} - ${variant.node.title}</div> - ${variant.node.price.amount} ${variant.node.price.currencyCode}   
       <button onclick="addToCart('${variant.node.id}', '${product.title} - ${variant.node.title}', '${variant.node.price.amount}', '${variant.node.price.currencyCode}')">Add to Cart</button>
@@ -92,7 +92,7 @@ function displayProduct(product) {
     <p class="product-title">${product.title}</p>
     <div class="shop-paragraph">${product.descriptionHtml}</div>
     <p class="product-variant">Options</p>
-    ${variantsHtml}
+    ${variantHtml}
   `;
 }
 
