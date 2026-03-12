@@ -72,9 +72,10 @@ function displayProduct(product) {
       : product.title;
     document.getElementById("product-detail").innerHTML = `
       ${imagesHtml}
-      <p class="product-title text-frag">${product.title}</p>
+      <p class="product-title">${product.title}</p>
       <div class="shop-paragraph">${product.descriptionHtml}</div>
       <div>
+        <span class="product-title">${product.title}</span>
         <span class="product-price text-frag">${variant.price.amount} ${variant.price.currencyCode}</span>
         <button onclick="addToCart('${variant.id}', '${variantTitle}', '${variant.price.amount}', '${variant.price.currencyCode}')">Add to Cart</button>
       </div>
@@ -84,7 +85,7 @@ function displayProduct(product) {
 
   // If multiple variants, show options with product.title and variant title, price, and add to cart
   let variantsHtml = product.variants.edges.map(variant =>
-    `<div class="product-variant">
+    `<div class="product-buy">
       <span class="p text-frag">${variant.node.title}</span>
       <span class="product-price text-frag">${variant.node.price.amount} ${variant.node.price.currencyCode}</span>
       <button onclick="addToCart('${variant.node.id}', '${product.title} - ${variant.node.title}', '${variant.node.price.amount}', '${variant.node.price.currencyCode}')">Add to Cart</button>
