@@ -180,6 +180,8 @@ h1 {
 @media (max-width: 800px) {
   .work-container {
     width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 }
 
