@@ -345,8 +345,8 @@ button {
   float: left;
   vertical-align: top;
   position: relative;
+  font-size: 1rem;
 
-  
 }
 
 .dropdown .dropbtn {
@@ -550,5 +550,39 @@ footer {
   border: none;
   font-size: 1.1rem;
   cursor: pointer;
+}
+
+.cart-item {
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item p {
+  margin: 0.2rem 0;
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+}
+
+.cart-item div {
+  margin-top: 0.5rem;
+}
+
+.cart-item button {
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  font-size: 1rem;
+  margin: 0 2px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.cart-item button:last-child {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
 }
 
