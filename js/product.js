@@ -64,6 +64,22 @@ function displayProduct(product) {
     `<img src="${img.node.src}" alt="${img.node.altText || ''}" width="400">`
   ).join("");
 
+  // If only one variant, show product title, price, and add to cart
+  if (product.variants.edges.length === 1) {
+    const variant = product.variants.edges[0].node;
+    document.getElementById("product-detail").innerHTML = `
+      ${imagesHtml}
+      <p class="product-title">${product.title}</p>
+      <div class="shop-paragraph">${product.descriptionHtml}</div>
+      <div>
+        <span class="product-price">${variant.price.amount} ${variant.price.currencyCode}</span>
+        <button onclick="addToCart('${variant.id}', '${product.title}', '${variant.price.amount}', '${variant.price.currencyCode}')">Add to Cart</button>
+      </div>
+    `;
+    return;
+  }
+
+  // If multiple variants, show options
   let variantsHtml = product.variants.edges.map(variant =>
     `<div>
       <strong>${variant.node.title}</strong> - ${variant.node.price.amount} ${variant.node.price.currencyCode}   
