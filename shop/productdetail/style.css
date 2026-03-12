@@ -340,6 +340,7 @@ button {
 }
 
 #cart-btn {
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   display: inline-block;
   float: left;
   vertical-align: top;
