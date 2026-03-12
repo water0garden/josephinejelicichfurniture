@@ -88,7 +88,7 @@ function displayProduct(product) {
     `<div class="product-variant" style="padding-top: 1rem;">
       <span class="p">${variant.node.title}</span>
       <span class="product-price">${variant.node.price.amount} ${variant.node.price.currencyCode}</span>
-      <button onclick="addToCart('${variant.node.id}', '${product.title} - ${variant.node.title}', '${variant.node.price.amount}', '${variant.node.price.currencyCode}')">Add to Cart</button>
+      <button onclick="addToCart('${variant.node.id}', '${product.title} — ${variant.node.title}', '${variant.node.price.amount}', '${variant.node.price.currencyCode}')">Add to Cart</button>
     </div>`
   ).join("");
 
@@ -136,7 +136,7 @@ function showCart() {
           <p>${item.title}</p>
           <p>${item.quantity} × ${item.price} ${item.currency}</p>
           <div>
-            <button onclick="updateCartQuantity(${idx}, -1)">−</button>
+            <button onclick="updateCartQuantity(${idx}, -1)">—</button>
             <span>${item.quantity}</span>
             <button onclick="updateCartQuantity(${idx}, 1)">+</button>
             <button onclick="removeCartItem(${idx})" style="font-family:'dotum',serif;font-size:1rem;">Remove</button>
