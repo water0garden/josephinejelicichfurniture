@@ -340,7 +340,6 @@ button {
   float: left;
   vertical-align: top;
   position: relative;
-  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   
 }
 
@@ -451,9 +450,7 @@ button {
 @media (max-width: 800px) {
 .shop-nav {
     display: inline-block;
-    float: right;
     padding: 0;
-    position:;
   }
 }
 
