@@ -219,13 +219,6 @@ img {
   }
 }
 
-@media (min-width: 820px) {
-  img {
-    width: 70%;
-    height: auto;
-    max-width: 70vw;
-  }
-}
 
 
 
@@ -381,6 +374,7 @@ button {
     padding-right: 0px;
   }
 }
+
 
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
   background-color: transparent;
