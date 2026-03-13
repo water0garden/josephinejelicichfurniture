@@ -72,10 +72,10 @@ function displayProduct(product) {
       : product.title;
     document.getElementById("product-detail").innerHTML = `
       ${imagesHtml}
-      <p class="product-title">${product.title}</p>
+      <p class="product-title" style="padding-top: 1rem;">${product.title}</p>
       <div class="shop-paragraph">${product.descriptionHtml}</div>
       <div class="product-variant" style="padding-top: 1rem;">
-        <span class="product-title" style="padding-top: 1rem;">${product.title}</span>
+        <span class="product-title">${product.title}</span>
         <span class="product-price">${variant.price.amount} ${variant.price.currencyCode}$</span>
         <button onclick="addToCart('${variant.id}', '${variantTitle}', '${variant.price.amount}', '${variant.price.currencyCode}')">Add to Cart</button>
       </div>
