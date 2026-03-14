@@ -76,7 +76,7 @@ function displayProduct(product) {
       <div class="shop-paragraph">${product.descriptionHtml}</div>
       <div class="product-variant" style="padding-top: 1rem;">
         <span class="product-title">${product.title}</span>
-        <span class="product-price">${variant.price.amount} ${variant.price.currencyCode}$</span>
+        <span class="product-price">${variant.price.amount} ${variant.price.currencyCode}</span>
         <button onclick="addToCart('${variant.id}', '${variantTitle}', '${variant.price.amount}', '${variant.price.currencyCode}')">Add to Cart</button>
       </div>
     `;
