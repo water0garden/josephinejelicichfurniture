@@ -35,6 +35,18 @@
      <section class="work-container">
     <div id="product-list">
     </div>
+
+     <!-- Slide-out Cart HTML -->
+  <div id="cart-slideout" class="cart-slideout">
+    <div class="cart-header">
+      <span>Cart</span>
+      <button onclick="closeCart()" class="close-btn">&times;</button>
+    </div>
+    <div id="cart-items"></div>
+    <button onclick="goToCheckout()" class="checkout-btn">Checkout</button>
+  </div>
+  <div id="cart-overlay" class="cart-overlay" onclick="closeCart()"></div>
+
      </section>
 
   <script src="../js/shop.js"></script>
