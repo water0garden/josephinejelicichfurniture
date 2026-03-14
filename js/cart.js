@@ -42,3 +42,18 @@ function closeCart() {
   document.getElementById("cart-slideout").classList.remove("open");
   document.getElementById("cart-overlay").classList.remove("open");
 }
+
+function goToCheckout() {
+  if (cart.length === 0) return;
+  // Use your Shopify domain or custom checkout logic
+  const domain = "gbg11r-ah.myshopify.com";
+  const cartUrl =
+    "https://" +
+    domain +
+    "/cart/" +
+    cart
+      .map((item) => item.variantId.split("/").pop() + ":" + item.quantity)
+      .join(",") +
+    "?checkout";
+  window.location.href = cartUrl;
+}
