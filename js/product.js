@@ -1,4 +1,4 @@
-const domain = "https://water0garden.github.io/josephinejelicichfurniture/shop/index.html";
+const domain = "gbg11r-ah.myshopify.com";
 const storefrontAccessToken = "e4c45ba5e531c0c76f492bd773f5f339";
 
 const params = new URLSearchParams(window.location.search);
