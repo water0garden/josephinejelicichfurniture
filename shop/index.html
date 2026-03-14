@@ -38,8 +38,8 @@
 
      <!-- Slide-out Cart HTML -->
   <div id="cart-slideout" class="cart-slideout">
-    <div class="cart-header">
-      <span>Cart</span>
+  <div class="cart-header">
+    <span>Cart</span>
       <button onclick="closeCart()" class="close-btn">&times;</button>
     </div>
     <div id="cart-items"></div>
@@ -77,6 +77,12 @@ window.onclick = function(event) {
     }
   }
 }
+</script>
+
+<script>
+document.getElementById('checkoutBtn').addEventListener('click', function() {
+    window.location.href = '/checkout';
+});
 </script>
 
 
