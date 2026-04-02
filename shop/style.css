@@ -561,6 +561,7 @@ footer {
   border: 1px solid #ccc;
   background: #f5f5f5;
   cursor: pointer;
+  color: black;
 }
 
 .cart-item button:last-child {
