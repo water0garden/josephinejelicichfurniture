@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
           if (captionText.includes('commissions')) {
             link = '../commissions/index.html';
-          } else if (captionText.includes('nelson carpentry school')) {
+          } else if (captionText.includes('centre for fine woodworking')) {
             link = '../nelson/index.html';
           } else if (captionText.includes('special frames')) {
             link = '../specialframes/index.html';
