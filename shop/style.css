@@ -126,8 +126,9 @@ h2 {
 
 
 img {
-  width: 650px;           /* Set your desired width */
-  height: 700px;          /* Set your desired height */
+  max-width: 98%;
+  /* width: 650px;           Set your desired width */
+  /* height: 700px;          Set your desired height */
   object-fit: cover;      /* Controls how image fits the box */
   display: block;         /* Removes extra space below images */    /* Optional: rounded corners */
   vertical-align: top;
@@ -425,7 +426,7 @@ footer {
 #product-list {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  max-width: 100%;
   gap: 0; /* or gap: 2rem; for spacing between items */
   margin: 0;
   padding: 0;
@@ -433,15 +434,16 @@ footer {
 
 .product {
   box-sizing: border-box;
-  width: 50%;
+  max-width: 50%;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  column-gap: 2rem;
 }
 
 .product-title  {
-  font-size: 1.5rem;
+  font-size: 16px;
   line-height: 1.3;
   font-family: 'tratello', Arial, sans-serif;
   letter-spacing: 0.045rem;
