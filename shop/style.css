@@ -260,6 +260,8 @@ button {
   letter-spacing: 0.045rem;
   cursor: grab;
   padding: 0;
+  color: black;
+
 }
 
 .navbar {
