@@ -70,11 +70,13 @@ window.onclick = function(event) {
 }
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function (event) {
-    arenaDisplay.fetch('exhibitions-cv-press', 99, document.querySelector('.text-block') );
-});
+<a href="#" id="resume-link">Resume</a>
 
+<script>
+document.getElementById('resume-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.open('../files/exhibitions-cv-press.pdf', '_blank', 'noopener');
+});
 </script>
 
   <footer>
