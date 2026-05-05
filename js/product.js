@@ -83,13 +83,19 @@ function displayProduct(product) {
   }
 
   // If multiple variants, show options with product.title and variant title, price, and add to cart
-  let variantsHtml = product.variants.edges.map(variant =>
-    `<div class="product-variant" style="padding-top: 1rem;">
-      <span class="p">${variant.node.title}</span>
-      <span class="product-price">${variant.node.price.amount} ${variant.node.price.currencyCode}</span>
-      <button onclick="addToCart('${variant.node.id}', '${product.title} — ${variant.node.title}', '${variant.node.price.amount}', '${variant.node.price.currencyCode}')">Add to Cart</button>
-    </div>`
-  ).join("");
+let variantsHtml = product.variants.edges.map(variant =>
+  `<div class="product-variant" style="padding-top: 1rem;">
+    <span class="p">${variant.node.title}</span>
+    <span class="product-price">${variant.node.price.amount} ${variant.node.price.currencyCode}</span>
+    <button onclick="addToCart(
+      '${variant.node.id}',
+      '${product.title} — ${variant.node.title}',
+      '${variant.node.price.amount}',
+      '${variant.node.price.currencyCode}',
+      '${product.images.edges[0]?.node.src || ""}'
+    )">Add to Cart</button>
+  </div>`
+).join("");
 
   document.getElementById("product-detail").innerHTML = `
     ${imagesHtml}
@@ -100,8 +106,7 @@ function displayProduct(product) {
   `;
 }
 
-function addToCart(variantId, title, price, currency) {
-  // Check if item already in cart
+function addToCart(variantId, title, price, currency, image) {
   const existing = cart.find(item => item.variantId === variantId);
   if (existing) {
     existing.quantity += 1;
@@ -111,10 +116,10 @@ function addToCart(variantId, title, price, currency) {
       title,
       price,
       currency,
+      image,      // <-- store the image URL
       quantity: 1
     });
   }
-  // Save cart to localStorage so all items are collected and persist
   localStorage.setItem('cart', JSON.stringify(cart));
   showCart();
 }
@@ -130,16 +135,11 @@ function showCart() {
   } else {
     cartItems.innerHTML = cart
       .map(
-        (item, idx) => `
+        (item) => `
         <div class="cart-item">
-          <p>${item.title}</p>
-          <p>${item.quantity} × ${item.price} ${item.currency}</p>
-          <div>
-            <button onclick="updateCartQuantity(${idx}, -1)">—</button>
-            <span>${item.quantity}</span>
-            <button onclick="updateCartQuantity(${idx}, 1)">+</button>
-            <button onclick="removeCartItem(${idx})" style="font-family:'dotum',serif;font-size:1rem;">Remove</button>
-          </div>
+          <img src="${item.image}" alt="${item.title}" style="width:60px;height:auto;margin-right:10px;vertical-align:middle;">
+          <strong>${item.title}</strong><br>
+          ${item.quantity} × ${item.price} ${item.currency}
         </div>`
       )
       .join("");
