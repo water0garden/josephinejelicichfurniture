@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<!-- The head of a web page defines it's metadata -->
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="view-1">
+    <header>
+  <span class="info">
+    <span class="text-frag"><a href="../view-2/index.html"><div class="jos-choice">Josephine Jelicich Furniture</div></a></span>
+    <span class="text-frag"><a href="../about/index.html">About</a></span>
+    <span class="text-frag"><div class="dropdown">
+      <button class="dropbtn" onclick="myFunction()"><div class="special">q</div>Wood Work<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="../personalprojects/index.html">• Personal Projects</a>
+          <a href="../specialframes/index.html">• Special Frames</a>
+          <a href="../commissions/index.html">• Commissions</a>
+          <a href="../nelson/index.html">• Centre for Fine Woodworking</a>
+          <a href="../warren/index.html">• The Warren</a>
+        </div>
+        </div></span>
+      <span class="text-frag"><a href="../view-1/index.html">Day by Day</a></span>
+      <span class="text-frag"><a href="../view-2/index.html">Gallery</a></span>
+      <span class="text-frag shop-nav"><a href="../shop/index.html">Shop</a></span>
+      </span>
+    </header>
+    </header>
+
+<!-- <article class="page-introduction">
+  <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">These images:
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="../about/index.html">This is my day by day.</a>
+    </div>
+  </div>
+  <div class="special">
+    q
+  </div>
+</article> -->
+
+ <section class="work-container">
+  </section>
+
+<script src="../js/main.js?v2"></script>
+<script src="../js/arena.js?v2"></script>
+<script src="../js/drop.js?v2"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function (event) {
+    arenaDisplay.fetch('view-1', 200, document.querySelector('.work-container') );
+});
+
+</script>
+
+</body>
+</html>
