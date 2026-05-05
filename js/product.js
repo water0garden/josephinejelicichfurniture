@@ -90,7 +90,7 @@ let variantsHtml = product.variants.edges.map(variant =>
     <button onclick="addToCart(
       '${variant.node.id}',
       '${product.title} — ${variant.node.title}',
-      '${variant.node.price.amount}',
+      // '${variant.node.price.amount}',
       '${variant.node.price.currencyCode}',
       '${product.images.edges[0]?.node.src || ""}'
     )">Add to Cart</button>
