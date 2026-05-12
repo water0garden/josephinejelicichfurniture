@@ -405,3 +405,7 @@ footer {
   padding-top:0.5rem;
   display: block;
 }
+
+a {
+  text-decoration: underline;
+}
