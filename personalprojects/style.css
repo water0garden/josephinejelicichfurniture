@@ -77,7 +77,7 @@ body {
 .work-container {
   margin: 0 auto;
   width: 50%;
-  padding-top: 8rem;
+  padding-top: 10rem;
   /* float: left; */
   display: block;
   overflow: auto;
@@ -241,7 +241,7 @@ button {
   background-color: inherit;
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   font-size: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   padding-right: 12rem;
 }
 
@@ -299,7 +299,7 @@ button {
   float: none;
   color: black;
   /* padding-top: 4px; */
-  padding: 12px 16px;
+  padding: 6px 16px;
   padding-left: 0px;
   padding-top: 0px;
   /* border: 1px dotted; */
