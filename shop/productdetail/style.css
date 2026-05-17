@@ -569,7 +569,7 @@ footer {
 
 ul.image-scroll-list {
   display: flex;
-  gap: 0.5em;
+  /* gap: 0.5em; */
   padding-left: 0;
   overflow-x: auto;
   overscroll-behavior-x: contain;
@@ -579,10 +579,10 @@ ul.image-scroll-list {
 
 ul.image-scroll-list li {
   list-style-type: none;
-  background-color: #eeeeee;
-  flex: 0 0 33%;
-  height: 300px;
-  padding: 0;
+  /* background-color: #eeeeee; */
+  /* flex: 0 0 33%; */
+  /* height: 300px; */
+  /* padding: 0; */
   scroll-snap-align: start;
   text-align: center;
   display: flex;
@@ -591,9 +591,9 @@ ul.image-scroll-list li {
 }
 
 ul.image-scroll-list img {
-  max-width: 100%;
+  /* max-width: 100%;
   max-height: 280px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 8px; */
 }
 

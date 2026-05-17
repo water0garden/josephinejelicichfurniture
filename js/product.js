@@ -59,6 +59,10 @@ function displayProduct(product) {
     document.getElementById("product-detail").innerHTML = "<p>Product not found.</p>";
     return;
   }
+
+//   let imagesHtml = product.images.edges.map(img =>
+//   `<img src="${img.node.src}" alt="${img.node.altText || ''}" width="400">`
+// ).join("");
 let imagesHtml = `<ul class="image-scroll-list">` +
   product.images.edges.map(img =>
     `<li><img src="${img.node.src}" alt="${img.node.altText || ''}"></li>`
