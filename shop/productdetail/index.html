@@ -83,7 +83,8 @@
           .map(
             (item, idx) => `
             <div class="cart-item">
-              <div class="jos-choice">${item.title}</div><br>
+             <img src="${item.image}" alt="${item.title}" style="">
+              <div class="jos-choice">${item.title}</div><br> 
               ${item.quantity} × ${item.price} ${item.currency}
               <div>
                 <button onclick="updateCartQuantity(${idx}, -1)">−</button>
