@@ -549,7 +549,7 @@ footer {
 .cart-item div {
   margin-top: 0.5rem;
 }
-.cart-image {
+.item-image {
   width: 65px;
   height: 65px;
   background-size: contain;
