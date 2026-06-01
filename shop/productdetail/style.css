@@ -507,6 +507,7 @@ footer {
   margin-bottom: 1rem;
 }
 .close-btn {
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   background: none;
   border: none;
   font-size: 2rem;
