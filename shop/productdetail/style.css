@@ -550,7 +550,21 @@ footer {
 .cart-item div {
   margin-top: 0.5rem;
 }
-.item-image {
+/* .item-image {
+  width: 65px;
+  height: 65px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+} */
+
+.cart-item img {
   width: 65px;
   height: 65px;
   background-size: contain;
