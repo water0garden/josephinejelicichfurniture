@@ -94,7 +94,6 @@ let variantsHtml = product.variants.edges.map(variant =>
     <span class="product-price">${variant.node.price.amount} ${variant.node.price.currencyCode}</span>
     <button onclick="addToCart(
   '${variant.id}',
-  '${variantTitle}',
   '${variant.price.amount}',
   '${variant.price.currencyCode}',
   '${product.images.edges[0]?.node.src || ""}'
