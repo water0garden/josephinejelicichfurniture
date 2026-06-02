@@ -565,8 +565,8 @@ footer {
 } */
 
 .cart-image img {
-  width: 65px;
-  height: 65px;
+  max-width: 65px;
+  max-height: 65px;
   /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
