@@ -564,7 +564,7 @@ footer {
   flex-direction: column;
 } */
 
-.cart-image {
+.cart-item img {
   max-width: 65px;
   max-height: 65px;
   flex-direction: column;
