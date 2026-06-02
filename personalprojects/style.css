@@ -165,6 +165,7 @@ p {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   letter-spacing: 0.045rem;
   margin: 0px;
+
   /* padding-bottom: 3rem; */
 
 }
@@ -384,5 +385,5 @@ a:hover { color: lavender;}
   color: black;
   text-decoration: none;
   padding top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
