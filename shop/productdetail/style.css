@@ -495,6 +495,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  overflow: scroll;
 }
 .cart-slideout.open {
   right: 0;
@@ -577,6 +578,24 @@ footer {
   display: flex;
   /* flex-direction: column; */
 }
+
+@media (max-width: 800px) {
+.cart-item img {
+  max-width: 65px;
+  max-height: 65px;
+  flex-direction: column;
+  /* background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent; */
+  /* left: 0;
+  top: 0; */
+  display: flex;
+  /* flex-direction: column; */
+  }
+}
+
+
 
 .cart-item button {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
