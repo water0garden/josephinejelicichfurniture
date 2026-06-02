@@ -111,56 +111,8 @@ let variantsHtml = product.variants.edges.map(variant =>
   `;
 }
 
-// function addToCart(variantId, title, price, currency, image) {
-//   const existing = cart.find(item => item.variantId === variantId);
-//   if (existing) {
-//     existing.quantity += 1;
-//   } else {
-//     cart.push({
-//       variantId,
-//       title,
-//       price,
-//       currency,
-//       image,      // <-- store the image URL
-//       quantity: 1
-//     });
-//   }
-//   localStorage.setItem('cart', JSON.stringify(cart));
-//   showCart();
-// }
-
-// ...existing code...
 function addToCart(variantId, title, price, currency, image) {
-  // normalize image -> plain URL or empty string
-  let imageUrl = '';
-  try {
-    if (!image) {
-      imageUrl = '';
-    } else if (typeof image === 'string') {
-      const s = image.trim();
-      if (s.startsWith('<')) {
-        // extract src from <img ...> or url(...) from inline style
-        const m = s.match(/src=(?:'|")([^'"]+)(?:'|")/) || s.match(/url\((?:'|")?(.*?)(?:'|")?\)/);
-        imageUrl = (m && m[1]) ? m[1] : '';
-      } else {
-        // already likely a URL or data-src token
-        const urlMatch = s.match(/^(data:|https?:|\/)/);
-        imageUrl = urlMatch ? s : (s.match(/url\((?:'|")?(.*?)(?:'|")?\)/) || [])[1] || s;
-      }
-    } else if (image instanceof Element) {
-      imageUrl = image.src || (getComputedStyle(image).backgroundImage.match(/url\((?:'|")?(.*?)(?:'|")?\)/) || [])[1] || '';
-    } else {
-      imageUrl = String(image);
-    }
-  } catch (e) {
-    console.warn('image normalization failed', e);
-    imageUrl = '';
-  }
-
-  console.log('addToCart image raw:', image, 'normalized:', imageUrl);
-
-  // existing cart logic (find existing by variantId)
-  let existing = cart.find(item => item.variantId === variantId);
+  const existing = cart.find(item => item.variantId === variantId);
   if (existing) {
     existing.quantity += 1;
   } else {
@@ -169,13 +121,61 @@ function addToCart(variantId, title, price, currency, image) {
       title,
       price,
       currency,
-      image: imageUrl, // store normalized URL
+      image,      // <-- store the image URL
       quantity: 1
     });
   }
   localStorage.setItem('cart', JSON.stringify(cart));
   showCart();
 }
+
+// ...existing code...
+// function addToCart(variantId, title, price, currency, image) {
+//   // normalize image -> plain URL or empty string
+//   let imageUrl = '';
+//   try {
+//     if (!image) {
+//       imageUrl = '';
+//     } else if (typeof image === 'string') {
+//       const s = image.trim();
+//       if (s.startsWith('<')) {
+//         // extract src from <img ...> or url(...) from inline style
+//         const m = s.match(/src=(?:'|")([^'"]+)(?:'|")/) || s.match(/url\((?:'|")?(.*?)(?:'|")?\)/);
+//         imageUrl = (m && m[1]) ? m[1] : '';
+//       } else {
+//         // already likely a URL or data-src token
+//         const urlMatch = s.match(/^(data:|https?:|\/)/);
+//         imageUrl = urlMatch ? s : (s.match(/url\((?:'|")?(.*?)(?:'|")?\)/) || [])[1] || s;
+//       }
+//     } else if (image instanceof Element) {
+//       imageUrl = image.src || (getComputedStyle(image).backgroundImage.match(/url\((?:'|")?(.*?)(?:'|")?\)/) || [])[1] || '';
+//     } else {
+//       imageUrl = String(image);
+//     }
+//   } catch (e) {
+//     console.warn('image normalization failed', e);
+//     imageUrl = '';
+//   }
+
+//   console.log('addToCart image raw:', image, 'normalized:', imageUrl);
+
+//   // existing cart logic (find existing by variantId)
+//   let existing = cart.find(item => item.variantId === variantId);
+//   if (existing) {
+//     existing.quantity += 1;
+//   } else {
+//     cart.push({
+//       variantId,
+//       title,
+//       price,
+//       currency,
+//       image: imageUrl, // store normalized URL
+//       quantity: 1
+//     });
+//   }
+//   localStorage.setItem('cart', JSON.stringify(cart));
+//   showCart();
+// }
 // ...existing code...
 
 
