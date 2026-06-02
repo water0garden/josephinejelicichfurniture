@@ -11,7 +11,7 @@ function showCart() {
       .map(
         (item, idx) => `
         <div class="cart-item">
-         <img src="${item.image}" alt="${item.title}" style="">
+         <div class="cart-image">${item.image}></div><br>
           <div class="jos-choice">${item.title}</div><br>
           ${item.quantity} × ${$item.price} ${item.currency}
           <div>
