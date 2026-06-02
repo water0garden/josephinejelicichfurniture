@@ -93,10 +93,11 @@ let variantsHtml = product.variants.edges.map(variant =>
     <span class="p">${variant.node.title}</span>
     <span class="product-price">${variant.node.price.amount} ${variant.node.price.currencyCode}</span>
     <button onclick="addToCart(
-  '${variant.id}',
-  '${variant.price.amount}',
-  '${variant.price.currencyCode}',
-  '${product.images.edges[0]?.node.src || ""}'
+    '${variant.node.id}',
+    '${product.title} — ${variant.node.title}',
+    '${variant.node.price.amount}',
+    '${variant.node.price.currencyCode}',
+    '${product.images.edges[0]?.node.src || ""}'
 )">Add to Cart</button>
   </div>`
 ).join("");
