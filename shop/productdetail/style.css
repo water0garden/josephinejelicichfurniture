@@ -564,18 +564,17 @@ footer {
   flex-direction: column;
 } */
 
-.cart-item img {
+.cart-image img {
   width: 65px;
   height: 65px;
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: transparent;
-  position: absolute;
-  left: 0;
-  top: 0;
+  background-color: transparent; */
+  /* left: 0;
+  top: 0; */
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
 .cart-item button {
