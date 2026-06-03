@@ -91,12 +91,14 @@ let imagesHtml = `<ul class="image-scroll-list">` +
 let variantsHtml = product.variants.edges.map(variant =>
   `<div class="product-variant" style="padding-top: 0.5rem;">
     <span class="p">${variant.node.title}</span>
-    <span class="product-price">${variant.node.price.amount} ${variant.node.price.currencyCode}</span>    <button onclick="addToCart(
+    <span class="product-price">$ ${variant.node.price.amount} ${variant.node.price.currencyCode}</span>    
+    <button onclick="addToCart(
     '${variant.node.id}',
     '${product.title} — ${variant.node.title}',
     '${variant.node.price.amount}',
     '${variant.node.price.currencyCode}',
     '${product.images.edges[0]?.node.src || ""}'
+    '${product.imagesHtml.edges[0]?.node.src || ""}'
 )">Add to Cart</button>
   </div>`
 ).join("");
@@ -120,7 +122,8 @@ function addToCart(variantId, title, price, currency, image) {
       title,
       price,
       currency,
-      image,      // <-- store the image URL
+      image,   
+      imagesHtml,      // <-- store the image URL
       quantity: 1
     });
   }
