@@ -91,8 +91,7 @@ let imagesHtml = `<ul class="image-scroll-list">` +
 let variantsHtml = product.variants.edges.map(variant =>
   `<div class="product-variant" style="padding-top: 0.5rem;">
     <span class="p">${variant.node.title}</span>
-    <span class="product-price">$${Number(variant.price.amount).toFixed(2)}</span>
-    <button onclick="addToCart(
+    <span class="product-price">${variant.node.price.amount} ${variant.node.price.currencyCode}</span>    <button onclick="addToCart(
     '${variant.node.id}',
     '${product.title} — ${variant.node.title}',
     '${variant.node.price.amount}',
