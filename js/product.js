@@ -105,7 +105,7 @@ let variantsHtml = product.variants.edges.map(variant =>
     ${imagesHtml}
     <p class="product-title">${product.title}</p>
     <div class="shop-paragraph">${product.descriptionHtml}</div>
-    <p class="product-variant">Style</p>
+    <p class="product-variant" style="font-weight: bold;">Style</p>
     ${variantsHtml}
   `;
 }
