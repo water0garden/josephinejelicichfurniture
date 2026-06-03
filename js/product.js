@@ -79,7 +79,7 @@ let imagesHtml = `<ul class="image-scroll-list">` +
       ${imagesHtml}
       <p class="product-title" style="padding-top: 1rem;">${product.title}</p>
       <div class="shop-paragraph">${product.descriptionHtml}</div>
-      <div class="product-variant" style="padding-top: 1rem;">
+      <div class="product-variant" style="padding-top: 0.5rem;">
         <span class="product-title">${product.title}</span>
         <button onclick="addToCart('${variant.id}', '${variantTitle}', '${variant.price.amount}', '${variant.price.currencyCode}')">Add to Cart</button>
       </div>
@@ -89,9 +89,9 @@ let imagesHtml = `<ul class="image-scroll-list">` +
 
   // If multiple variants, show options with product.title and variant title, price, and add to cart
 let variantsHtml = product.variants.edges.map(variant =>
-  `<div class="product-variant" style="padding-top: 1rem;">
+  `<div class="product-variant" style="padding-top: 0.5rem;">
     <span class="p">${variant.node.title}</span>
-    <span class="product-price">${variant.node.price.amount} ${variant.node.price.currencyCode}</span>
+    <span class="product-price">$${Number(variant.price.amount).toFixed(2)}</span>
     <button onclick="addToCart(
     '${variant.node.id}',
     '${product.title} — ${variant.node.title}',
@@ -106,7 +106,7 @@ let variantsHtml = product.variants.edges.map(variant =>
     ${imagesHtml}
     <p class="product-title">${product.title}</p>
     <div class="shop-paragraph">${product.descriptionHtml}</div>
-    <p class="product-variant">Options</p>
+    <p class="product-variant">Style</p>
     ${variantsHtml}
   `;
 }
