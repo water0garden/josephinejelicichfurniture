@@ -486,7 +486,7 @@ footer {
   position: fixed;
   top: 0;
   right: -400px;
-  width: 350px;
+  width: 400px;
   height: 100%;
   background: #fff;
   box-shadow: -2px 0 10px rgba(0,0,0,0.2);
@@ -567,7 +567,7 @@ footer {
 
 .cart-item img {
   max-width: 65px;
-  max-height: 65px;
+  max-height: 85px;
   flex-direction: column;
   /* background-size: contain;
   background-repeat: no-repeat;
