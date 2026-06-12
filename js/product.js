@@ -81,7 +81,13 @@ let imagesHtml = `<ul class="image-scroll-list">` +
       <div class="shop-paragraph">${product.descriptionHtml}</div>
       <div class="product-variant" style="padding-top: 0.5rem;">
         <span class="product-title">${product.title}</span>
-        <button onclick="addToCart('${variant.id}', '${variantTitle}', '${variant.price.amount}', '${variant.price.currencyCode}')">Add to Cart</button>
+         <button onclick="addToCart(
+          '${variant.id}',
+          '${variantTitle}',
+          '${variant.price.amount}',
+          '${variant.price.currencyCode}',
+          '${product.images.edges[0]?.node.src || ""}'
+        )">Add to Cart</button>
       </div>
     `;
     return;
