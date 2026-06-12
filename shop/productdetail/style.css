@@ -582,7 +582,7 @@ footer {
 @media (max-width: 800px) {
 .cart-item img {
   max-width: 65px;
-  max-height: 65px;
+  max-height: 75px;
   flex-direction: column;
   /* background-size: contain;
   background-repeat: no-repeat;
