@@ -13,7 +13,7 @@ function showCart() {
         <div class="cart-item">
          <div class="cart-image">${item.image}></div><br>
           <div class="jos-choice">${item.title}</div><br>
-          ${item.quantity} × ${$item.price} ${item.currency}
+          ${item.quantity} × $${$item.price} ${item.currency}
           <div>
             <button onclick="updateCartQuantity(${idx}, -1)">−</button>
             <span>${item.quantity}</span>
