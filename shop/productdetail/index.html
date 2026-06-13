@@ -84,9 +84,9 @@
             (item, idx) => `
             <div class="cart-item">
              <img src="${item.image}" alt="${item.title}" style="">
-              <div class="jos-choice">${item.title}</div><br> 
+              <div class="jos-choice">${item.title}</div>
               ${item.quantity} × ${item.price} ${item.currency}
-              <div>
+              <div class="cart-item-details">
                 <button onclick="updateCartQuantity(${idx}, -1)">−</button>
                 <span>${item.quantity}</span>
                 <button onclick="updateCartQuantity(${idx}, 1)">+</button>
