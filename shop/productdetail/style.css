@@ -607,12 +607,17 @@ footer {
   }
 }
 
-
+.cart-item-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.4rem;
+}
 
 .cart-item button {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   font-size: 1rem;
-  margin: 0 2px;
   padding: 4px 10px;
   border-radius: 4px;
   border: 1px solid #ccc;

@@ -75,7 +75,7 @@
       }
     }
 
-    function showCart() {
+  function showCart() {
       document.getElementById("cart-slideout").classList.add("open");
       document.getElementById("cart-overlay").classList.add("open");
       const cartItems = document.getElementById("cart-items");
@@ -86,14 +86,18 @@
           .map(
             (item, idx) => `
             <div class="cart-item">
-             <img src="${item.image}" alt="${item.title}" style="">
-              <div class="jos-choice">${item.title}</div>
-              ${item.quantity} × ${item.price} ${item.currency}
+             <img src="${item.image}" alt="${item.title}">
               <div class="cart-item-details">
-                <button onclick="updateCartQuantity(${idx}, -1)">−</button>
-                <span>${item.quantity}</span>
-                <button onclick="updateCartQuantity(${idx}, 1)">+</button>
-                <button onclick="removeCartItem(${idx})">Remove</button>
+                <div class="cart-item-top">
+                  <span class="jos-choice">${item.title}</span>
+                  <span class="cart-item-price">${item.quantity} × ${item.price} ${item.currency}</span>
+                </div>
+                <div class="cart-item-controls">
+                  <button onclick="updateCartQuantity(${idx}, -1)">−</button>
+                  <span>${item.quantity}</span>
+                  <button onclick="updateCartQuantity(${idx}, 1)">+</button>
+                  <button class="remove-btn" onclick="removeCartItem(${idx})">Remove</button>
+                </div>
               </div>
             </div>`
           )
