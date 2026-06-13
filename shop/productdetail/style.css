@@ -553,6 +553,13 @@ footer {
   gap: 0.8rem;
 }
 
+.cart-item-price {
+  display: flex;
+  flex-direction: row;        /* changed from column */
+  align-items: flex-start;
+  
+}
+
 .cart-item p {
   margin: 0.2rem 0;
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
