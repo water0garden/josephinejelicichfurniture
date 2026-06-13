@@ -557,6 +557,7 @@ footer {
   display: flex;
   flex-direction: row;        /* changed from column */
   align-items: flex-start;
+  padding-top: 0.5rem;
   
 }
 
