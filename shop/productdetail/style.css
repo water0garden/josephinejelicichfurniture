@@ -501,6 +501,15 @@ footer {
   padding: 1rem;
   overflow: scroll;
 }
+
+@media screen and (max-width: 800px) {
+  .cart-slideout {
+    width: 100%;
+    right: -100%;
+  }
+  
+}
+
 .cart-slideout.open {
   right: 0;
 }
