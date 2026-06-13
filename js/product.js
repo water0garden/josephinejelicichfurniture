@@ -60,16 +60,12 @@ function displayProduct(product) {
     return;
   }
 
-//   let imagesHtml = product.images.edges.map(img =>
-//   `<img src="${img.node.src}" alt="${img.node.altText || ''}" width="400">`
-// ).join("");
-let imagesHtml = `<ul class="image-scroll-list">` +
-  product.images.edges.map(img =>
-    `<li><img src="${img.node.src}" alt="${img.node.altText || ''}"></li>`
-  ).join('') +
-  `</ul>`;
+  let imagesHtml = `<ul class="image-scroll-list">` +
+    product.images.edges.map(img =>
+      `<li><img src="${img.node.src}" alt="${img.node.altText || ''}"></li>`
+    ).join('') +
+    `</ul>`;
 
-  // If only one variant, show product title, variant title (if not default), price, and add to cart
   if (product.variants.edges.length === 1) {
     const variant = product.variants.edges[0].node;
     const variantTitle = variant.title && variant.title !== "Default Title"
@@ -81,7 +77,7 @@ let imagesHtml = `<ul class="image-scroll-list">` +
       <div class="shop-paragraph">${product.descriptionHtml}</div>
       <div class="product-variant" style="padding-top: 0.5rem;">
         <span class="product-title">${product.title}</span>
-         <button onclick="addToCart(
+        <button onclick="addToCart(
           '${variant.id}',
           '${variantTitle}',
           '${variant.price.amount}',
@@ -93,19 +89,19 @@ let imagesHtml = `<ul class="image-scroll-list">` +
     return;
   }
 
-  // If multiple variants, show options with product.title and variant title, price, and add to cart
-let variantsHtml = product.variants.edges.map(variant =>
-  `<div class="product-variant" style="padding-top: 0.5rem;">
-    <span class="p">${variant.node.title}</span>
-<span class="product-price">$${parseFloat(variant.node.price.amount).toFixed(2)}</span>    <button onclick="addToCart(
-    '${variant.node.id}',
-    '${product.title} — ${variant.node.title}',
-    '${variant.node.price.amount}',
-    '${variant.node.price.currencyCode}',
-    '${product.images.edges[0]?.node.src || ""}'
-)">Add to Cart</button>
-  </div>`
-).join("");
+  let variantsHtml = product.variants.edges.map(variant =>
+    `<div class="product-variant" style="padding-top: 0.5rem;">
+      <span class="p">${variant.node.title}</span>
+      <span class="product-price">$${parseFloat(variant.node.price.amount).toFixed(2)}</span>
+      <button onclick="addToCart(
+        '${variant.node.id}',
+        '${product.title} — ${variant.node.title}',
+        '${variant.node.price.amount}',
+        '${variant.node.price.currencyCode}',
+        '${product.images.edges[0]?.node.src || ""}'
+      )">Add to Cart</button>
+    </div>`
+  ).join("");
 
   document.getElementById("product-detail").innerHTML = `
     ${imagesHtml}
@@ -126,65 +122,13 @@ function addToCart(variantId, title, price, currency, image) {
       title,
       price,
       currency,
-      image,   
-      // imagesHtml,      // <-- store the image URL
+      image,
       quantity: 1
     });
   }
   localStorage.setItem('cart', JSON.stringify(cart));
   showCart();
 }
-
-// ...existing code...
-// function addToCart(variantId, title, price, currency, image) {
-//   // normalize image -> plain URL or empty string
-//   let imageUrl = '';
-//   try {
-//     if (!image) {
-//       imageUrl = '';
-//     } else if (typeof image === 'string') {
-//       const s = image.trim();
-//       if (s.startsWith('<')) {
-//         // extract src from <img ...> or url(...) from inline style
-//         const m = s.match(/src=(?:'|")([^'"]+)(?:'|")/) || s.match(/url\((?:'|")?(.*?)(?:'|")?\)/);
-//         imageUrl = (m && m[1]) ? m[1] : '';
-//       } else {
-//         // already likely a URL or data-src token
-//         const urlMatch = s.match(/^(data:|https?:|\/)/);
-//         imageUrl = urlMatch ? s : (s.match(/url\((?:'|")?(.*?)(?:'|")?\)/) || [])[1] || s;
-//       }
-//     } else if (image instanceof Element) {
-//       imageUrl = image.src || (getComputedStyle(image).backgroundImage.match(/url\((?:'|")?(.*?)(?:'|")?\)/) || [])[1] || '';
-//     } else {
-//       imageUrl = String(image);
-//     }
-//   } catch (e) {
-//     console.warn('image normalization failed', e);
-//     imageUrl = '';
-//   }
-
-//   console.log('addToCart image raw:', image, 'normalized:', imageUrl);
-
-//   // existing cart logic (find existing by variantId)
-//   let existing = cart.find(item => item.variantId === variantId);
-//   if (existing) {
-//     existing.quantity += 1;
-//   } else {
-//     cart.push({
-//       variantId,
-//       title,
-//       price,
-//       currency,
-//       image: imageUrl, // store normalized URL
-//       quantity: 1
-//     });
-//   }
-//   localStorage.setItem('cart', JSON.stringify(cart));
-//   showCart();
-// }
-// ...existing code...
-
-
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -195,16 +139,36 @@ function showCart() {
   if (!cart.length) {
     cartItems.innerHTML = "<p>Your cart is empty.</p>";
   } else {
+    const subtotal = cart.reduce((sum, item) => sum + (parseFloat(item.price) * item.quantity), 0);
+    const currency = cart[0].currency;
+
     cartItems.innerHTML = cart
       .map(
-        (item) => `
+        (item, idx) => `
         <div class="cart-item">
-          <img src="${item.image}" alt="${item.title}" style="width:60px;height:auto;margin-right:10px;vertical-align:middle;">
-          <strong>${item.title}</strong><br>
-          ${item.quantity} × ${item.price} ${item.currency}
+          <img src="${item.image}" alt="${item.title}">
+          <div class="cart-item-details">
+            <div class="cart-item-top">
+              <span class="jos-choice">${item.title}</span>
+              <span class="cart-item-price">${item.quantity} × $${parseFloat(item.price).toFixed(2)} ${item.currency}</span>
+            </div>
+            <div class="cart-item-controls">
+              <button onclick="updateCartQuantity(${idx}, -1)">−</button>
+              <span>${item.quantity}</span>
+              <button onclick="updateCartQuantity(${idx}, 1)">+</button>
+              <button class="remove-btn" onclick="removeCartItem(${idx})">Remove</button>
+            </div>
+          </div>
         </div>`
       )
-      .join("");
+      .join("") + `
+      <div class="cart-subtotal">
+        <span>SUBTOTAL</span>
+        <span>$${subtotal.toFixed(2)} ${currency}</span>
+      </div>
+      <label class="cart-instructions-label">Special instructions for seller</label>
+      <textarea class="cart-instructions" rows="3"></textarea>
+      <p class="cart-shipping-note">Shipping and discount codes are added at checkout.</p>`;
   }
 }
 
