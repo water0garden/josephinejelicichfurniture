@@ -44,9 +44,6 @@
       <button onclick="closeCart()" class="close-btn">&times;</button>
     </div>
     <div id="cart-items"></div>
-    <label class="cart-instructions-label">Special instructions for seller</label>
-<textarea class="cart-instructions" rows="3"></textarea>
-<p class="cart-shipping-note">Shipping and discount codes are added at checkout.</p>
     <button onclick="goToCheckout()" class="checkout-btn">Checkout</button>
   </div>
   <div id="cart-overlay" class="cart-overlay" onclick="closeCart()"></div>
@@ -75,18 +72,21 @@
       }
     }
 
-  function showCart() {
+    function showCart() {
       document.getElementById("cart-slideout").classList.add("open");
       document.getElementById("cart-overlay").classList.add("open");
       const cartItems = document.getElementById("cart-items");
       if (!cart.length) {
         cartItems.innerHTML = "<p>Your cart is empty.</p>";
       } else {
+        const subtotal = cart.reduce((sum, item) => sum + (parseFloat(item.price) * item.quantity), 0);
+        const currency = cart[0].currency;
+
         cartItems.innerHTML = cart
           .map(
             (item, idx) => `
             <div class="cart-item">
-             <img src="${item.image}" alt="${item.title}">
+              <img src="${item.image}" alt="${item.title}">
               <div class="cart-item-details">
                 <div class="cart-item-top">
                   <span class="jos-choice">${item.title}</span>
@@ -101,7 +101,14 @@
               </div>
             </div>`
           )
-          .join("");
+          .join("") + `
+          <div class="cart-subtotal">
+            <span>SUBTOTAL</span>
+            <span>${subtotal.toFixed(2)} ${currency}</span>
+          </div>
+          <label class="cart-instructions-label">Special instructions for seller</label>
+          <textarea class="cart-instructions" rows="3"></textarea>
+          <p class="cart-shipping-note">Shipping and discount codes are added at checkout.</p>`;
       }
     }
 
