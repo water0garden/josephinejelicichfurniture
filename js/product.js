@@ -76,7 +76,8 @@ function displayProduct(product) {
       <p class="product-title" style="padding-top: 1rem;">${product.title}</p>
       <div class="shop-paragraph">${product.descriptionHtml}</div>
       <div class="product-variant" style="padding-top: 0.5rem;">
-        <span class="product-title">$${parseFloat(variant.price.amount).toFixed(2)}</span>
+        <span class="product-title">${product.title}</span>
+        <span class="product-price">$${parseFloat(variant.price.amount).toFixed(2)}</span>
         <button onclick="addToCart(
           '${variant.id}',
           '${variantTitle}',
