@@ -2,44 +2,44 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Shop</title>
   <meta name="viewport" content="initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <header>
-  <span class="info">
-    <span class="text-frag"><a href="../gallery/index.html"><div class="jos-choice">Josephine Jelicich Furniture</div></a></span>
-    <span class="text-frag"><a href="../about/index.html">About</a></span>
-    <span class="text-frag"><div class="dropdown">
-      <button class="dropbtn" onclick="myFunction()"><div class="special">q</div>Wood Work<i class="fa fa-caret-down"></i></button>
-        <div class="dropdown-content" id="myDropdown">
-          <a href="../personalprojects/index.html">• Personal Projects</a>
-          <a href="../specialframes/index.html">• Special Frames</a>
-          <a href="../commissions/index.html">• Commissions</a>
-          <a href="../nelson/index.html">• Centre for Fine Woodworking</a>
-          <a href="../warren/index.html">• The Warren</a>
+    <span class="info">
+      <span class="text-frag"><a href="../gallery/index.html"><div class="jos-choice">Josephine Jelicich Furniture</div></a></span>
+      <span class="text-frag"><a href="../about/index.html">About</a></span>
+      <span class="text-frag">
+        <div class="dropdown">
+          <button class="dropbtn" onclick="myFunction()">
+            <div class="special">q</div>Wood Work<i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="../personalprojects/index.html">• Personal Projects</a>
+            <a href="../specialframes/index.html">• Special Frames</a>
+            <a href="../commissions/index.html">• Commissions</a>
+            <a href="../nelson/index.html">• Centre for Fine Woodworking</a>
+            <a href="../warren/index.html">• The Warren</a>
+          </div>
         </div>
-        </div></span>
+      </span>
       <span class="text-frag"><a href="../daybyday/index.html">Day by Day</a></span>
       <span class="text-frag"><a href="../gallery/index.html">Gallery</a></span>
       <span class="text-frag shop-nav"><a href="../shop/index.html">Shop</a></span>
       <span class="text-frag shop-nav"><button id="cart-btn" onclick="showCart()">Cart</button></span>
     </span>
-    </span>
   </header>
 
+  <section class="work-container">
+    <div id="product-list"></div>
+  </section>
 
-     <section class="work-container">
-    <div id="product-list">
-    </div>
-
-     <!-- Slide-out Cart HTML -->
   <div id="cart-slideout" class="cart-slideout">
-  <div class="cart-header">
-    <span>Cart</span>
+    <div class="cart-header">
+      <span>Cart</span>
       <button onclick="closeCart()" class="close-btn">&times;</button>
     </div>
     <div id="cart-items"></div>
@@ -47,45 +47,13 @@
   </div>
   <div id="cart-overlay" class="cart-overlay" onclick="closeCart()"></div>
 
-     </section>
+  <footer>
+    &copy; Josephine Jelicich 2021
+  </footer>
 
-  <script src="../js/shop.js"></script>
-  <script src="../js/app.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/drop.js"></script>
   <script src="../js/cart.js"></script>
-  <script src="../js/product.js"></script>
-
-
-
-
-
-<script>
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Optional: Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
-
-<script>
-document.getElementById('checkoutBtn').addEventListener('click', function() {
-    window.location.href = '/checkout';
-});
-</script>
-
+  <script src="../js/drop.js"></script>
+  <script src="../js/shop.js"></script>
 
 </body>
 </html>
-

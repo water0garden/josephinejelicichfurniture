@@ -1,16 +1,16 @@
-const shopDomain = "gbg11r-ah.myshopify.com";
+const domain = "gbg11r-ah.myshopify.com";
 const storefrontAccessToken = "e4c45ba5e531c0c76f492bd773f5f339";
 
 async function fetchProducts() {
   const query = `
     {
-      products(first: 50) {
+      products(first: 20) {
         edges {
           node {
-            handle
+            id
             title
             description
-            descriptionHtml
+            handle
             images(first: 1) {
               edges {
                 node {
@@ -19,23 +19,13 @@ async function fetchProducts() {
                 }
               }
             }
-            variants(first: 1) {
-              edges {
-                node {
-                  id
-                  price {
-                    amount
-                    currencyCode
-                  }
-                }
-              }
-            }
           }
         }
       }
     }
   `;
-  const response = await fetch(`https://${shopDomain}/api/2023-07/graphql.json`, {
+
+  const response = await fetch(`https://${domain}/api/2023-07/graphql.json`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -43,48 +33,35 @@ async function fetchProducts() {
     },
     body: JSON.stringify({ query })
   });
+
   const json = await response.json();
-  return json.data.products.edges;
+  displayProducts(json.data.products.edges);
 }
 
-function renderProducts(products) {
+function displayProducts(products) {
   const container = document.getElementById("product-list");
-  if (!products.length) {
-    container.innerHTML = "<p>No products found.</p>";
-    return;
-  }
-  container.innerHTML = products.map(({ node: product }) => {
-    const image = product.images.edges[0]?.node.src || "";
-    const alt = product.images.edges[0]?.node.altText || "";
-    const handle = product.handle;
-    // Use product-variant for variant count and title
-    const variantCount = product['product-variant']?.edges?.length || 0;
-    let optionName = product.title;
-    if (variantCount > 1) {
-      // Show product title and first product-variant option
-      const variantTitle = product['product-variant'].edges[0]?.node?.title || "";
-      optionName = `${product.title} - ${variantTitle}`;
-    }
-    // If only one variant, show only product title
-    return `
-      <figure class="product">
-        <a href="productdetail/index.html?handle=${handle}">
-          <img class="product-img" src="${image}" alt="${alt}">
-          <figcaption>
-            <span class="product-title">${optionName}</span>
-          </figcaption>
-        </a>
-      </figure>
+
+  products.forEach(({ node }) => {
+    const image = node.images.edges[0]?.node.src || "";
+    const alt = node.images.edges[0]?.node.altText || "";
+    const handle = node.handle;
+    const productUrl = `productdetail/index.html?handle=${handle}`;
+
+    const div = document.createElement("div");
+    div.className = "product";
+    div.innerHTML = `
+      <a href="${productUrl}">
+        <img src="${image}" alt="${alt}" width="400">
+        <p class="product-title">${node.title}</p>
+      </a>
+      <p class="shop-paragraph">${node.description}</p>
     `;
-  }).join("");
+    container.appendChild(div);
+  });
+
+  document.querySelectorAll(".shop-paragraph").forEach(p => {
+    p.style.display = "none";
+  });
 }
 
-document.addEventListener("DOMContentLoaded", async function() {
-  const products = await fetchProducts();
-  renderProducts(products);
-});
-
-// Example for a button with id="return-to-shop"
-document.getElementById("return-to-store").onclick = function() {
-  window.location.href = "../shop/index.html";
-};
+fetchProducts();
