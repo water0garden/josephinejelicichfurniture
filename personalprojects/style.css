@@ -340,12 +340,12 @@ button {
   padding-left: 3ch;
 }
 
+
 @media (max-width: 800px) {
-.shop-nav {
+  .shop-nav {
+    float: none;
     display: inline-block;
-    float: left;
     padding: 0;
-    position: absolute;
   }
 }
 
