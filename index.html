@@ -26,9 +26,10 @@
         </div></span>
       <span class="text-frag"><a href="../daybyday/index.html">Day by Day</a></span>
       <span class="text-frag"><a href="../gallery/index.html">Gallery</a></span>
-      <span class="text-frag shop-nav"><a href="shop/index.html">Shop</a></span>
-      </span>
-    </header>
+      <span class="text-frag shop-nav"><a href="../shop/index.html">Shop</a></span>
+      <span class="text-frag shop-nav"><button id="cart-btn" onclick="showCart()">Cart</button></span>
+    </span>
+  </header>
 
       <!-- <article class="page-introduction">
         <div class="dropdown">
@@ -48,11 +49,23 @@
  </section>
 
 
-<!-- <script src="../js/test.js?v2"></script> -->
+<div id="cart-slideout" class="cart-slideout">
+    <div class="cart-header">
+      <span>Cart</span>
+      <button onclick="closeCart()" class="close-btn">&times;</button>
+    </div>
+    <div id="cart-items"></div>
+    <button onclick="goToCheckout()" class="checkout-btn">Checkout</button>
+  </div>
+  <div id="cart-overlay" class="cart-overlay" onclick="closeCart()"></div>
+
+ 
+
+<script src="../js/cart.js"></script>
 <script src="../js/main.js?v2"></script>
 <script src="../js/arena.js?v2"></script>
 
-<!-- <script src="../js/drop.js?v2"></script> -->
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function (event) {
