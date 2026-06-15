@@ -28,8 +28,6 @@ a:hover { color: black; }
   }
 }
 
-/* *** font things *** */
-
 @font-face {
   font-family: 'hoefler-text-ornaments';
   src: url(../../fonts/hoefler-text-ornaments.ttf);
@@ -76,7 +74,9 @@ a:hover { color: black; }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-/* *** main styles *** */
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-size: 1rem;
@@ -178,8 +178,6 @@ h1 {
   }
 }
 
-/* *** image styles *** */
-
 img {
   display: inline-block;
   position: relative;
@@ -229,8 +227,6 @@ figure {
   }
 }
 
-/* *** text styles *** */
-
 figcaption {
   display: block;
   padding-top: 0.3rem;
@@ -263,8 +259,6 @@ p {
 .text-block {
   width: 95%;
 }
-
-/* *** Navigation and dropdown *** */
 
 .jos-choice {
   font-family: 'tratello', Arial, sans-serif;
@@ -404,12 +398,6 @@ button {
   display: block;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-/* shop */
-
 .shop-nav {
   float: right;
   padding-left: 3ch;
@@ -430,8 +418,6 @@ footer {
   z-index: 10;
   width: 100%;
 }
-
-/* Cart */
 
 #cart-btn {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
@@ -541,14 +527,15 @@ footer {
 
 .cart-item-top {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: flex-start;
+  gap: 0.2rem;
 }
 
 .cart-item-price {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
-  font-size: 1rem;
-  padding-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
 }
 
 .cart-item p {

@@ -28,8 +28,6 @@ a:hover { color: black; }
   }
 }
 
-/* *** font things *** */
-
 @font-face {
   font-family: 'hoefler-text-ornaments';
   src: url(../fonts/hoefler-text-ornaments.ttf);
@@ -100,11 +98,8 @@ h2 {
   letter-spacing: 0.045rem;
 }
 
-/* *** image styles *** */
-
 img {
   max-width: 100%;
-  object-fit: cover;
   display: block;
   vertical-align: top;
   position: relative;
@@ -154,8 +149,6 @@ p {
   letter-spacing: 0.045rem;
   margin: 0px;
 }
-
-/* *** Navigation and dropdown *** */
 
 .jos-choice {
   font-family: 'tratello', Arial, sans-serif;
@@ -300,8 +293,6 @@ button {
 .show {
   display: block;
 }
-
-/* shop */
 
 .shop-nav {
   float: right;
@@ -487,14 +478,15 @@ footer {
 
 .cart-item-top {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: flex-start;
+  gap: 0.2rem;
 }
 
 .cart-item-price {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
-  font-size: 1rem;
-  padding-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
 }
 
 .cart-item p {
