@@ -25,7 +25,8 @@
       <span class="text-frag"><a href="../daybyday/index.html">Day by Day</a></span>
       <span class="text-frag"><a href="../gallery/index.html">Gallery</a></span>
       <span class="text-frag shop-nav"><a href="../shop/index.html">Shop</a></span>
-      </span>
+       <span class="text-frag shop-nav"><button id="cart-btn" onclick="showCart()">Cart</button></span>
+    </span>
     </header>
 
 
@@ -64,6 +65,22 @@ window.onclick = function(event) {
   }
 }
 </script>
+
+ <div id="cart-slideout" class="cart-slideout">
+    <div class="cart-header">
+      <span>Cart</span>
+      <button onclick="closeCart()" class="close-btn">&times;</button>
+    </div>
+    <div id="cart-items"></div>
+    <button onclick="goToCheckout()" class="checkout-btn">Checkout</button>
+  </div>
+  <div id="cart-overlay" class="cart-overlay" onclick="closeCart()"></div>
+
+  <footer>
+    &copy; Josephine Jelicich 2021
+  </footer>
+
+  <script src="../js/cart.js"></script>
 
 <footer>
   &copy; Josephine Jelicich 2021
