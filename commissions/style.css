@@ -263,12 +263,14 @@ p figcaption {
 
 button {
   background-color: transparent;
-  padding: 0;
+  border: none;
   font-size: 1rem;
   line-height: 1.3;
-  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  font-family: 'tratello', sans-serif;
   letter-spacing: 0.045rem;
   cursor: grab;
+  padding: 0;
+  color: black;
 }
 
 .navbar {
@@ -405,4 +407,189 @@ footer {
     padding: 0;
     position: absolute;
   }
+}
+
+/* Cart */
+
+#cart-btn {
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  display: inline-block;
+  float: left;
+  vertical-align: top;
+  position: relative;
+  font-size: 1rem;
+}
+
+.cart-slideout {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  z-index: 2000;
+  transition: right 0.4s cubic-bezier(.77,0,.18,1);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow: scroll;
+}
+
+@media screen and (max-width: 800px) {
+  .cart-slideout {
+    width: 100%;
+    right: -100%;
+  }
+}
+
+.cart-slideout.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.cart-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 1999;
+}
+
+.cart-overlay.open {
+  display: block;
+}
+
+.checkout-btn {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.9rem;
+  background: #f5f5f5;
+  color: #000;
+  border: 1px solid #ddd;
+  font-size: 1.1rem;
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.05rem;
+}
+
+.checkout-btn:hover {
+  background: #ebebeb;
+}
+
+.cart-item {
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.cart-item img {
+  width: 65px;
+  height: 85px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.cart-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cart-item-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.cart-item-price {
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.cart-item p {
+  margin: 0.2rem 0;
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+}
+
+.cart-item-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.4rem;
+}
+
+.cart-item button {
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  font-size: 1rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background: DarkKhaki !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 0.5rem;
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+}
+
+.cart-instructions {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  resize: vertical;
+}
+
+.cart-instructions-label {
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.cart-shipping-note {
+  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  max-width: 100%;
 }
