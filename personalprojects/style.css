@@ -528,7 +528,7 @@ a:hover { color: lavender;}
   font-size: 1rem;
   padding: 4px 10px;
   border-radius: 4px;
-  /* border: 1px solid #ccc; */
+  border: 1px solid #ccc;
   background: #f5f5f5;
   cursor: pointer;
 }
