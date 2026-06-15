@@ -251,13 +251,14 @@ p {
 
 button {
   background-color: transparent;
-  padding: 0;
+  border: none;
   font-size: 1rem;
   line-height: 1.3;
-  font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
+  font-family: 'tratello', sans-serif;
   letter-spacing: 0.045rem;
   cursor: grab;
-
+  padding: 0;
+  color: black;
 }
 
 .navbar {
