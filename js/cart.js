@@ -69,5 +69,5 @@ function goToCheckout() {
       .map((item) => item.variantId.split("/").pop() + ":" + item.quantity)
       .join(",") +
     "?checkout";
-  window.location.href = cartUrl;
+  window.open(cartUrl, "_blank", "noopener,noreferrer");
 }
