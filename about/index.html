@@ -58,6 +58,11 @@
 <article class="text-block">
 </article>
 
+<!-- Resume link -->
+<a id="resumeBtn" href="#" target="_blank" rel="noopener noreferrer">
+  View Resume (PDF)
+</a>
+
 <script>
 document.addEventListener("DOMContentLoaded", function (event) {
     arenaDisplay.fetch('about-jvumrqn2-c0', 99, document.querySelector('.text-block') );
@@ -83,7 +88,41 @@ window.onclick = function(event) {
 }
 </script>
 
-<a href="resume.pdf" class="resume" target="_blank">Resume</a>
+<script>
+  const ARENA_CHANNEL_SLUG = "exhibitions-cv-press";
+
+async function loadResumeLink() {
+  const resumeBtn = document.getElementById("resumeBtn");
+
+  try {
+    const response = await fetch(
+      `https://api.are.na/v2/channels/${ARENA_CHANNEL_SLUG}/contents`
+    );
+    const data = await response.json();
+
+    const resumeBlock = data.find(
+      (block) =>
+        block.attachment &&
+        block.attachment.content_type === "application/pdf"
+    );
+
+    if (resumeBlock) {
+      resumeBtn.href = resumeBlock.attachment.url;
+    } else {
+      console.warn("No PDF found in this Are.na channel.");
+      resumeBtn.textContent = "Resume unavailable";
+      resumeBtn.removeAttribute("href");
+    }
+  } catch (error) {
+    console.error("Error fetching resume from Are.na:", error);
+    resumeBtn.textContent = "Resume unavailable";
+  }
+}
+
+loadResumeLink();
+  </script>
+
+<!-- <a href="resume.pdf" class="resume" target="_blank">Resume</a> -->
 
 <!-- <a href="#" id="resume-link">Resume</a>
 
