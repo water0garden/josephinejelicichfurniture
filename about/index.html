@@ -79,36 +79,45 @@
   </script>
 
   <script>
-    const ARENA_BLOCK_ID = "45860910";
+    const ARENA_CHANNEL_SLUG = "exhibitions-cv-press";
 
-    async function loadResumeLink() {
-      const resumeBtn = document.getElementById("resumeBtn");
+async function loadResumeLink() {
+  const resumeBtn = document.getElementById("resumeBtn");
 
-      try {
-        const response = await fetch(
-          `https://api.are.na/v2/blocks/${ARENA_BLOCK_ID}`
-        );
+  try {
+    const response = await fetch(
+      `https://api.are.na/v2/channels/${ARENA_CHANNEL_SLUG}/contents`
+    );
 
-        if (!response.ok) {
-          throw new Error(`API returned status ${response.status}`);
-        }
-
-        const block = await response.json();
-        const pdfUrl = block.attachment?.url;
-
-        if (pdfUrl) {
-          resumeBtn.href = pdfUrl;
-        } else {
-          resumeBtn.textContent = "Resume unavailable";
-          resumeBtn.removeAttribute("href");
-        }
-      } catch (error) {
-        console.error("Error fetching resume block from Are.na:", error);
-        resumeBtn.textContent = "Resume unavailable";
-      }
+    if (!response.ok) {
+      throw new Error(`API returned status ${response.status}`);
     }
 
-    loadResumeLink();
+    const data = await response.json();
+    const blocks = Array.isArray(data) ? data : data.contents;
+
+    // Find all PDF blocks, then take the most recently added one
+    const pdfBlocks = blocks.filter(
+      (block) => block.attachment?.content_type === "application/pdf"
+    );
+
+    const latestPdf = pdfBlocks.sort(
+      (a, b) => new Date(b.created_at) - new Date(a.created_at)
+    )[0];
+
+    if (latestPdf) {
+      resumeBtn.href = latestPdf.attachment.url;
+    } else {
+      resumeBtn.textContent = "Resume unavailable";
+      resumeBtn.removeAttribute("href");
+    }
+  } catch (error) {
+    console.error("Error fetching resume from Are.na:", error);
+    resumeBtn.textContent = "Resume unavailable";
+  }
+}
+
+loadResumeLink();
   </script>
 
   <footer>
