@@ -25,6 +25,7 @@ async function fetchProduct() {
             node {
               id
               title
+              availableForSale
               price {
                 amount
                 currencyCode
