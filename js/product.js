@@ -72,6 +72,17 @@ function displayProduct(product) {
     const variantTitle = variant.title && variant.title !== "Default Title"
       ? `${product.title} - ${variant.title}`
       : product.title;
+
+    const buttonHtml = variant.availableForSale
+      ? `<button onclick="addToCart(
+          '${variant.id}',
+          '${variantTitle}',
+          '${variant.price.amount}',
+          '${variant.price.currencyCode}',
+          '${product.images.edges[0]?.node.src || ""}'
+        )">Add to Cart</button>`
+      : `<button class="sold-out-btn" disabled>Sold Out</button>`;
+
     document.getElementById("product-detail").innerHTML = `
       ${imagesHtml}
       <p class="product-title" style="padding-top: 1rem;">${product.title}</p>
@@ -79,31 +90,29 @@ function displayProduct(product) {
       <div class="product-variant" style="padding-top: 0.5rem;">
         <span class="product-title">${product.title}</span>
         <span class="product-price">$${parseFloat(variant.price.amount).toFixed(2)}</span>
-        <button onclick="addToCart(
-          '${variant.id}',
-          '${variantTitle}',
-          '${variant.price.amount}',
-          '${variant.price.currencyCode}',
-          '${product.images.edges[0]?.node.src || ""}'
-        )">Add to Cart</button>
+        ${buttonHtml}
       </div>
     `;
     return;
   }
 
-  let variantsHtml = product.variants.edges.map(variant =>
-    `<div class="product-variant" style="padding-top: 0.5rem;">
+  let variantsHtml = product.variants.edges.map(variant => {
+    const buttonHtml = variant.node.availableForSale
+      ? `<button onclick="addToCart(
+          '${variant.node.id}',
+          '${product.title} — ${variant.node.title}',
+          '${variant.node.price.amount}',
+          '${variant.node.price.currencyCode}',
+          '${product.images.edges[0]?.node.src || ""}'
+        )">Add to Cart</button>`
+      : `<button class="sold-out-btn" disabled>Sold Out</button>`;
+
+    return `<div class="product-variant" style="padding-top: 0.5rem;">
       <span class="p">${variant.node.title}</span>
       <span class="product-price">$${parseFloat(variant.node.price.amount).toFixed(2)}</span>
-      <button onclick="addToCart(
-        '${variant.node.id}',
-        '${product.title} — ${variant.node.title}',
-        '${variant.node.price.amount}',
-        '${variant.node.price.currencyCode}',
-        '${product.images.edges[0]?.node.src || ""}'
-      )">Add to Cart</button>
-    </div>`
-  ).join("");
+      ${buttonHtml}
+    </div>`;
+  }).join("");
 
   document.getElementById("product-detail").innerHTML = `
     ${imagesHtml}
