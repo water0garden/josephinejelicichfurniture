@@ -92,7 +92,7 @@ a:hover { color: black;}
 /* *** main styles *** */
 
 header {
-  padding-bottom: 6rem;
+  /* padding-bottom: 6rem; */
 }
 
 @media (max-width: 800px) {
