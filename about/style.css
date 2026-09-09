@@ -377,18 +377,16 @@ button {
 
 .shop-nav {
   float: right;
-  padding-left: 3ch;
+  padding-left: 40px;
 }
 
 @media (max-width: 800px) {
-.shop-nav {
+  .shop-nav {
+    float: none;
     display: inline-block;
-    float: left;
     padding: 0;
-    position: absolute;
   }
 }
-
 footer {
   clear: both;
   position: relative;
@@ -423,6 +421,7 @@ a {
   position: relative;
   font-size: 1rem;
 }
+
 
 .cart-slideout {
   position: fixed;
