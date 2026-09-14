@@ -581,6 +581,7 @@ footer {
 }
 
 .back-to-top {
+  font-family: tratello;
   position: fixed;
   bottom: 30px;
   right: 30px;
