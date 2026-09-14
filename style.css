@@ -378,6 +378,13 @@ button {
   /* padding-right: 12rem; testing space */
 }
 
+.opening-text {
+  font-family: 'tratello', Arial, sans-serif;
+  font-size: 100px;
+  letter-spacing: 1px;
+  /* padding-right: 12rem; testing space */
+}
+
 footer {
   clear: both;
   position: relative;
