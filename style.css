@@ -370,6 +370,14 @@ button {
     padding: 0;
   }
 }
+
+.jos-choice {
+  font-family: 'tratello', Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  /* padding-right: 12rem; testing space */
+}
+
 footer {
   clear: both;
   position: relative;
