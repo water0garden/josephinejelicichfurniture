@@ -385,7 +385,8 @@ button {
 
 .opening-text {
   font-family: 'tratello', Arial, sans-serif;
-  font-size: 100px;
+  font-size: 200px;
+  color: #E97451;
   letter-spacing: 1px;
   /* padding-right: 12rem; testing space */
 }
