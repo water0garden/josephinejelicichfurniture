@@ -21,14 +21,14 @@ html {
 }
 
 
-a:link, a:visited {
+/* a:link, a:visited {
 color: grey;
 text-decoration: none;
 }
 
 a:active { color: forestgreen;}
 a:hover { color: black;}
-
+ */
 
 
 
@@ -46,7 +46,7 @@ a:hover { color: black;}
 
 @font-face {
   font-family: 'tratello' ;
-  src: url(fonts/tratello.ttf);
+  src: url(tratello.ttf);
 }
 
 .title-page {
@@ -96,13 +96,13 @@ body {
   letter-spacing: 0.045rem;
   margin: 0;
   padding: 1.3rem;
-  background: white;
+  background-color: wheat;
   width: 100%;
   overflow: auto;
 }
 
 .work-container {
-  padding-top: 10rem;
+  /* padding-top: 10rem; */
   width: 100%;
   margin: 0 auto;
   float: left;
@@ -386,9 +386,24 @@ button {
 .opening-text {
   font-family: 'tratello', Arial, sans-serif;
   font-size: 200px;
-  color: #E97451;
+  color: forestgreen;
   letter-spacing: 1px;
+  text-decoration: none;
+  text-align: center;
   /* padding-right: 12rem; testing space */
+}
+
+@media (max-width: 800px) {
+.opening-text {
+ 
+  font-family: 'tratello', Arial, sans-serif;
+  font-size: -webkit-xxx-large;
+  color: forestgreen;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-align: center;
+  /* padding-right: 12rem; testing space */
+}
 }
 
 footer {
