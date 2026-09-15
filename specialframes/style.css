@@ -176,7 +176,7 @@ p {
 
 /* If your paragraph has a specific class name */
 p.figcaption:last-child {
-  padding: 2rem;
+  padding: 5rem;
 }
 
 
