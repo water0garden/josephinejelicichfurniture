@@ -166,8 +166,17 @@ p {
   letter-spacing: 0.045rem;
   margin: 0px;
   /* padding-bottom: 3rem; */
-  padding-bottom: 2rem;
+  padding-bottom: 0rem;
+}
 
+/* Applies padding only if the <p> is the absolute last child of its parent */
+/* p:last-child {
+  padding-bottom: 20px;
+} */
+
+/* If your paragraph has a specific class name */
+p.figcaption:last-child {
+  padding: 2rem;
 }
 
 
