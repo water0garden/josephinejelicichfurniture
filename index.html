@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <meta name="viewport" content="initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header>
+    <header>
   <span class="info">
-    <span class="text-frag"><a href="gallery/index.html"><div class="jos-choice">Josephine Jelicich Furniture</div></a></span>
-    <span class="text-frag"><a href="about/index.html">About</a></span>
+    <span class="text-frag"><a href="../gallery/index.html"><div class="jos-choice">Josephine Jelicich Furniture</div></a></span>
+    <span class="text-frag"><a href="../about/index.html">About</a></span>
     <span class="text-frag"><div class="dropdown">
       <button class="dropbtn" onclick="myFunction()"><div class="special">q</div>Wood Work<i class="fa fa-caret-down"></i></button>
         <div class="dropdown-content" id="myDropdown">
@@ -23,20 +24,32 @@
           <a href="../warren/index.html">• The Warren</a>
         </div>
         </div></span>
-     <span class="text-frag"><a href="daybyday/index.html">Day by Day</a></span>
-      <span class="text-frag"><a href="gallery/index.html">Gallery</a></span>
-      <span class="text-frag shop-nav"><a href="shop/index.html"><div class="jos-choice">Shop</div></a></span>
+      <span class="text-frag"><a href="../daybyday/index.html">Day by Day</a></span>
+      <span class="text-frag"><a href="../gallery/index.html">Gallery</a></span>
+      <span class="text-frag shop-nav"><a href="../shop/index.html"><div class="jos-choice">Shop</div></a></span>
       <span class="text-frag shop-nav"><button id="cart-btn" onclick="showCart()">Cart</button></span>
     </span>
   </header>
 
+      <!-- <article class="page-introduction">
+        <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">These works:
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="index.html">A short description about following works..."Here is a selection of projects and commisions from 2018-2020.</a>
+        </div>
+        </div>
+        <div class="special">q</div>
+      </article> -->
+
+
 
   <section class="work-container">
-    <p class="opening-text">Coming soon!</p>
  </section>
 
 
-  <div id="cart-slideout" class="cart-slideout">
+<div id="cart-slideout" class="cart-slideout">
     <div class="cart-header">
       <span>Cart</span>
       <button onclick="closeCart()" class="close-btn">&times;</button>
@@ -46,24 +59,45 @@
   </div>
   <div id="cart-overlay" class="cart-overlay" onclick="closeCart()"></div>
 
- 
 
- <script src="../js/cart.js"></script>
-  <script src="../js/main.js?v2"></script>
-  <script src="../js/drop.js"></script>
-  <script src="../js/arena.js?v2"></script>
+
+<script src="../js/cart.js"></script> 
+<script src="../js/main.js?v2"></script>
+<script src="../js/drop.js?v2"></script>
+<script src="../js/arena.js?v2"></script>
 
 
 
 <script>
 document.addEventListener("DOMContentLoaded", function (event) {
-    arenaDisplay.fetch('gallery-jlo_o66l9fc', 99, document.querySelector('.work-container') );
+    arenaDisplay.fetch('gallery-ahccph33urm', 99, document.querySelector('.work-container') );
 });
 
 </script>
 
+
+<script>
+
+  function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+
+</script>
+
 <footer>
-  &copy; Josephine Jelicich 2026
+  &copy; Josephine Jelicich 2021
 </footer>
 
 

@@ -25,7 +25,7 @@ async function fetchProducts() {
     }
   `;
 
-  const response = await fetch(`https://${domain}/api/2023-07/graphql.json`, {
+  const response = await fetch(`https://${domain}/api/2026-07/graphql.json`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

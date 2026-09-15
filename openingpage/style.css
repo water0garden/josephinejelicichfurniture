@@ -22,18 +22,13 @@ html {
 
 
 a:link, a:visited {
-color: black;
+color: grey;
 text-decoration: none;
 }
 
-a:active { color: black;}
+a:active { color: forestgreen;}
 a:hover { color: black;}
 
-@media (max-width: 800px) {
-  a:link, a:visited {
-    color: black;
-  }
-}
 
 
 
@@ -41,17 +36,17 @@ a:hover { color: black;}
 
 @font-face {
   font-family: 'hoefler-text-ornaments';
-  src: url(../fonts/hoefler-text-ornaments.ttf);
+  src: url(fonts/hoefler-text-ornaments.ttf);
 }
 
 @font-face {
   font-family: 'Herculanum.ttf';
-  src: url(../fonts/Herculanum.ttf);
+  src: url(fonts/Herculanum.ttf);
 }
 
 @font-face {
-  font-family: 'tratello';
-  src: url(../fonts/tratello.ttf);
+  font-family: 'tratello' ;
+  src: url(fonts/tratello.ttf);
 }
 
 .title-page {
@@ -148,7 +143,7 @@ body {
 /* *** fig, image styles *** */
 
 img {
-  width: 100%;
+  width: 650px;
   display: inline-block;
   position: relative;
 }
@@ -166,7 +161,7 @@ figure {
   padding: 0;
   margin-right: 1rem;
   margin-bottom: 1rem;
-  max-width: 30%;
+  max-width: 50%;
   display: block;
   position: relative;
 }
@@ -185,7 +180,7 @@ figcaption {
   display: block;
   padding-top: 0.3rem;
   padding-bottom: 2rem;
-  width: 100%;
+  width: 650px;
 }
 
 @media (max-width: 800px) {
@@ -211,20 +206,6 @@ p {
 
 
 /* *** Navigation and dropdown *** */
-
-.jos-choice {
-  font-family: 'tratello', Arial, sans-serif;
-  font-size: 16px;
-  letter-spacing: 1px;
-  /* padding-right: 12rem; testing space */
-}
-
-@media (max-width: 800px) {
-  .jos-choice {
-    padding-right: 0px;
-  }
-}
-
 
 .text-frag {
   display: inline-block;
@@ -394,6 +375,21 @@ button {
     padding: 0;
   }
 }
+
+.jos-choice {
+  font-family: 'tratello', Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  /* padding-right: 12rem; testing space */
+}
+
+.opening-text {
+  font-family: 'tratello', Arial, sans-serif;
+  font-size: 100px;
+  letter-spacing: 1px;
+  /* padding-right: 12rem; testing space */
+}
+
 footer {
   clear: both;
   position: relative;
@@ -401,7 +397,6 @@ footer {
   z-index: 10;
   width: 100%;
 }
-
 
 /* Cart */
 
