@@ -166,12 +166,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
 
         else if (entry.class === 'Text') {
-          var entryHTML = '<article>'
-            + '<div class="text-block">'
-            + entry.content_html
-            + '</div>'
-            + '</article>';
-        }
+  // Fix hrefs that are plain email addresses (Are.na strips "mailto:")
+  var fixedHTML = entry.content_html.replace(
+    /href="([^":\/]+@[^"]+)"/g,
+    'href="mailto:$1"'
+  );
+
+  var entryHTML = '<article>'
+    + '<div class="text-block">'
+    + fixedHTML
+    + '</div>'
+    + '</article>';
+}
 
         else if (entry.class === 'Channel') {
           var str = entry.title;
