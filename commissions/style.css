@@ -29,10 +29,10 @@ html {
   color: forestgreen;
 }
 
-/* .text-block a:active {
+.text-block a:active {
   text-decoration: underline;
   color: forestgreen;
-} */
+}
 
 a:link, a:visited {
 color: black;
