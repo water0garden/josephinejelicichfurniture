@@ -399,7 +399,8 @@ footer {
 
 @media screen and (max-width: 800px) {
   .cart-slideout {
-    width: 100%;
+    opacity: 95%;
+    width: 85%;
     right: -100%;
   }
 }
