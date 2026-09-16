@@ -21,6 +21,16 @@ html {
 }
 
 
+.figcaption a:hover {
+  text-decoration: underline;
+  color: forestgreen;
+}
+
+.figcaption a:active {
+  text-decoration: underline;
+  color: forestgreen;
+}
+
 a:link, a:visited {
 color: black;
 text-decoration: none;
