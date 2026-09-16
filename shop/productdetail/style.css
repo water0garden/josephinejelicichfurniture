@@ -104,6 +104,7 @@ body {
 
 @media (max-width: 800px) {
   .work-container {
+    padding-top: 4rem;
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -197,7 +198,7 @@ img {
 
 ul.image-scroll-list img {
   width: 500px;
-  height: 600px;
+  height: 650px;
   object-fit: cover;
 }
 
