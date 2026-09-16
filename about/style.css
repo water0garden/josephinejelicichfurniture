@@ -36,17 +36,7 @@ a:hover { color: black;}
   }
 }
 
-a#resumeBtn:link, a#resumeBtn:visited {
-  color: forestgreen;
-  text-decoration: none;
-  opacity: 0;
-  transition: opacity 0.6s ease-in;
-}
 
-a.textblock:link, a.textblock:visited {
-  color: forestgreen;
-  text-decoration: none;
-}
 
 
 
@@ -422,8 +412,7 @@ footer {
 }
 
 #resumeBtn {
-  opacity: 0;
-  transition: opacity 0.6s ease;
+  
 }
 
 
@@ -616,4 +605,14 @@ a {
   text-align: center;
   margin-bottom: 0.5rem;
   max-width: 100%;
+}
+
+.text-block a:hover {
+  text-decoration: underline;
+  color: forestgreen;
+}
+
+.text-block a:active {
+  text-decoration: underline;
+  color: forestgreen;
 }
