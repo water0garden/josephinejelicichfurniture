@@ -31,11 +31,20 @@ a:hover { color: black;}
 
 @media (max-width: 800px) {
   a:link, a:visited {
-    color: forestgreen;
+    color: black;
 
   }
 }
 
+a#resumeBtn:link, a#resumeBtn:visited {
+  color: forestgreen;
+  text-decoration: none;
+}
+
+a#textblock:link, a#textblock:visited {
+  color: forestgreen;
+  text-decoration: none;
+}
 
 
 
