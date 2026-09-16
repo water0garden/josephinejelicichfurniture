@@ -131,6 +131,12 @@ h1 {
   letter-spacing: 0.045rem;
 }
 
+@media (max-width: 800px) {
+  .product-title {
+    padding-top: 0rem;
+  }
+}
+
 .product-variant {
   padding: 0.4rem 0;
   border-bottom: 1px solid #eee;
