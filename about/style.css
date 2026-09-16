@@ -31,7 +31,8 @@ a:hover { color: black;}
 
 @media (max-width: 800px) {
   a:link, a:visited {
-    color: black;
+    color: forestgreen;
+
   }
 }
 
