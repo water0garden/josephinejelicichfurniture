@@ -210,6 +210,10 @@ p {
   width: 95%;
 }
 
+.text-block p {
+  margin-bottom: 1em;
+}
+
 
 
 /* *** Navigation and dropdown *** */
