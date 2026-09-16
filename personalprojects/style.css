@@ -390,6 +390,11 @@ a:hover { color: lavender;}
   padding-bottom: 2rem;
 }
 
+.text-block p {
+  margin-bottom: 1em;
+}
+
+
 
 /* Cart */
 
