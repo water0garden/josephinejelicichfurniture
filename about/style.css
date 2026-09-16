@@ -20,6 +20,15 @@ html {
    overflow: auto;
 }
 
+.text-block a:hover {
+  text-decoration: underline;
+  color: forestgreen;
+}
+
+.text-block a:active {
+  text-decoration: underline;
+  color: forestgreen;
+}
 
 a:link, a:visited {
 color: black;
@@ -411,9 +420,7 @@ footer {
   display: block;
 }
 
-#resumeBtn {
-  
-}
+
 
 
 a {
@@ -607,12 +614,3 @@ a {
   max-width: 100%;
 }
 
-.text-block a:hover {
-  text-decoration: underline;
-  color: forestgreen;
-}
-
-.text-block a:active {
-  text-decoration: underline;
-  color: forestgreen;
-}
