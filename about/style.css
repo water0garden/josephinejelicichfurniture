@@ -437,6 +437,25 @@ a {
   text-decoration: underline;
 }
 
+@media (max-width: 800px) {
+  /* Pin the cart button's wrapper to the top right */
+  .shop-nav:last-child {
+    position: fixed;
+    top: 1.3rem;
+    right: 1.3rem;
+    z-index: 1500;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Neutralise the float/relative positioning inside it */
+  #cart-btn {
+    float: none;
+    position: static;
+    display: inline-block;
+  }
+}
+
 
 /* Cart */
 
@@ -448,6 +467,8 @@ a {
   position: relative;
   font-size: 1rem;
 }
+
+
 
 
 .cart-slideout {
