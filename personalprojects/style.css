@@ -183,7 +183,7 @@ p {
 .info {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
   gap: 0.5rem 1.5rem;
 }
 .text-frag {
