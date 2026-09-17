@@ -352,9 +352,9 @@ button {
   margin-left: auto;
 }
 
-.shop-nav:not(.cart-nav) {
+/* .shop-nav:not(.cart-nav) {
   margin-left: auto;
-}
+} */
 
 
 @media (max-width: 800px) {
