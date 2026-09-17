@@ -588,8 +588,8 @@ a:hover { color: red;}
   bottom: 30px;
   right: 30px;
   z-index: 99;
-  background-color: #FFDB58;
-  color: white;
+  background-color:cornflowerblue ;
+  color: red;
   text-decoration: none;
   width: 45px;
   height: 45px;
@@ -598,10 +598,10 @@ a:hover { color: red;}
   justify-content: center;
   border-radius: 50%;
   font-size: 20px;
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s;
 }
 
 .back-to-top:hover {
-  background-color: cornflowerblue;
+  background-color:#FFDB58;
 }
