@@ -204,9 +204,11 @@ p {
     gap: 0.3rem 0.8rem;
   }
 }
+
 @media (max-width: 800px) {
   .info {
     padding-bottom: 2rem;
+    padding-right: 4.5rem;
   }
 }
 
