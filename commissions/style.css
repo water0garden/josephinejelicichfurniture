@@ -24,12 +24,10 @@ html {
   box-sizing: border-box;
 }
 
-
-.text-block:link,
-.text-block:visited {
+.text-block a:link,
+.text-block a:visited {
   color: forestgreen;
 }
-
 
 a:link, a:visited {
 color: black;
