@@ -352,12 +352,22 @@ button {
   margin-left: auto;
 }
 
+.shop-nav:not(.cart-nav) {
+  margin-left: auto;
+}
+
 
 @media (max-width: 800px) {
   .shop-nav {
     float: none;
     display: inline-block;
     padding: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .shop-nav:not(.cart-nav) {
+    margin-left: auto;
   }
 }
 
