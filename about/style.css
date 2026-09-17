@@ -455,10 +455,11 @@ a {
   .shop-nav:last-child {
     position: fixed;
     top: 1.3rem;
-    right: 1.3rem;
+    right: 1.6rem;
     z-index: 1500;
     margin: 0;
     padding: 0;
+    background-color: yellow;
   }
 
   /* Neutralise the float/relative positioning inside it */
