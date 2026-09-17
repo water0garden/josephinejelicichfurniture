@@ -343,16 +343,35 @@ button {
 /*shop*/
 
 .shop-nav {
-  float: right;
   padding-left: 3ch;
 }
 
+.shop-nav:first-of-type {
+  margin-left: auto;
+}
 
 @media (max-width: 800px) {
   .shop-nav {
     float: none;
     display: inline-block;
     padding: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .shop-nav:first-of-type {
+    position: fixed;
+    top: 1.3rem;
+    right: 1.6rem;
+    z-index: 1500;
+    margin: 0;
+    padding: 0;
+  }
+
+  #cart-btn {
+    float: none;
+    position: static;
+    display: inline-block;
   }
 }
 
