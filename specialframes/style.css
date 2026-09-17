@@ -372,7 +372,7 @@ text-decoration: none;
 }
 
 a:active { color: forestgreen;}
-a:hover { color: lavender;}
+a:hover { color: red;}
 
 
 .backdrop {
@@ -590,7 +590,7 @@ a:hover { color: lavender;}
   bottom: 30px;
   right: 30px;
   z-index: 99;
-  background-color: pink;
+  background-color:#FFDB58;
   color: white;
   text-decoration: none;
   width: 45px;
@@ -605,5 +605,5 @@ a:hover { color: lavender;}
 }
 
 .back-to-top:hover {
-  background-color: #FF5F14;
+  background-color:cornflowerblue;
 }
