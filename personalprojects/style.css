@@ -364,7 +364,8 @@ text-decoration: none;
 }
 
 a:active { color: forestgreen;}
-a:hover { color: red;}
+a:hover { color: lavender;}
+
 
 
 .backdrop {
@@ -601,6 +602,12 @@ a:hover { color: red;}
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s;
 }
+
+.back-to-top:link,
+.back-to-top:visited {
+  color: red;
+}
+
 
 .back-to-top:hover {
   background-color:#FFDB58;
