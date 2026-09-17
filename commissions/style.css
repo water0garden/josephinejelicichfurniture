@@ -24,15 +24,12 @@ html {
   box-sizing: border-box;
 }
 
-.text-block a:active {
-  text-decoration: underline;
+
+.text-block:link,
+.text-block:visited {
   color: forestgreen;
 }
 
-.text-block a:active {
-  text-decoration: underline;
-  color: forestgreen;
-}
 
 a:link, a:visited {
 color: black;
