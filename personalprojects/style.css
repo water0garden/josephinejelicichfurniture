@@ -257,9 +257,9 @@ p {
   font-size: 1rem;
 }
 
-/* .shop-nav {
-  margin-left: 0;
-} */
+.shop-nav {
+ float: right;
+}
 
 
 @media (max-width: 1024px) {
