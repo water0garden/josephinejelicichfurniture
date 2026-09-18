@@ -261,9 +261,21 @@ p {
  float: right;
 }
 
+.cart-nav {
+ float: right;
+}
+
 
 @media (max-width: 1024px) {
   .shop-nav {
+    float: left;
+    display: inline-block;
+    padding: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cart-nav {
     float: left;
     display: inline-block;
     padding: 0;
