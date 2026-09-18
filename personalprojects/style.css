@@ -259,12 +259,17 @@ p {
 
 .shop-nav {
  float: right;
+ display: inline;
 }
 
 .cart-nav {
  float: right;
 }
 
+.nav-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns everything to the right wall */
+}
 
 @media (max-width: 800px) {
   .shop-nav {
