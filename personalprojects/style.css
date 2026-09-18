@@ -231,20 +231,18 @@ button {
   color: black;
 }
 
-/* === UPDATED: .navbar is now flex so margin-left:auto works on .cart-nav === */
 .navbar {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  display: inline-block;
   margin-right: 3ch;
   color: black;
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
 }
 
-/* === UPDATED: removed float: left — flex handles row layout now === */
 .navbar a {
+  float: left;
   font-size: inherit;
   color: black;
+  /* padding: 14px 16px; */
   text-decoration: none;
 }
 
@@ -347,58 +345,18 @@ button {
 /*shop*/
 
 .shop-nav {
-  margin-left: auto;
-}
-
-.cart-nav {
   margin-left: 0;
 }
 
-/* === UPDATED: on mobile, drop out of flex row and go back to float-based stacking === */
-@media (max-width: 800px) {
-  .navbar {
-    display: block;
-  }
-
-  .navbar a {
-    float: left;
-  }
-
-  .shop-nav {
-    float: left;
-    display: inline-block;
-    padding: 0;
-  }
+.cart-nav {
+  margin-left: auto;
+}
 
 @media (max-width: 1024px) {
   .shop-nav {
     float: left;
     display: inline-block;
     padding: 0;
-  }
-
-  .cart-nav {
-    margin-left: 0;
-    float: left;
-    display: inline-block;
-    padding: 0;
-  }
-}
-
-@media (max-width: 800px) {
-  .cart-nav {
-    position: fixed;
-    top: 1.3rem;
-    right: 1.6rem;
-    z-index: 1500;
-    margin: 0;
-    padding: 0;
-  }
-
-  #cart-btn {
-    float: none;
-    position: static;
-    display: inline-block;
   }
 }
 
