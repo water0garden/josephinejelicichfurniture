@@ -346,15 +346,13 @@ button {
 
 /*shop*/
 
-.shop-nav {
-  /* padding-left: 3ch; */
-}
 
-/* === UPDATED: pins Shop+Cart to the right on desktop === */
-.cart-nav {
+.shop-nav {
   margin-left: auto;
 }
 
+.cart-nav {
+}
 /* === UPDATED: on mobile, drop out of flex row and go back to float-based stacking === */
 @media (max-width: 800px) {
   .navbar {
