@@ -399,7 +399,7 @@ a:hover { color: lavender;}
   color: black;
   text-decoration: none;
   padding top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
 }
 
 .text-block p {
@@ -417,7 +417,7 @@ a:hover { color: lavender;}
   vertical-align: top;
   position: relative;
   font-size: 1rem;
-  border: forestgreen 1px solid;
+  
 }
 
 .cart-slideout {
