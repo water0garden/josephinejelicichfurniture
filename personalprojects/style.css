@@ -180,21 +180,14 @@ p {
   letter-spacing: 1px;
 }
 
-.info {
+/* .info {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   flex-grow: 1;
   gap: 0.5rem 1.5rem;
 }
-
-@media (max-width: 800px) {
-  .info {
-  justify-content: flex-start;
-
-  }
-}
-
+ */
 
 
 /* .text-frag {
