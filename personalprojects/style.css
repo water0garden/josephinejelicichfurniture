@@ -266,7 +266,7 @@ p {
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 800px) {
   .shop-nav {
     float: left;
     display: inline-block;
@@ -274,7 +274,7 @@ p {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 800px) {
   .cart-nav {
     float: left;
     display: inline-block;
