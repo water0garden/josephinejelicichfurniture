@@ -439,7 +439,7 @@ a {
 
 
 
-/* Cart */
+/* Cart Btn*/
 
 #cart-btn {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
@@ -450,28 +450,9 @@ a {
   font-size: 1rem;
 }
 
-@media (max-width: 800px) {
-  /* Pin the cart button's wrapper to the top right */
-  .shop-nav:last-child {
-    position: fixed;
-    top: 1.3rem;
-    right: 1.6rem;
-    z-index: 1500;
-    margin: 0;
-    padding: 0;
-    background-color: yellow;
-  }
-
-  /* Neutralise the float/relative positioning inside it */
-  #cart-btn {
-    float: none;
-    position: static;
-    display: inline-block;
-  }
-}
 
 
-
+/* Cart Slideout Styles */
 
 
 .cart-slideout {
