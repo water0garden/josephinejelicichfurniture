@@ -417,6 +417,7 @@ a:hover { color: lavender;}
   vertical-align: top;
   position: relative;
   font-size: 1rem;
+  border: forestgreen 1px solid;
 }
 
 .cart-slideout {
