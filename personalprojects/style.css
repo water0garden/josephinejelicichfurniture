@@ -346,13 +346,14 @@ button {
 
 /*shop*/
 
-
 .shop-nav {
   margin-left: auto;
 }
 
 .cart-nav {
+  margin-left: 0;
 }
+
 /* === UPDATED: on mobile, drop out of flex row and go back to float-based stacking === */
 @media (max-width: 800px) {
   .navbar {
