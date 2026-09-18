@@ -1,21 +1,24 @@
 const domain = "gbg11r-ah.myshopify.com";
 const storefrontAccessToken = "e4c45ba5e531c0c76f492bd773f5f339";
+const collectionHandle = "frontpage";
 
 async function fetchProducts() {
   const query = `
     {
-      products(first: 20) {
-        edges {
-          node {
-            id
-            title
-            description
-            handle
-            images(first: 1) {
-              edges {
-                node {
-                  src
-                  altText
+      collectionByHandle(handle: "${collectionHandle}") {
+        products(first: 20, sortKey: COLLECTION_DEFAULT) {
+          edges {
+            node {
+              id
+              title
+              description
+              handle
+              images(first: 1) {
+                edges {
+                  node {
+                    src
+                    altText
+                  }
                 }
               }
             }
@@ -35,7 +38,7 @@ async function fetchProducts() {
   });
 
   const json = await response.json();
-  displayProducts(json.data.products.edges);
+  displayProducts(json.data.collectionByHandle.products.edges);
 }
 
 function displayProducts(products) {
