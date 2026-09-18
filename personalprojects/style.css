@@ -440,7 +440,7 @@ a:hover { color: lavender;}
 #cart-btn {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   display: inline-block;
-  float: left;
+  float: right;
   vertical-align: top;
   position: relative;
   font-size: 1rem;
