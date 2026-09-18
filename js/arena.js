@@ -200,6 +200,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         container.innerHTML += entryHTML;
 
+
+    container.querySelectorAll('.text-block a').forEach(function (link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+
+
         document.querySelector('body').setAttribute('data-state', 'ready');
 
       });
