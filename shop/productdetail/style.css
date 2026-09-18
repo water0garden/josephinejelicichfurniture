@@ -153,6 +153,7 @@ h1 {
   letter-spacing: 0.045rem;
   margin: 0px;
   padding-bottom: 2rem;
+  max-width: 40%;
 }
 
 .product-description {
