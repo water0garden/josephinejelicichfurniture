@@ -180,11 +180,13 @@ p {
   letter-spacing: 1px;
 }
 
-/* .info {
+.info {
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 1;
   gap: 0.5rem 1.5rem;
-} */
+}
+
 
 /* .text-frag {
   display: inline-block;
@@ -259,17 +261,18 @@ p {
 
 .shop-nav {
  float: right;
- display: inline;
+ justify-content: flex-end;
 }
 
 .cart-nav {
  float: right;
+ justify-content: flex-end;
 }
 
-.nav-container {
+/* .nav-container {
   display: flex;
   justify-content: flex-end; /* Aligns everything to the right wall */
-}
+} */
 
 @media (max-width: 800px) {
   .shop-nav {
