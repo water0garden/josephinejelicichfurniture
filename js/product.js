@@ -30,6 +30,10 @@ async function fetchProduct() {
                 amount
                 currencyCode
               }
+              image {
+                src
+                altText
+              }
             }
           }
         }
@@ -73,13 +77,15 @@ function displayProduct(product) {
       ? `${product.title} - ${variant.title}`
       : product.title;
 
+    const variantImage = variant.image?.src || product.images.edges[0]?.node.src || "";
+
     const buttonHtml = variant.availableForSale
       ? `<button onclick="addToCart(
           '${variant.id}',
           '${variantTitle}',
           '${variant.price.amount}',
           '${variant.price.currencyCode}',
-          '${product.images.edges[0]?.node.src || ""}'
+          '${variantImage}'
         )">Add to Cart</button>`
       : `<button class="sold-out-btn" disabled>Sold Out</button>`;
 
@@ -97,13 +103,15 @@ function displayProduct(product) {
   }
 
   let variantsHtml = product.variants.edges.map(variant => {
+    const variantImage = variant.node.image?.src || product.images.edges[0]?.node.src || "";
+
     const buttonHtml = variant.node.availableForSale
       ? `<button onclick="addToCart(
           '${variant.node.id}',
           '${product.title} — ${variant.node.title}',
           '${variant.node.price.amount}',
           '${variant.node.price.currencyCode}',
-          '${product.images.edges[0]?.node.src || ""}'
+          '${variantImage}'
         )">Add to Cart</button>`
       : `<button class="sold-out-btn" disabled>Sold Out</button>`;
 
