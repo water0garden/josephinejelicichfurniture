@@ -127,6 +127,13 @@ body {
   vertical-align: top;
 }
 
+.news {
+  font-family: tratello;
+  z-index: 10;
+  color: forestgreen;
+  font-size: 2rem;
+}
+
 
 
 /* .work-container:hover {
