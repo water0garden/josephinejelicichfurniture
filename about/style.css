@@ -227,8 +227,16 @@ p {
 
 .jos-choice {
   font-family: 'tratello', Arial, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 1px;
+}
+
+@media (max-width: 800px) {
+  .jos-choice {
+    font-family: 'tratello', Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
 }
 
 .site-header {
