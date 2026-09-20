@@ -408,7 +408,7 @@ button {
 @media (max-width: 800px) {
   .shop-nav {
     float: none;
-    display: inline-block;
+    display: inline-end;
     padding: 0;
   }
 }
