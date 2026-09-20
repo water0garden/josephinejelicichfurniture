@@ -20,6 +20,15 @@ html {
    overflow: auto;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.text-block a:link,
+.text-block a:visited {
+  color: forestgreen;
+}
+
 a:link, a:visited {
 color: black;
 text-decoration: none;
@@ -35,7 +44,6 @@ a:hover { color: black;}
 }
 
 
-
 /* *** font things *** */
 
 @font-face {
@@ -49,14 +57,15 @@ a:hover { color: black;}
 }
 
 @font-face {
-  font-family: 'tratello';
+  font-family: 'tratello' ;
   src: url(../fonts/tratello.ttf);
 }
 
 .title-page {
   font-family: 'Herculanum.ttf';
-  font-size: 2rem;
+  font-size: 1.3rem;
   margin: 0 auto;
+  padding-top: 8rem;
 }
 
 .special {
@@ -86,6 +95,11 @@ a:hover { color: black;}
 
 
 /* *** main styles *** */
+
+header {
+  /* padding-bottom: 6rem; */
+}
+
 @media (max-width: 800px) {
   .info {
     padding-bottom: 2rem;
@@ -105,6 +119,8 @@ body {
   overflow: auto;
 }
 
+
+
 .work-container {
   padding-top: 10rem;
   width: 100%;
@@ -114,14 +130,6 @@ body {
   overflow: auto;
   vertical-align: top;
 }
-
-
-
-/* .work-container:hover {
-  color: grey;
-  z-index: 16;
-} */
-
 
 
 @media (max-width: 800px) {
@@ -172,7 +180,7 @@ figure {
 
 @media (max-width: 800px) {
   figure {
-    width: 100%;
+    max-width: 100%;
     display: block;
   }
 }
@@ -181,9 +189,9 @@ figure {
 /* *** text styles *** */
 
 figcaption {
-  display: block;
-  padding-top: 0.3rem;
-  padding-bottom: 2rem;
+  display: none;
+  padding-top: 0.1rem;
+  padding-bottom: 4rem;
   width: 650px;
 }
 
@@ -199,12 +207,17 @@ p {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   letter-spacing: 0.045rem;
   margin: 0px;
-  /* padding-bottom: 2rem; */
+  margin-top: -0.8rem;
+  padding-bottom: 2rem;
+}
+
+p figcaption {
+  padding-bottom: 4rem;
 }
 
 
 .text-block {
-  width: 95%;
+  width: 92%;
 }
 
 
@@ -385,6 +398,7 @@ button {
 .show {
   display: block;
 }
+
 
 
 /* Cart */
@@ -571,6 +585,7 @@ button {
   max-width: 100%;
 }
 
+/*FOOTER  STYLES*/
 
 footer {
   clear: both;
