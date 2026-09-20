@@ -367,6 +367,12 @@ footer {
 }
 
 @media (max-width: 800px) {
+  .product-title {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
   .product {
     font-size: 16px;
     width: 100%;
