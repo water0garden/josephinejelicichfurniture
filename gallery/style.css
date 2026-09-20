@@ -218,10 +218,16 @@ p {
   margin: 0px;
 }
 
-p {
+.work-container > article:first-child .text-block p {
+  /* any other styling you want just for this banner */
     color: forestgreen;
     background-color: gold;
 }
+
+.work-container > article:first-child .text-block p a {
+  color: red;
+}
+
 
 
 
