@@ -182,7 +182,7 @@ p {
   flex-wrap: wrap;
   /* align-items: center; */
   width: 100%;
-  row-gap: 0.5rem;
+  /* row-gap: 0.5rem; */
 }
 
 .shop-nav-first {
