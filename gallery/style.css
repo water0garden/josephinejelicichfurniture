@@ -220,6 +220,7 @@ p {
 
 .work-container > article:first-child .text-block p {
   /* any other styling you want just for this banner */
+  display: inline-block;
     color: forestgreen;
     background-color: gold;
 }
