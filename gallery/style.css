@@ -135,14 +135,6 @@ body {
 }
 
 
-
-/* .work-container:hover {
-  color: grey;
-  z-index: 16;
-} */
-
-
-
 @media (max-width: 800px) {
   .work-container {
     width: 100%;
@@ -218,7 +210,6 @@ p {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   letter-spacing: 0.045rem;
   margin: 0px;
-  /* padding-bottom: 2rem; */
 }
 
 
@@ -230,24 +221,41 @@ p {
   font-family: 'tratello', Arial, sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
-  /* padding-right: 12rem; testing space */
 }
 
-/* *** Navigation and dropdown *** */
 
-@media (max-width: 800px) {
-  .info {
-    display: ruby-text;
-    float: inline-end;
-  }
+/* *** Navigation and dropdown (fixed with flexbox) *** */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
+.nav-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 3ch;
+}
 
 .text-frag {
   display: inline-block;
   margin-right: 3ch;
   vertical-align: top;
   position: relative;
+}
+
+.nav-right .text-frag {
+  margin-right: 0; /* spacing handled by .nav-right gap instead */
 }
 
 @media (max-width: 800px) {
@@ -257,11 +265,9 @@ p {
   }
 }
 
-
 @media (max-width: 800px) {
   .info .text-frag .dropdown {
     margin-right: 0px;
-    /* padding: 4rem; */
     float: left;
     display: inline-block;
     vertical-align: middle;
@@ -291,7 +297,6 @@ button {
   float: left;
   font-size: inherit;
   color: black;
-  /* padding: 14px 16px; */
   text-decoration: none;
 }
 
@@ -307,13 +312,13 @@ button {
 }
 
 @media (max-width: 800px) {
-  .dropdown .dropbtn  {
+  .dropdown .dropbtn {
     padding-right: 0px;
   }
 }
 
 @media (max-width: 900px) {
-  .dropdown .dropbtn  {
+  .dropdown .dropbtn {
     padding-right: 0px;
   }
 }
@@ -327,49 +332,40 @@ button {
   display: none;
   position: relative;
   text-align: left;
-  /* padding-left: 6px transparent; */
   min-width: 160px;
   min-height: 40px;
-  /* padding-top: 0.5rem transparent; */
-  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); */
   z-index: 1;
 }
 
 .dropbtn.show + .dropdown-content {
   display: block;
   position: absolute;
-  /* background-color: DarkOliveGreen; */
-  /* padding-right: 1.5rem transparent; */
   width: 97%;
   text-align: left;
 }
 
 @media (max-width: 800px) {
-.dropbtn.show + .dropdown-content {
-  display: block;
-  position: relative;
-  width: 100%;
-  float: left;
+  .dropbtn.show + .dropdown-content {
+    display: block;
+    position: relative;
+    width: 100%;
+    float: left;
   }
 }
 
-
 @media (max-width: 800px) {
-.dropdown-content {
+  .dropdown-content {
     width: 90%;
     position: relative;
   }
 }
 
-
 .dropdown-content a {
   float: none;
   color: black;
-  /* padding-top: 4px; */
   padding: 6px 16px;
   padding-left: 0px;
   padding-top: 0px;
-  /* border: 1px dotted; */
   text-decoration: none;
   display: block;
   text-align: left;
@@ -380,11 +376,10 @@ button {
 }
 
 @media (max-width: 800px) {
-.dropdown-content a {
-  display: inline-block;
+  .dropdown-content a {
+    display: inline-block;
   }
 }
-
 
 .dropdown-content a:hover {
   text-decoration: underline;
@@ -398,40 +393,10 @@ button {
   box-sizing: border-box;
 }
 
-/*shop*/
-
+/* *** Shop / Cart nav *** */
+/* layout now handled by .nav-right flex container above;
+   .shop-nav kept as a hook in case you want extra styling later */
 .shop-nav {
-  float: right;
-  padding-left: 3ch;
-}
-
-@media (max-width: 800px) {
-  .shop-nav {
-    float: none;
-    display: inline-end;
-    padding: 0;
-  }
-}
-
-.shop-nav {
-  float: right;
-  padding-left: 3ch;
-}
-
-@media (max-width: 800px) {
-  .shop-nav {
-    float: none;
-    display: inline-end;
-    padding: 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .shop-nav {
-    float: none;
-    display: inline-end;
-    padding: 0;
-  }
 }
 
 footer {
@@ -448,7 +413,6 @@ footer {
 #cart-btn {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
   display: inline-block;
-  float: left;
   vertical-align: top;
   position: relative;
   font-size: 1rem;
