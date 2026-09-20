@@ -33,7 +33,6 @@ html {
 }
 
 
-
 .special {
   font-family: 'hoefler-text-ornaments', hoefler-text-ornaments;
   font-weight: normal;
@@ -59,6 +58,8 @@ html {
  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+
+/* Image and Text Styling */
 
 
 body {
@@ -142,7 +143,6 @@ figure {
   }
 }
 
-
 figcaption {
   margin: 0 auto;
   padding-top: 0.5rem;
@@ -184,43 +184,18 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  flex-grow: 1;
-  gap: 0.5rem 1.5rem;
-}
-
-
-
-/* .text-frag {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-}
-
-@media (max-width: 900px) {
-  .info {
-    gap: 0.4rem 1rem;
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .info {
-    gap: 0.3rem 0.8rem;
-  }
+  
 }
 
 @media (max-width: 800px) {
   .info {
-    padding-bottom: 2rem;
-    padding-right: 4.5rem;
+    display: flex;
+    justify-content:flex-start;
+    width: 100%;
+    
   }
 }
 
-@media (max-width: 900px) {
-  .dropdown .dropbtn {
-    padding-right: 2rem;
-  }
-} */
 
 .text-frag {
   display: inline-block;
@@ -236,11 +211,6 @@ p {
   }
 }
 
-@media (max-width: 800px) {
-  .info {
-    padding-bottom: 2rem;
-  }
-}
 
 @media (max-width: 800px) {
   .info .text-frag .dropdown {
@@ -261,18 +231,22 @@ p {
   font-size: 1rem;
 }
 
+.nav-container {
+  padding-left: 26rem;
+}
+
+@media (max-width: 800px) {
+  .nav-container {
+    padding-left: inherit;
+    display: inline-block;
+    float: left;
+  }
+}
+
+
 .shop-nav {
  float: left;
  justify-content: flex-end;
-}
-
-.cart-nav {
- float: right;
- justify-content: flex-end;
-}
-
-.nav-container {
-padding-left: 26rem;
 }
 
 @media (max-width: 800px) {
@@ -282,6 +256,13 @@ padding-left: 26rem;
     padding: 0;
   }
 }
+
+.cart-nav {
+ float: right;
+ justify-content: flex-end;
+}
+
+
 
 @media (max-width: 800px) {
   .cart-nav {
@@ -437,17 +418,7 @@ a:hover { color: lavender;}
 
 
 
-.backdrop {
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -10;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  /* opacity: 30%; */
-  background-color: DarkOliveGreen;
-}
-
+/* Text styling */
 
 .text-block {
   font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
@@ -644,6 +615,9 @@ a:hover { color: lavender;}
   max-width: 100%;
 }
 
+
+
+/* Navigation Back to top */
 
 .back-to-top {
   font-family: tratello;
