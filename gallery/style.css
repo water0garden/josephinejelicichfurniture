@@ -46,6 +46,12 @@ a:hover { color: black;}
   }
 }
 
+p a:active {
+  color: red;
+  
+}
+
+
 
 
 /* *** font things *** */
@@ -211,6 +217,13 @@ p {
   letter-spacing: 0.045rem;
   margin: 0px;
 }
+
+p {
+    color: forestgreen;
+    background: gold;
+}
+
+
 
 
 .text-block {
