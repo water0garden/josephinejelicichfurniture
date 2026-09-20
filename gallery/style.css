@@ -229,7 +229,7 @@ p {
 .site-header {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
   width: 100%;
   row-gap: 0.5rem;
 }
