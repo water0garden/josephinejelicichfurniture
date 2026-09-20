@@ -100,7 +100,7 @@ a:hover { color: black;}
 /* *** main styles *** */
 @media (max-width: 800px) {
   .info {
-    padding-bottom: 2rem;
+    display: ruby-text;
   }
 }
 
