@@ -132,6 +132,9 @@ body {
   z-index: 10;
   color: forestgreen;
   font-size: 2rem;
+  margin: 0 auto;
+  vertical-align: top;
+
 }
 
 
