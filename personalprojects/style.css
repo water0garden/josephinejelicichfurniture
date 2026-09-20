@@ -262,7 +262,7 @@ p {
 }
 
 .shop-nav {
- float: right;
+ float: left;
  justify-content: flex-end;
 }
 
@@ -271,10 +271,9 @@ p {
  justify-content: flex-end;
 }
 
-/* .nav-container {
-  display: flex;
-  justify-content: flex-end; /* Aligns everything to the right wall */
-} */
+.nav-container {
+padding-left: 26rem;
+}
 
 @media (max-width: 800px) {
   .shop-nav {
