@@ -399,13 +399,7 @@ button {
   display: block;
 }
 
-footer {
-  clear: both;
-  position: relative;
-  padding-top: 4rem;
-  z-index: 10;
-  width: 100%;
-}
+
 
 /* Cart */
 
@@ -589,4 +583,14 @@ footer {
   text-align: center;
   margin-bottom: 0.5rem;
   max-width: 100%;
+}
+
+/*FOOTER  STYLES*/
+
+footer {
+  clear: both;
+  position: relative;
+  padding-top: 4rem;
+  z-index: 10;
+  width: 100%;
 }

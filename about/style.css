@@ -194,7 +194,7 @@ figure {
 figcaption {
   display: block;
   padding-top: 0.3rem;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
   width: 650px;
 }
 
