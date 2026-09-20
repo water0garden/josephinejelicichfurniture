@@ -98,12 +98,8 @@ a:hover { color: black;}
 
 
 /* *** main styles *** */
-@media (max-width: 800px) {
-  .info {
-    display: ruby-text;
-    float: inline-end;
-  }
-}
+
+
 
 
 body {
@@ -230,15 +226,20 @@ p {
   width: 95%;
 }
 
-
-
-/* *** Navigation and dropdown *** */
-
 .jos-choice {
   font-family: 'tratello', Arial, sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
   /* padding-right: 12rem; testing space */
+}
+
+/* *** Navigation and dropdown *** */
+
+@media (max-width: 800px) {
+  .info {
+    display: ruby-text;
+    float: inline-end;
+  }
 }
 
 
