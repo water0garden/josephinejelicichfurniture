@@ -193,6 +193,7 @@ figure {
 /* *** text styles *** */
 
 figcaption {
+  font-size: 0.5rem;
   display: block;
   padding-top: 0.3rem;
   /* padding-bottom: 2rem; */
@@ -202,6 +203,7 @@ figcaption {
 @media (max-width: 800px) {
   figcaption {
     width: 100%;
+    font-size: 0.5rem;
   }
 }
 
