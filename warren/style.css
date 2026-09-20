@@ -189,11 +189,13 @@ figure {
 /* *** text styles *** */
 
 figcaption {
-  /* display: none; */
-  padding-top: 0.1rem;
-  padding-bottom: 4rem;
+  display: block;
+  padding-top: 0.3rem;
+  /* padding-bottom: 2rem; */
   width: 650px;
 }
+
+
 
 @media (max-width: 800px) {
   figcaption {
