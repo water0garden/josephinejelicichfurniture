@@ -321,6 +321,12 @@ button {
   }
 }
 
+@media (max-width: 1024px) {
+  .dropdown .dropbtn  {
+    padding-right: 0px;
+  }
+}
+
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
   background-color: transparent;
   text-decoration: underline;
