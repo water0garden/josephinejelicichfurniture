@@ -1,5 +1,13 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+function updateCartCount() {
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const countEl = document.getElementById('cart-count');
+  if (countEl) {
+    countEl.textContent = count;
+  }
+}
+
 function showCart() {
   document.getElementById("cart-slideout").classList.add("open");
   document.getElementById("cart-overlay").classList.add("open");
@@ -44,12 +52,14 @@ function updateCartQuantity(index, change) {
   cart[index].quantity += change;
   if (cart[index].quantity < 1) cart[index].quantity = 1;
   localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
   showCart();
 }
 
 function removeCartItem(index) {
   cart.splice(index, 1);
   localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
   showCart();
 }
 
@@ -81,3 +91,6 @@ function goToCheckout() {
     `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes,noopener,noreferrer`
   );
 }
+
+// Set the counter correctly as soon as this script loads on any page
+updateCartCount();
