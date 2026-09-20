@@ -215,7 +215,25 @@ figcaption:hover {
 
 
 
-/* *** Navigation and dropdown *** */
+/* *** Navigation and dropdown (fixed with flexbox) *** */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  width: 100%;
+  /* row-gap: 0.5rem; */
+}
+
+.shop-nav-first {
+  margin-left: auto; /* pushes Shop (and Cart after it) to the right when there's room */
+}
+
+@media (max-width: 800px) {
+  .shop-nav-first {
+    margin-left: 0; /* no forced right-push once things are already wrapping/tight */
+  }
+}
 
 .text-frag {
   display: inline-block;
@@ -372,22 +390,6 @@ figcaption:hover {
   box-sizing: border-box;
 }
 
-/*shop*/
-
-.shop-nav {
-  float: right;
-  padding-left: 3ch;
-  font-family: ;
-}
-
-@media (max-width: 800px) {
-  .shop-nav {
-    float: none;
-    display: inline-block;
-    padding: 0;
-  }
-}
-
 footer {
   clear: both;
   position: relative;
@@ -401,7 +403,6 @@ footer {
 #cart-btn {
   font-family: 'Herculanum.ttf'; 
   display: inline-block;
-  float: left;
   vertical-align: top;
   position: relative;
   font-size: 1rem;
@@ -609,4 +610,3 @@ footer {
 .back-to-top:hover {
   background-color: cornflowerblue;
 }
-
