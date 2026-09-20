@@ -101,6 +101,7 @@ a:hover { color: black;}
 @media (max-width: 800px) {
   .info {
     display: ruby-text;
+    float: inline-end;
   }
 }
 
@@ -240,12 +241,6 @@ p {
   /* padding-right: 12rem; testing space */
 }
 
-@media (max-width: 800px) {
-  .jos-choice {
-    padding-right: 0px;
-  }
-}
-
 
 .text-frag {
   display: inline-block;
@@ -261,11 +256,6 @@ p {
   }
 }
 
-@media (max-width: 800px) {
-  .info {
-    padding-bottom: 2rem;
-  }
-}
 
 @media (max-width: 800px) {
   .info .text-frag .dropdown {
@@ -421,6 +411,28 @@ button {
     padding: 0;
   }
 }
+
+.shop-nav {
+  float: right;
+  padding-left: 3ch;
+}
+
+@media (max-width: 800px) {
+  .shop-nav {
+    float: none;
+    display: inline-end;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .shop-nav {
+    float: none;
+    display: inline-end;
+    padding: 0;
+  }
+}
+
 footer {
   clear: both;
   position: relative;
