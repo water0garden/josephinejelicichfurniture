@@ -427,7 +427,9 @@ a:hover { color: lavender;}
 
 @media screen and (max-width: 800px) {
   .cart-slideout {
-    width: 100%;
+    opacity: 97%;
+    width: 85%;
+    height: fit-content;
     right: -100%;
   }
 }
