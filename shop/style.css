@@ -424,6 +424,7 @@ footer {
   .cart-slideout {
     opacity: 95%;
     width: 85%;
+    height: fit-content;
     right: -100%;
   }
 }
