@@ -140,6 +140,8 @@ body {
 }
 
 .spiral-logo {
+  z-index: 9999;
+  position: fixed;
   float: right;
   width: 15%;
   vertical-align: top;
