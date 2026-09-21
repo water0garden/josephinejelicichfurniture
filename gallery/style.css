@@ -153,7 +153,7 @@ body {
 
 @media (max-width: 800px) {
   .spiral-logo {
-    max-width: 30%;
+    width: 40%;
     
   }
 }
@@ -249,11 +249,11 @@ p {
 
 .work-container > article:first-child .text-block p {
   /* any other styling you want just for this banner */
-  display: inline-block;
+    display: inline-block;
     color: forestgreen;
     background-color: gold;
     margin-bottom: 2rem;
-    transform: rotate(-5deg);
+    /* transform: rotate(-5deg); */
 }
 
 .work-container > article:first-child .text-block p a {
