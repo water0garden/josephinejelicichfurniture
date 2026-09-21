@@ -121,7 +121,7 @@ body {
 }
 
 .work-container {
-  padding-top: 1rem;
+  padding-top: 8rem;
   width: 100%;
   margin: 0 auto;
   float: left;
@@ -142,9 +142,10 @@ body {
 .spiral-logo {
   z-index: 9999;
   position: fixed;
-  float: right;
+  right: 20px;
   width: 15%;
   vertical-align: top;
+  transform: translateY(-50%);
   display: inline-block;
   animation: spin 8s linear infinite;
 }
