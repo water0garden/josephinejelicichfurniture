@@ -234,6 +234,7 @@ p {
   vertical-align: top;
   position: relative;
   font-size: 1rem;
+  transform: rotate(-10deg)
 }
 
 button {
