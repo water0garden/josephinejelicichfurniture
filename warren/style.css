@@ -135,6 +135,7 @@ body {
 @media (max-width: 800px) {
   .work-container {
     width: 100%;
+    padding-top: 3rem;
   }
 }
 
@@ -200,6 +201,8 @@ figcaption {
 @media (max-width: 800px) {
   figcaption {
     width: 100%;
+    padding-bottom: 0.5rem;
+    
   }
 }
 
