@@ -140,6 +140,7 @@ body {
 }
 
 .spiral-logo {
+  width: 15%;
   vertical-align: top;
   display: inline-block;
   animation: spin 8s linear infinite;
