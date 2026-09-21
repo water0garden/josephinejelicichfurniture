@@ -150,6 +150,16 @@ body {
   animation: spin 8s linear infinite;
 }
 
+
+@media (max-width: 800px) {
+  .spiral-logo {
+    max-width: 30%;
+    
+  }
+}
+
+
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
