@@ -21,14 +21,13 @@ html {
 }
 /* Text-block links */
 .text-block a:link,
-.text-block a:visited,
-.text-block a:hover {
+.text-block a:visited {
   color: red;
   text-decoration: none;
 }
 
-.text-block a:active {
-  color: forestgreen;
+.text-block a:hover  {
+  color: burlywood;
   text-decoration: underline;
 }
 
