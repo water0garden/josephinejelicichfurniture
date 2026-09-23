@@ -19,27 +19,31 @@ html {
 .clearfix {
    overflow: auto;
 }
-
+/* Text-block links */
+.text-block a:link,
+.text-block a:visited,
 .text-block a:hover {
-  text-decoration: underline;
-  color: forestgreen;
+  color: red;
+  text-decoration: none;
 }
 
 .text-block a:active {
-  text-decoration: underline;
   color: forestgreen;
+  text-decoration: underline;
 }
 
-a #resumeBtn a:hover {
-  text-decoration: underline;
-  color: forestgreen;
+/* Resume button */
+#resumeBtn a:link,
+#resumeBtn a:visited,
+#resumeBtn a:hover {
+  color: red;
+  text-decoration: none;
 }
 
-a #resumeBtn a:active {
+#resumeBtn a:active {
+  color: burlywood;
   text-decoration: underline;
-  color: forestgreen;
 }
-
 a:link, a:visited {
 color: black;
 text-decoration: none;
