@@ -27,7 +27,8 @@ html {
 }
 
 .text-block a:hover  {
-  color: burlywood;
+  background-color: gold;
+
 
 }
 
@@ -39,7 +40,8 @@ html {
 }
 
 #resumeBtn:active {
-  color: burlywood;
+  background-color: gold;
+;
  
 }
 
