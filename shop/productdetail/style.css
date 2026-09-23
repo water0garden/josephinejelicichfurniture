@@ -482,7 +482,7 @@ footer {
   .cart-slideout {
     opacity: 97%;
     width: 85%;
-    height: fit-content;
+    /* height: fit-content; */
     right: -100%;
   }
 }
