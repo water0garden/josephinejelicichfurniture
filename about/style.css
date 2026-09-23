@@ -33,13 +33,12 @@ html {
 }
 
 #resumeBtn:link,
-#resumeBtn:visited,
-#resumeBtn:hover {
+#resumeBtn:visited {
   color: red;
   text-decoration: none;
 }
 
-#resumeBtn:active {
+#resumeBtn:hover {
   background-color: gold;
 ;
  
