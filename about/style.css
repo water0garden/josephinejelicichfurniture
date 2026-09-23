@@ -30,12 +30,12 @@ html {
   color: forestgreen;
 }
 
-a#resumeBtn a:hover {
+a #resumeBtn a:hover {
   text-decoration: underline;
   color: forestgreen;
 }
 
-a#resumeBtn a:active {
+a #resumeBtn a:active {
   text-decoration: underline;
   color: forestgreen;
 }
