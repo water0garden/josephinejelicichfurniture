@@ -229,12 +229,10 @@ ul.image-scroll-list img {
 @media (max-width: 800px) {
   .scroll-counter {
     display: block;
-    text-align: center;
+    text-align: left;
     font-family: 'Dotum', 'SC Dream', Arial, sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.05rem;
-    padding-top: 0.5rem;
-    padding-bottom: 1rem;
   }
 }
 
