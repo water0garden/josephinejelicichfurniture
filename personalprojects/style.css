@@ -400,7 +400,14 @@ a:hover { color: lavender;}
   margin-bottom: 1em;
 }
 
+.text-block a:link {
+  color: cornflowerblue;
+}
 
+
+.text-block a:hover {
+  color: red;
+}
 
 /* Cart */
 
