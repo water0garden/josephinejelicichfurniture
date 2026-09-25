@@ -69,7 +69,10 @@ function displayProduct(product) {
     product.images.edges.map(img =>
       `<li><img src="${img.node.src}" alt="${img.node.altText || ''}"></li>`
     ).join('') +
-    `</ul>`;
+    `</ul>
+    <div class="scroll-counter" id="scrollCounter">
+      <span id="scrollCurrent">1</span> / <span id="scrollTotal">1</span>
+    </div>`;
 
   if (product.variants.edges.length === 1) {
     const variant = product.variants.edges[0].node;
@@ -99,6 +102,7 @@ function displayProduct(product) {
         ${buttonHtml}
       </div>
     `;
+    initScrollCounter();
     return;
   }
 
@@ -129,6 +133,7 @@ function displayProduct(product) {
     <p class="product-variant" style="font-weight: bold;">Style</p>
     ${variantsHtml}
   `;
+  initScrollCounter();
 }
 
 function addToCart(variantId, title, price, currency, image) {
@@ -139,6 +144,7 @@ function addToCart(variantId, title, price, currency, image) {
     cart.push({ variantId, title, price, currency, image, quantity: 1 });
   }
   localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
   showCart();
 }
 
