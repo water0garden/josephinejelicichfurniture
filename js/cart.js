@@ -4,7 +4,7 @@ function updateCartCount() {
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);
   const countEl = document.getElementById('cart-count');
   if (countEl) {
-    countEl.textContent = count;
+    countEl.textContent = `[${count}]`;
   }
 }
 
