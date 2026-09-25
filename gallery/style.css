@@ -646,3 +646,7 @@ footer {
   margin-bottom: 0.5rem;
   max-width: 100%;
 }
+
+.cart-count {
+  color: steelblue;
+}
