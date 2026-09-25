@@ -613,6 +613,7 @@ footer {
 .back-to-top:hover {
   background-color: cornflowerblue;
 }
+
 .spiral-loading-wrapper {
   position: fixed;
   top: 50%;
@@ -620,7 +621,7 @@ footer {
   transform: translate(-50%, -50%);
   z-index: 2000;
   width: 20%;
-  animation: fadeOut 1s ease forwards 20s;
+  animation: fadeOut 1s ease forwards 15s;
 }
 
 .spiral-loading {
@@ -631,7 +632,7 @@ footer {
 
 @media (max-width: 800px) {
   .spiral-loading-wrapper {
-    width: 50%;
+    width: 60%;
   }
 }
 
