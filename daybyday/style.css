@@ -621,7 +621,7 @@ footer {
   transform: translate(-50%, -50%);
   z-index: 2000;
   width: 20%;
-  animation: fadeOut 1s ease forwards 15s;
+  animation: fadeOut 1s ease forwards 10s;
 }
 
 .spiral-loading {
