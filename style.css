@@ -394,16 +394,20 @@ button {
 }
 
 @media (max-width: 800px) {
-.opening-text {
- 
-  font-family: 'tratello', Arial, sans-serif;
-  font-size: -webkit-xxx-large;
-  color: forestgreen;
-  letter-spacing: 1px;
-  text-decoration: none;
-  text-align: center;
-  /* padding-right: 12rem; testing space */
-}
+  .opening-text {
+    font-family: 'tratello', Arial, sans-serif;
+    font-size: -webkit-xxx-large;
+    color: forestgreen;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-align: center;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* keeps text from touching screen edges */
+  }
 }
 
 footer {
