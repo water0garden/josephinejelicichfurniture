@@ -619,7 +619,7 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2000;
-  width: 15%;
+  width: 20%;
   animation: fadeOut 1s ease forwards 20s;
 }
 
@@ -631,7 +631,7 @@ footer {
 
 @media (max-width: 800px) {
   .spiral-loading-wrapper {
-    width: 40%;
+    width: 50%;
   }
 }
 
