@@ -615,25 +615,27 @@ footer {
 }
 
 
-.spiral-loading {
-  z-index: 2000;
+.spiral-loading-wrapper {
   position: fixed;
-  right: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
   width: 15%;
-  vertical-align: top;
-  transform: translateY(-50%);
-  display: inline-block;
-  animation: spin 8s linear infinite;
+  animation: fadeOut 1s ease forwards 20s;
 }
 
+.spiral-loading {
+  display: block;
+  width: 100%;
+  animation: spin 16s linear infinite;
+}
 
 @media (max-width: 800px) {
-  .spiral-logo {
+  .spiral-loading-wrapper {
     width: 40%;
-    
   }
 }
-
 
 @keyframes spin {
   from {
@@ -641,5 +643,15 @@ footer {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }
