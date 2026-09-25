@@ -398,6 +398,14 @@ a:hover { color: lavender;}
   padding-bottom: 2rem;
 }
 
+.text-block a:link {
+  color: cornflowerblue;
+}
+
+
+.text-block a:hover {
+  color: red;
+}
 
 
 /* Cart */
