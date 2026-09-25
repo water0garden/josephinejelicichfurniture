@@ -624,6 +624,22 @@ footer {
   animation: fadeOut 1s ease forwards 10s;
 }
 
+.spiral-loading-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  width: 15%;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.spiral-loading-wrapper.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .spiral-loading {
   display: block;
   width: 100%;
@@ -642,15 +658,5 @@ footer {
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    visibility: hidden;
   }
 }
