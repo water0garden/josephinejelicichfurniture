@@ -217,7 +217,7 @@ ul.image-scroll-list img {
 @media (max-width: 800px) {
   ul.image-scroll-list img {
     width: 100vw;
-    height: webkit-fill-available;
+    height: auto;
     display: block;
   }
 }
