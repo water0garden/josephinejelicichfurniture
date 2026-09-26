@@ -225,7 +225,7 @@ ul.image-scroll-list img {
 @media (max-width: 800px) {
   ul.image-scroll-list img {
     width: auto;
-    max-height: 300px;
+    max-height: 450px;
     max-width: 100vw;
     object-fit: contain;
     display: block;
