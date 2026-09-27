@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   arenaDisplay = {
 
     fetch: function (slug, per, container) {
+      let allContents = [];
       let page = 1;
       let randomNum = Math.floor(Math.random() * 1000000) + 1;
 
@@ -15,20 +16,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
           })
           .then(function (data) {
             if (data.contents && data.contents.length > 0) {
-              // Render this batch immediately instead of waiting for every page
-              var batch = {
-                title: data.title,
-                slug: data.slug,
-                user: data.user,
-                metadata: data.metadata,
-                contents: data.contents.reverse() // newest first, per-batch
-              };
-              arenaDisplay.parseChannel(batch, container);
-
+              allContents = allContents.concat(data.contents);
               page++;
               fetchPage();
+            } else {
+              // Reverse once, across the FULL set, so ordering matches the original (newest first overall)
+              data.contents = allContents.reverse();
+              arenaDisplay.parseChannel(data, container);
             }
-            // else: no more pages, nothing further to do
           })
           .catch(function (err) {
             console.log('fetch failed');
