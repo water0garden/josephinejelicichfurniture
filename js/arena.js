@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   arenaDisplay = {
 
     fetch: function (slug, per, container) {
-      let allContents = [];
       let page = 1;
       let randomNum = Math.floor(Math.random() * 1000000) + 1;
 
@@ -16,14 +15,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
           })
           .then(function (data) {
             if (data.contents && data.contents.length > 0) {
-              allContents = allContents.concat(data.contents);
+              // Render this batch immediately instead of waiting for every page
+              var batch = {
+                title: data.title,
+                slug: data.slug,
+                user: data.user,
+                metadata: data.metadata,
+                contents: data.contents.reverse() // newest first, per-batch
+              };
+              arenaDisplay.parseChannel(batch, container);
+
               page++;
               fetchPage();
-            } else {
-              // Only reverse ONCE here if you want newest first
-              data.contents = allContents.reverse();
-              arenaDisplay.parseChannel(data, container);
             }
+            // else: no more pages, nothing further to do
           })
           .catch(function (err) {
             console.log('fetch failed');
@@ -36,11 +41,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
     parseChannel: function (data, container) {
       var channel = {};
       channel.title = data.title;
-      channel.contents = data.contents; // <-- FIXED: removed .reverse()
+      channel.contents = data.contents;
       channel.url = 'https://are.na/' + data.user.slug + '/' + data.slug + '/';
 
       console.log(data);
-      // console.log(channel);
 
       if (data.metadata !== null) {
         var channelDescription = data.metadata.description;
@@ -50,8 +54,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         };
       }
 
+      // Build all HTML for this batch in one string, write to DOM once at the end
+      var htmlBuffer = '';
+
       channel.contents.forEach(function (entry) {
-        // console.log(entry);
+        var entryHTML = '';
+
         if (entry.class === 'Image') {
 
           if (entry.source !== null) {
@@ -83,17 +91,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
           } else if (captionText.includes('the warren')) {
             link = '../warren/index.html';
           } else if (captionText.includes('shop')) {
-            link = '../shop/index.html'; // <-- This links to the main shop page
+            link = '../shop/index.html';
           } else if (captionText.includes('personal projects')) {
             link = '../personalprojects/index.html';
           }
 
-          var imageTag = '<img src="' + entry.image.original.url + '">';
+          // Use the much smaller "display" size instead of "original",
+          // and lazy-load so offscreen images don't fetch until scrolled into view
+          var imageTag = '<img src="' + entry.image.display.url + '" loading="lazy" decoding="async">';
           if (link) {
             imageTag = '<a href="' + link + '">' + imageTag + '</a>';
           }
 
-          var entryHTML = '<figure class="work ' + size + '">'
+          entryHTML = '<figure class="work ' + size + '">'
             + imageTag
             + '<figcaption>'
             + entry.title + entry.description_html
@@ -109,10 +119,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             var title = str.replace("https://", "");
             title = title.replace("http://", "");
             title = title.replace("/", "");
-
           };
 
-          var entryHTML = '<div class="block -'
+          entryHTML = '<div class="block -'
             + entry.class
             + '">'
             + '<a target="_blank" class="portal"'
@@ -125,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
 
         else if (entry.class === 'Media') {
-          var entryHTML = '<article>'
+          entryHTML = '<article>'
             + '<figure>'
             + entry.embed.html
             + '<figcaption>'
@@ -142,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         else if (entry.class === 'Attachment') {
           if (entry.attachment.extension === "mp4") {
-            var entryHTML = '<div class="block -'
+            entryHTML = '<div class="block -'
               + entry.class
               + '">'
               + '<figure>'
@@ -158,26 +167,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
               + '</a>'
               + '</div>';
           } else if (entry.attachment.extension === "pdf") {
-            var entryHTML = '<figure>'
-              + '<img src="' + entry.image.display.url + '">'
+            entryHTML = '<figure>'
+              + '<img src="' + entry.image.display.url + '" loading="lazy" decoding="async">'
               + '</figure>';
           }
-
         }
 
         else if (entry.class === 'Text') {
-  // Fix hrefs that are plain email addresses (Are.na strips "mailto:")
-  var fixedHTML = entry.content_html.replace(
-    /href="([^":\/]+@[^"]+)"/g,
-    'href="mailto:$1"'
-  );
+          // Fix hrefs that are plain email addresses (Are.na strips "mailto:")
+          var fixedHTML = entry.content_html.replace(
+            /href="([^":\/]+@[^"]+)"/g,
+            'href="mailto:$1"'
+          );
 
-  var entryHTML = '<article>'
-    + '<div class="text-block">'
-    + fixedHTML
-    + '</div>'
-    + '</article>';
-}
+          entryHTML = '<article>'
+            + '<div class="text-block">'
+            + fixedHTML
+            + '</div>'
+            + '</article>';
+        }
 
         else if (entry.class === 'Channel') {
           var str = entry.title;
@@ -187,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             wordhtml += '<span>' + split[i] + '</span>';
           };
 
-          var entryHTML = '<article>'
+          entryHTML = '<article>'
             + '<p>'
             + '<a class="sparkle-portal" href="/i/index.php?id='
             + entry.slug
@@ -198,18 +206,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
             + '</article>';
         }
 
-        container.innerHTML += entryHTML;
-
-
-    container.querySelectorAll('.text-block a').forEach(function (link) {
-    link.setAttribute('target', '_blank');
-    link.setAttribute('rel', 'noopener noreferrer');
-  });
-
-
-        document.querySelector('body').setAttribute('data-state', 'ready');
-
+        htmlBuffer += entryHTML;
       });
+
+      // Single DOM write for the whole batch, instead of one write per entry
+      container.innerHTML += htmlBuffer;
+
+      container.querySelectorAll('.text-block a').forEach(function (link) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      });
+
+      document.querySelector('body').setAttribute('data-state', 'ready');
     }
 
   };
